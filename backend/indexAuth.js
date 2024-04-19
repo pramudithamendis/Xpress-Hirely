@@ -1,10 +1,10 @@
 const mongoDBURL=
-'mongodb+srv://liquinzeng:Periwinkle22246714@cluster0.sla6vhg.mongodb.net/user-auth?retryWrites=true&w=majority&appName=Cluster0'
+'mongodb+srv://it22888884:alkeerwew@vehicle.7itxsn1.mongodb.net/vehicledb?retryWrites=true&w=majority'
 
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const authRouter = require('./routes/authRoute')
+const authRouter = require('./Routes/authRoute')
 const app = express();
 
 //1)MIDDLEWARES
