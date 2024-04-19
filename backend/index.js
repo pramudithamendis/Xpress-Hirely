@@ -5,6 +5,7 @@ import chatRoutes from './Routes/chatRoutes.js'
 import userRoutes from './Routes/userRoutes.js'
 import vehicleRoutes from './Routes/vehicleRoutes.js'
 import adminRoutes from './Routes/adminRoutes.js'
+import rentHisRoute from './routes/rentHisRoute.js';
 import cors from 'cors';
 
 const app = express();
@@ -16,11 +17,13 @@ app.get('/', (request,response)=>{
     console.log(request);
     return response.status(234).send('Welcome');
 })
-
+//Customer support - Pramuditha
 app.use('/chat', chatRoutes);
 app.use('/user', userRoutes)
 app.use('/vehicle', vehicleRoutes);
 app.use('/admin', adminRoutes);
+//Rental History-vihara
+app.use('/rents', rentHisRoute);
 
 mongoose
     .connect(mongoDBURL)
