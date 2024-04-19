@@ -1,0 +1,25 @@
+
+.ChatUser_parent{
+    display: flex;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: auto;
+}
+
+.Signup{
+    background-color: #FF8A00;
+    border-radius: 10px;
+    width: 300px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: space-between;
+
+    padding: 20px;
+}
+
+.Signup input, button{
+    border-radius: 10px;
+    padding: 10px;
+}

@@ -1,0 +1,15 @@
+
+.HomeAdmin_parent{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin-top: 10px;
+    margin-left: 10px;
+
+}
+.HomeAdminSignIn, .HomeAdminSignUp{
+    background-color: #FF8A00;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
