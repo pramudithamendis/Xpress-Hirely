@@ -38,6 +38,11 @@ const Header = () => {
                 RENT YOUR VEHICLE
               </a>
             </li>
+            <li className="mr-6">
+              <a href="#" className="menu-item hover:text-gray-900 relative">
+                CUSTOMER SUPPORT
+              </a>
+            </li>
           </ul>
         </nav>
         <div>
