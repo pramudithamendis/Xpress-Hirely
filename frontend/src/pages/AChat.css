@@ -119,3 +119,10 @@ border: 1px solid white;
     border-radius: 20px;
     padding-left: 10px;   
 }
+
+.AChat_Reply{
+    background-color:#c98231 ;
+    padding: 20px;
+    margin-left: 10px;
+    border-radius: 20px;
+}

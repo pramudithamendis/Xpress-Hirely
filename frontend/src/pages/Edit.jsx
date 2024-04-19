@@ -58,7 +58,7 @@ const [issue, setI] = useState('Good');
       <div className='Edit_parent_leftpanel phonescreen'><BackButton /></div>
       <div className="Edit_parent_middlepanel">
         
-
+          Issue title
           <input
             className='Edit_parent_middlepanel_title'
             type='text' placeholder='Title of the issue'
@@ -66,13 +66,16 @@ const [issue, setI] = useState('Good');
             onChange={(e) => { setTitle(e.target.value); }
             }
           />
+          Vehicle number
           <input
             className='Edit_parent_middlepanel_vehicle'
-            type='text' placeholder='Vehicle type'
+            type='text' placeholder='Vehicle number'
             value={vehicle}
             onChange={(e) => { setV(e.target.value); }
             }
+            disabled
           />
+          Issue detail
           <input
             className='Edit_parent_middlepanel_issue'
             type='text' placeholder='Type your issue here'

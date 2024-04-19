@@ -95,7 +95,7 @@ const AChat = () => {
          <div>     
           
          {r.map(function(r, i){
-        return <div>
+        return <div className='AChat_Reply'>
           {r.title}
         </div>;
         })}
