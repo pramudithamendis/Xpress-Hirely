@@ -1,5 +1,4 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
 import Create from "./pages/Create.jsx";
 import Chats from "./pages/Chats.jsx";
 import Delete from "./pages/Delete.jsx";
