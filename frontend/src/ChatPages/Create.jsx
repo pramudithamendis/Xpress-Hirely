@@ -10,6 +10,7 @@ import { useLocation } from 'react-router-dom'
 const Create = () => {
   const [title, setTitle] = useState('');
   const [vehiclenumber, setV] = useState('');
+  const [vehicletypee, setVT] = useState('');
   const [issue, setI] = useState('');
 
   const [loading, setL] = useState(false);
@@ -74,10 +75,12 @@ const Create = () => {
     "title": title,
     "vehicle": vehiclenumber,
     "issue": issue,
-    "user": user    
+    "user": user,
+    "vehicletypee": vehicletypee
     })
       .then((response) => {
         console.log(response);
+        console.log("Hi");
         navigate('/chat/chats');
       })
       .catch((error) => {
@@ -110,6 +113,13 @@ const Create = () => {
             type='text' placeholder='Type your issue here'
             value={issue}
             onChange={(e) => { setI(e.target.value); }
+            }
+          />
+          <input
+            className='Create_parent_middlepanel_issue'
+            type='text' placeholder='Vehicle type'
+            value={vehicletypee}
+            onChange={(e) => { setVT(e.target.value); }
             }
           />
            <button className='Create_parent_middlepanel_button' onClick={CreateF0}

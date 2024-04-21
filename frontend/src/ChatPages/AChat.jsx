@@ -68,8 +68,9 @@ const AChat = () => {
       <div className='AChat_leftpanel' style={{marginLeft: 20 + 'em'}}><BackButton /></div>
       <div className='AChat_parent_middlepanel'>
         <div className='AChat_parent_middlepanel_title text-black	'>Title: {s.title}</div><hr className='AChat_parent_middlepanel_title_hr' />
-        <div className='AChat_parent_middlepanel_vehicle text-black	'>Vehicle type: {s.vehicle}</div><hr className='AChat_parent_middlepanel_vehicle_hr' />
+        <div className='AChat_parent_middlepanel_vehicle text-black	'>Vehicle number: {s.vehicle}</div><hr className='AChat_parent_middlepanel_vehicle_hr' />
         <div className='AChat_parent_middlepanel_issue text-black	'>Issue: {s.issue}</div>
+        <div className='AChat_parent_middlepanel_issue text-black	'>Vehicle type: {s.vehicletypee}</div>
         <div className='AChat_parent_middlepanel_operations text-black	'>
 
         {editable ? (

@@ -58,7 +58,7 @@ const Chats = () => {
             </div>
             <div>
                 {!user ? (<div className='LoginFirst_parent'><div className="LoginIfCantGetDetailsFromLocalStorage_parent">To create a chat, you must create an account first.</div><div className="LoginIfCantGetDetailsFromLocalStorage" onClick={() => {
-                            navigate(`/home`)
+                            navigate(`/user/create`)
                         }}>Login</div></div>) : (
 
 

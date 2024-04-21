@@ -14,12 +14,18 @@ router.post('/create', async (request,response)=>{
             return response.status(400).send('Send all the required fields');
         }
 
+        console.log(request)
+        console.log("hI IN CHATROUTES")
+
         const newChat = {
             title: request.body.title,
             vehicle: request.body.vehicle,
             issue: request.body.issue,
             user: request.body.user,
+            vehicletypee: request.body.vehicletypee
+            
         }
+        
 
         const chat = await chatModel.create(newChat);
         return response.status(201).send(chat);

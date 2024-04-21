@@ -43,7 +43,7 @@ const ChatUser = () => {
            onChange={(e)=> {setidN(e.target.value);}}
          />
          <input 
-           type='text'
+           type='password'
            placeholder='Enter your password'
            value={password} 
            onChange={(e)=> {setpassword(e.target.value);}}
