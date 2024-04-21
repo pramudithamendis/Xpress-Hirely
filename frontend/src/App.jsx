@@ -76,8 +76,8 @@ const App = () => {
         <Route path="rents/editHis/:id" element={<EditRentHisPage />} />
         <Route path="rents/deleteHis/:id" element={<DeleteRentHisPage />} />
 
-        <Route path="/onboarding" element={<OnBoarding />} />
           <Route path="/rent-request" element={<RentRequest />} />
+        <Route path="/onboarding" element={<OnBoarding />} />
           <Route path="/request-management" element={<RequestManagement />} />
           <Route path="/vehicle-details" element={<VehicleDetails />} />
       </Routes>

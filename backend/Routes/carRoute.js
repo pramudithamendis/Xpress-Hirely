@@ -13,4 +13,6 @@ router.get('/pending', carController.getPendingRequests);
 router.patch('/request/:id', carController.updateRequestStatus);
 router.delete('/request/:id', carController.deleteRequest);
 
-module.exports = router;
+// module.exports = router;
+
+export default router;

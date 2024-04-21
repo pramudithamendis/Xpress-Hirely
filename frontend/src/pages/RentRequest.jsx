@@ -81,7 +81,7 @@ const RentRequest = () => {
         console.log('Submitting request:', vehicleRequest);
     
         try {
-            const response = await axios.post('http://localhost:8009/cars', vehicleRequest);
+            const response = await axios.post('http://localhost:5555/cars', vehicleRequest);
     
             if (response.status === 201) {
                 setSuccessMessage('Request submitted successfully');

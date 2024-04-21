@@ -8,7 +8,7 @@ const RequestManagement = () => {
 
     const fetchAndFilterPendingRequests = async () => {
         try {
-            const response = await axios.get('http://localhost:8009/cars'); // Assuming '/cars' is the endpoint to fetch all requests
+            const response = await axios.get('http://localhost:5555/cars'); // Assuming '/cars' is the endpoint to fetch all requests
             const pendingRequests = response.data.filter(car => car.status === 'pending');
             setCars(pendingRequests);
         } catch (error) {

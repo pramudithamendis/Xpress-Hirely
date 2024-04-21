@@ -48,7 +48,7 @@ const VehicleDetails = () => {
     // Ask for confirmation using browser's notification system
     if (window.confirm("Are you sure you want to delete this record?")) {
       try {
-        await axios.delete(`http://localhost:8009/cars/${id}`);
+        await axios.delete(`http://localhost:5555/cars/${id}`);
         fetchAcceptedRequests(); // Refresh the list after deletion
         setSuccessMessage("Vehicle deleted successfully!");
         setErrorMessage("");
