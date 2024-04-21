@@ -2,10 +2,10 @@
 import React, { useState } from 'react';
 // import Header from '../components/Header';
 // import Footer from '../components/Footer';
-// import SedanImage from '../images/sedan.png';
-// import truck from '../images/truck.png';
-// import van from '../images/van.png';
-// import suv from '../images/jeep.png';
+import SedanImage from '../images/sedan.png';
+import truck from '../images/truck.png';
+import van from '../images/van.png';
+import suv from '../images/jeep.png';
 import Select from 'react-select';
 import axios from 'axios';
 
@@ -160,7 +160,7 @@ const RentRequest = () => {
     
     return (
         <>
-            <Header />
+            {/* <Header /> */}
             <div className="bg-gray-100 min-h-screen flex items-center justify-center pt-8 pb-8">
                 <div className="max-w-lg w-full bg-white p-8 rounded-lg shadow-lg">
                     <div className="mb-8">
@@ -368,7 +368,7 @@ const RentRequest = () => {
             )}
                 </div>
             </div>
-            <Footer />
+            {/* <Footer /> */}
         </>
     );
 };

@@ -2,13 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 // import Header from '../components/Header'; // Import your Header component here
 // import Footer from '../components/Footer'; // Import your Footer component here
-// import onBording from '../images/Car_Rental.jpg';
+import onBording from '../images/Car_Rental.jpg';
 
 const Onboarding = () => {
     return (
         <div>
             {/* Include your Header component here */}
-            <Header />
+            {/* <Header /> */}
             <div className="container mx-auto flex justify-between items-center py-10">
                 {/* Hero Image */}
                 <div className="w-1/2">
@@ -35,7 +35,7 @@ const Onboarding = () => {
                 </div>
             </div>
             {/* Include your Footer component here */}
-            <Footer />
+            {/* <Footer /> */}
         </div>
     );
 };
