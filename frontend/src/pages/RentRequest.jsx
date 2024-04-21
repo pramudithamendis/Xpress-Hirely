@@ -1,11 +1,11 @@
 // RentRequest.jsx
 import React, { useState } from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import SedanImage from '../images/sedan.png';
-import truck from '../images/truck.png';
-import van from '../images/van.png';
-import suv from '../images/jeep.png';
+// import Header from '../components/Header';
+// import Footer from '../components/Footer';
+// import SedanImage from '../images/sedan.png';
+// import truck from '../images/truck.png';
+// import van from '../images/van.png';
+// import suv from '../images/jeep.png';
 import Select from 'react-select';
 import axios from 'axios';
 

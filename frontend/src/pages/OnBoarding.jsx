@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Header from '../components/Header'; // Import your Header component here
-import Footer from '../components/Footer'; // Import your Footer component here
-import onBording from '../images/Car_Rental.jpg';
+// import Header from '../components/Header'; // Import your Header component here
+// import Footer from '../components/Footer'; // Import your Footer component here
+// import onBording from '../images/Car_Rental.jpg';
 
 const Onboarding = () => {
     return (

@@ -24,10 +24,10 @@ import Layout from "./components/layout/Layout";
 
 import { BrowserRouter as Router} from 'react-router-dom';
 import { ToastContainer } from 'react-toastify'; // Import ToastContainer
-import OnBoarding from '../src/pages/OnBoarding.js';
-import RentRequest from './pages/RentRequest.js';
-import RequestManagement from './pages/RequestManagment.js';
-import VehicleDetails from './pages/VehicleDetails.js';
+import OnBoarding from '../src/pages/OnBoarding.jsx';
+import RentRequest from './pages/RentRequest.jsx';
+import RequestManagement from './pages/RequestManagment.jsx';
+import VehicleDetails from './pages/VehicleDetails.jsx';
 import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
