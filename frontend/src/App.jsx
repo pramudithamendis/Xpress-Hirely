@@ -22,6 +22,14 @@ import HomeRentHisPage from "./pages/HomeRentHis.page";
 import ShowRentHisPage from "./pages/ShowRentHis.page";
 import Layout from "./components/layout/Layout";
 
+import { BrowserRouter as Router} from 'react-router-dom';
+import { ToastContainer } from 'react-toastify'; // Import ToastContainer
+import OnBoarding from '../src/pages/OnBoarding.js';
+import RentRequest from './pages/RentRequest.js';
+import RequestManagement from './pages/RequestManagment.js';
+import VehicleDetails from './pages/VehicleDetails.js';
+import 'react-toastify/dist/ReactToastify.css';
+
 const App = () => {
   return (
     <Layout>
@@ -67,6 +75,11 @@ const App = () => {
         <Route path="/rents/detailsHis/:id" element={<ShowRentHisPage />} />
         <Route path="rents/editHis/:id" element={<EditRentHisPage />} />
         <Route path="rents/deleteHis/:id" element={<DeleteRentHisPage />} />
+
+        <Route path="/onboarding" element={<OnBoarding />} />
+          <Route path="/rent-request" element={<RentRequest />} />
+          <Route path="/request-management" element={<RequestManagement />} />
+          <Route path="/vehicle-details" element={<VehicleDetails />} />
       </Routes>
     </Layout>
   );
