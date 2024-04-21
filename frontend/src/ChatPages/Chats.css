@@ -106,3 +106,35 @@ font-size:20px;
     padding-top: 10px;
 }
 
+.LoginFirst_parent{
+    background-color: white;
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 550px;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.LoginIfCantGetDetailsFromLocalStorage_parent{
+    /* margin-left: 500px; */
+    font-size: 20px;
+    
+}
+
+
+.LoginIfCantGetDetailsFromLocalStorage{
+    background-color: #FF8A00;
+    /* margin-left: 600px; */
+    padding: 20px;
+    width: 80px;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+    
+}
+
+.LoginIfCantGetDetailsFromLocalStorage:hover{
+    cursor: pointer;
+}

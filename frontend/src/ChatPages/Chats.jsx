@@ -24,7 +24,8 @@ const Chats = () => {
 
     useEffect(() => {
         setL(true);
-
+        console.log(user)
+       
         axios.get(`http://localhost:5555/chat/chats/${user}`)
             .then((response) => {
                 setS(response.data);
@@ -52,11 +53,13 @@ const Chats = () => {
         <div>
             <div>
                 <div className='Chats_parent '>
-                <div>Hi {user}!<br /></div>
+                <div> {user}<br /></div>
                 </div>
             </div>
             <div>
-                {loading ? (<Spinner />) : (
+                {!user ? (<div className='LoginFirst_parent'><div className="LoginIfCantGetDetailsFromLocalStorage_parent">To create a chat, you must create an account first.</div><div className="LoginIfCantGetDetailsFromLocalStorage" onClick={() => {
+                            navigate(`/home`)
+                        }}>Login</div></div>) : (
 
 
                     <div className='Chats_parent '>
