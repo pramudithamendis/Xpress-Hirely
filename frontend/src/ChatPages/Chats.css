@@ -2,6 +2,8 @@
     background: white;
     color: white;
 } */
+
+
 .Chats_parent {
     /* background-color: blue; */
     
@@ -12,7 +14,7 @@
     align-items: center;    
 }
 .CreateButton{
-    background-color: white;
+    background-color: #FF8A00;
     color: black;
     width: 300px;
     display: flex;
@@ -31,7 +33,7 @@
 
 .CreateButton:hover{
     cursor: pointer;
-    background-color: #FF8A00;
+    /* background-color: white; */
 }
 .Chats_parent2 div{
     /* background-color: blue; */
@@ -57,7 +59,7 @@
     margin-left: 10px;
     border: 1px solid white;
     box-shadow: 10px 10px;
-    background-color: #FF8A00;
+    background-color: white;
     -webkit-box-shadow: 10px 10px 21px 0px rgba(0,0,0,0.75);
 -moz-box-shadow: 10px 10px 21px 0px rgba(0,0,0,0.75);
 box-shadow: 10px 10px 21px 0px rgba(0,0,0,0.75);    
@@ -65,7 +67,7 @@ box-shadow: 10px 10px 21px 0px rgba(0,0,0,0.75);
 
 .Chat:hover{
     cursor: pointer;
-    background-color: rgb(180, 123, 18);
+    /* background-color: rgb(180, 123, 18); */
 
 }
 
@@ -74,23 +76,25 @@ box-shadow: 10px 10px 21px 0px rgba(0,0,0,0.75);
 .Chats_parent_middlepanel_title{
 margin-left: 20px;
 background-color: none;
-color: white;
 margin-bottom: 20px;
 margin-right: 10px;
 margin-top: 10px;
 border-radius: 20px;
 padding-left: 10px;
+font-size:20px;
+
 
 }
 
 .Chats_parent_middlepanel_vehicle{
 margin-left: 20px;
 background-color: none;
-color: white;
+
 margin-bottom: 20px;
 margin-right: 10px;
 border-radius: 20px;
 padding-left: 10px;
+font-size:20px;
 
 }
 

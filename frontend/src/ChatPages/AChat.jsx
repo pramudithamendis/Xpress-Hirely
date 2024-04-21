@@ -65,12 +65,12 @@ const AChat = () => {
 
   return (
     <div className='AChat_parent'>
-      <div className='AChat_leftpanel'><BackButton /></div>
+      <div className='AChat_leftpanel' style={{marginLeft: 20 + 'em'}}><BackButton /></div>
       <div className='AChat_parent_middlepanel'>
-        <div className='AChat_parent_middlepanel_title'>Title: {s.title}</div><hr className='AChat_parent_middlepanel_title_hr' />
-        <div className='AChat_parent_middlepanel_vehicle'>Vehicle type: {s.vehicle}</div><hr className='AChat_parent_middlepanel_vehicle_hr' />
-        <div className='AChat_parent_middlepanel_issue'>Issue: {s.issue}</div>
-        <div className='AChat_parent_middlepanel_operations'>
+        <div className='AChat_parent_middlepanel_title text-black	'>Title: {s.title}</div><hr className='AChat_parent_middlepanel_title_hr' />
+        <div className='AChat_parent_middlepanel_vehicle text-black	'>Vehicle type: {s.vehicle}</div><hr className='AChat_parent_middlepanel_vehicle_hr' />
+        <div className='AChat_parent_middlepanel_issue text-black	'>Issue: {s.issue}</div>
+        <div className='AChat_parent_middlepanel_operations text-black	'>
 
         {editable ? (
           <Link className='edit' to={`/chat/edit/${s._id}`}>

@@ -48,7 +48,7 @@ const ChatUser = () => {
            value={password} 
            onChange={(e)=> {setpassword(e.target.value);}}
          />
-        <button className='p-2 bg-sky-300 m-' onClick={CreateF}
+        <button className='Create_parent_middlepanel_button' onClick={CreateF}
         >Save</button>
        </div>
 

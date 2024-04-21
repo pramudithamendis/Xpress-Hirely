@@ -3,7 +3,7 @@ import { SocialIcon } from "react-social-icons";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-400 text-white py-8">
+    <footer className="bg-gray-400 text-white py-8 mt" style={{marginTop: 28 + 'em'}}>
       <div className="container mx-auto flex flex-wrap justify-between">
         <div className="relative w-full sm:w-1/2 md:w-auto mb-4sm:mb-0 border-r-4 border-gray-700 pr-4">
           <div className="absolute top-0 left-10">

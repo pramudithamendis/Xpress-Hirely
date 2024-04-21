@@ -24,7 +24,7 @@ body{
     display: flex;
     flex-direction: column;
     width: 350px;
-    background-color: #FF8A00;
+    background-color: white;
     border: 1px solid white;
     padding: 10px;
     justify-content: center;
@@ -82,4 +82,9 @@ box-shadow: 10px 10px 21px 0px rgba(0,0,0,0.75);
     border-radius: 20px;
     padding: 10px;
     margin-top: 10px;
+}
+
+
+.Create_parent_middlepanel_button{
+    background-color: #FF8A00;
 }

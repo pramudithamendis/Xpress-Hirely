@@ -137,3 +137,18 @@ border: 1px solid white;}
     
      
 }
+
+
+
+.AChat_reply_Admin{
+    
+
+
+}
+.AChat_reply_Admin_each{
+    margin-bottom: 20px;
+    background-color: white;
+    padding: 10px;
+    margin-left: 10px;
+    border-radius: 10px;
+}

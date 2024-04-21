@@ -48,10 +48,10 @@ const ChatsForAdmin = () => {
                                 navigate(`/chat/getchat/${s._id}/admin`)
                             }}>
                                 <>
-                                    <div className='Chats_parent_middlepanel_title'>Title: {s.title}</div>
-                                    <div className='Chats_parent_middlepanel_vehicle'>Vehicle type: {s.vehicle}</div>
+                                    <div className='Chats_parent_middlepanel_title text-black'>Title: {s.title}</div>
+                                    <div className='Chats_parent_middlepanel_vehicle text-black'>Vehicle type: {s.vehicle}</div>
 
-                                    <div className='Chats_parent_middlepanel_Operations'>
+                                    <div className='Chats_parent_middlepanel_Operations text-black'>
 
                                        
 

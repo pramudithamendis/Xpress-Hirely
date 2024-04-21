@@ -57,7 +57,7 @@ const ChatAdminLogin = () => {
           value={password}
           onChange={(e) => { setpassword(e.target.value); }}
         />
-        <button className='p-2 bg-sky-300 m-' onClick={LoginF}
+        <button className='Create_parent_middlepanel_button' onClick={LoginF}
         >Save</button>
         <div>
           {errorMessage}

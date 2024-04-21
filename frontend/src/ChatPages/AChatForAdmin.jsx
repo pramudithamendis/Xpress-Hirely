@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+ import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import Spinner from '../components/Spinner';
@@ -62,10 +62,10 @@ const AChatForAdmin = () => {
         </div>
       </div>
       <div className='AChat_parent_middlepanel'>
-        <div className='AChat_parent_middlepanel_title'>Title: {s.title}</div><hr className='AChat_parent_middlepanel_title_hr' />
-        <div className='AChat_parent_middlepanel_vehicle'>Vehicle type: {s.vehicle}</div><hr className='AChat_parent_middlepanel_vehicle_hr' />
-        <div className='AChat_parent_middlepanel_issue'>Issue: {s.issue}</div>
-        <div className='AChat_parent_middlepanel_operations'>
+        <div className='AChat_parent_middlepanel_title text-black	'>Title: {s.title}</div><hr className='AChat_parent_middlepanel_title_hr' />
+        <div className='AChat_parent_middlepanel_vehicle text-black	'>Vehicle type: {s.vehicle}</div><hr className='AChat_parent_middlepanel_vehicle_hr' />
+        <div className='AChat_parent_middlepanel_issue text-black	'>Issue: {s.issue}</div>
+        <div className='AChat_parent_middlepanel_operations text-black	'>
         </div>
 
 
@@ -75,9 +75,9 @@ const AChatForAdmin = () => {
       {replyloading ? (<Spinner />) : (
         <div>
           {/* {r.length} */}
-          <div>
+          <div className='AChat_reply_Admin'>
             {r.map(function (r, i) {
-              return <div>
+              return <div className='AChat_reply_Admin_each'>
                 {r.title}
               </div>;
             })}

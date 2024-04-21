@@ -31,7 +31,7 @@ const Delete = () => {
     <div className='Delete_parent'>
       <div className="Delete_parent_leftpanel"><BackButton /></div>
       <div className="Delete_parent_middlepanel">
-        <div className='Delete_parent_middlepanel_verify'>
+        <div className='Delete_parent_middlepanel_verify text-black'>
           Are you sure you want to delete this?
         </div>
         <button className='Delete_parent_middlepanel_button' onClick={DeleteF}

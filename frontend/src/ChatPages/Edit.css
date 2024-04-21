@@ -19,7 +19,7 @@
 }
 
 .Edit_parent_middlepanel{
-    background-color: #FF8A00;
+    background-color: rgb(232, 232, 232);
 
     display: flex;
     flex-direction: column;
