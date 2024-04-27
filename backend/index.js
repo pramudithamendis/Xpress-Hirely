@@ -6,6 +6,7 @@ import userRoutes from './Routes/userRoutes.js'
 import vehicleRoutes from './Routes/vehicleRoutes.js'
 import adminRoutes from './Routes/adminRoutes.js'
 import rentHisRoute from './routes/rentHisRoute.js';
+import paymentsRoute from './routes/paymentsRoute.js';
 import cors from 'cors';
 
 const app = express();
@@ -24,6 +25,8 @@ app.use('/vehicle', vehicleRoutes);
 app.use('/admin', adminRoutes);
 //Rental History-vihara
 app.use('/rents', rentHisRoute);
+//Payment management - Piyara
+app.use('/payments',paymentsRoute);
 
 mongoose
     .connect(mongoDBURL)
