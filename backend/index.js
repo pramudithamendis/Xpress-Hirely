@@ -6,7 +6,13 @@ import userRoutes from './Routes/userRoutes.js'
 import vehicleRoutes from './Routes/vehicleRoutes.js'
 import adminRoutes from './Routes/adminRoutes.js'
 import rentHisRoute from './routes/rentHisRoute.js';
-import paymentsRoute from './routes/paymentsRoute.js';
+import cardPaymentsRoute from './routes/cardPaymentsRoute.js';
+import cashPaymentsRoute from './routes/cashPaymentsRoute.js';
+import paymentMethodRoute from './routes/paymentMethodRoute.js';
+import refundRequestsRoute from './routes/refundRequestsRoute.js';
+import stripePaymentsRoute from './routes/stripePaymentsRoute.js';
+import sgMail from '@sendgrid/mail';
+import fs from 'fs';
 import cors from 'cors';
 
 const app = express();
@@ -26,7 +32,11 @@ app.use('/admin', adminRoutes);
 //Rental History-vihara
 app.use('/rents', rentHisRoute);
 //Payment management - Piyara
-app.use('/payments',paymentsRoute);
+app.use('/cardpayments',cardPaymentsRoute);
+app.use('/cashpayments',cashPaymentsRoute);
+app.use('/savepaymentmethod',paymentMethodRoute);
+app.use('/refundrequests',refundRequestsRoute);
+app.use('/stripepayments',stripePaymentsRoute);
 
 mongoose
     .connect(mongoDBURL)
