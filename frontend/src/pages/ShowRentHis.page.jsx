@@ -3,6 +3,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import BackButton from "../components/BackButton";
 import Spinner from "../components/Spinner";
+import jsPDF from "jspdf";
 
 const ShowRentHisPage = () => {
   const [rent, setRentHis] = useState({});
@@ -22,11 +23,57 @@ const ShowRentHisPage = () => {
         setLoading(false);
       });
   }, []);
+  const handleGenerateReport = (rent) => {
+    const doc = new jsPDF();
+
+    // Report Header
+    doc.setFontSize(18);
+    doc.text(`Rent Details for ID: ${rent._id}`, 20, 20);
+
+    // Rent Data
+    let currentY = 35; // Start below the header
+    doc.setFontSize(12);
+
+    doc.text(`Name: ${rent.name}`, 20, currentY);
+    currentY += 8;
+    doc.text(`Vehicle Model: ${rent.vehicle}`, 20, currentY);
+    currentY += 8;
+    doc.text(`Rent Date: ${rent.rentDate}`, 20, currentY);
+    currentY += 8;
+    doc.text(`Rent Date: ${rent.renturnDate}`, 20, currentY);
+    currentY += 8;
+    doc.text(`Rent Date: ${rent.mileage}`, 20, currentY);
+    currentY += 8;
+    doc.text(`Rent Amount: ${rent.amount}`, 20, currentY);
+    currentY += 8;
+    doc.text(`Create Time: ${rent.createdAt}`, 20, currentY);
+    currentY += 8;
+    doc.text(`Last Update Time: ${rent.updatedAt}`, 20, currentY);
+
+    // Footer
+    doc.setFontSize(10);
+    doc.text(
+      `Report generated on: ${new Date().toLocaleString()}`,
+      20,
+      doc.internal.pageSize.height - 15
+    );
+
+    doc.save(`rent_report_${rent._id}.pdf`);
+  };
 
   return (
     <div className="px-20 py-8">
       <BackButton />
-      <h1 className="text-3xl my-4">Show Rent</h1>
+      <div className="flex justify-between items-center">
+        <h1 className="text-3xl my-4">Show Rent</h1>
+        <button
+          className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded mr-4"
+          onClick={() => handleGenerateReport(rent)}
+        >
+          Generate Report
+        </button>
+      </div>
+
       {loading ? (
         <Spinner />
       ) : (

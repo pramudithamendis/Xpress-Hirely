@@ -7,12 +7,22 @@ import { BsInfoCircle } from "react-icons/bs";
 import { MdOutlineAddBox, MdOutlineDelete } from "react-icons/md";
 import RentsTable from "../components/home/RentsTable";
 import RentsCard from "../components/home/RentsCard";
+import SearchBar from "../components/SearchBar";
+import { useLocation } from "react-router-dom";
 
 const HomeRentHisPage = () => {
   const [rents, setRentHis] = useState([]);
   const [loading, setLoading] = useState(false);
   const [showType, setShowType] = useState("table");
+  //for the search function
+  const [searchInput, setSearchInput] = useState("");
+  const [filteredRents, setFilteredRents] = useState([]);
+  const location = useLocation();
+  const newRentData = location.state?.newRentData; // Access the data
 
+  const handleSearchChange = (newSearchTerm) => {
+    setSearchInput(newSearchTerm);
+  };
   useEffect(() => {
     setLoading(true);
     axios
@@ -26,6 +36,19 @@ const HomeRentHisPage = () => {
         setLoading(false);
       });
   }, []);
+  useEffect(() => {
+    // Filter data every time rents or the searchInput changes
+    const filteredData = rents.filter((item) => {
+      return (
+        item.name.toLowerCase().includes(searchInput.toLowerCase()) ||
+        item.vehicle.toLowerCase().includes(searchInput.toLowerCase()) ||
+        item.rentDate.toString().includes(searchInput) || // Assuming rentDate is a Date object
+        item.mileage?.toString().includes(searchInput) || // Handle optional mileage field
+        item.amount.toString().includes(searchInput)
+      );
+    });
+    setFilteredRents(filteredData);
+  }, [rents, searchInput]);
 
   return (
     <div className="px-40 py-16">
@@ -45,18 +68,25 @@ const HomeRentHisPage = () => {
       </div>
 
       <div className="flex justify-between items-center">
-        <h1 className="text-3xl my-8">Rents List</h1>
-        <Link to="/rents/createHis">
-          <MdOutlineAddBox className="text-sky-800 text-4xl" />
-        </Link>
+        <h1 className="text-3xl my-8">Rents List</h1> {/* Title on the left */}
+        <div className="flex items-center">
+          {" "}
+          {/* Wrapper for search bar and add icon */}
+          <SearchBar onSearchChange={handleSearchChange} /> {/* Search bar */}
+          <Link to="/rents/createHis" className="ml-4">
+            {" "}
+            {/* Add margin to the left */}
+            <MdOutlineAddBox className="text-black text-4xl" /> {/* Add icon */}
+          </Link>
+        </div>
       </div>
 
       {loading ? (
         <Spinner />
       ) : showType === "table" ? (
-        <RentsTable rents={rents} />
+        <RentsTable rents={filteredRents} />
       ) : (
-        <RentsCard rents={rents} />
+        <RentsCard rents={filteredRents} />
       )}
     </div>
   );
