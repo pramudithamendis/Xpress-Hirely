@@ -49,7 +49,7 @@ const isPasswordValid = await bcrypt.compare(password, user.password);
     const token = jwt.sign({ _id: user._id }, "secretkey123", {
       expiresIn: '90d',
     });
-
+    
     res.status(200).json({
       status: 'success',
       token,
