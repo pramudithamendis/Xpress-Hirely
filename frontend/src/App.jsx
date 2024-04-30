@@ -30,6 +30,7 @@ import AdminDashboard from "./pages/AdminDashboard";
 import { useAuth } from "./contexts/AuthContext";
 import Layout from "./components/layout/Layout";
 import Profile from "./pages/ProfilePage.jsx";
+import { Navigate } from "react-router-dom";
 
 const App = () => {
   const { isAuthenticated, userData } = useAuth();
