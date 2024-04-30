@@ -1,5 +1,10 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
 import Create from "./pages/Create.jsx";
 import Chats from "./pages/Chats.jsx";
 import Delete from "./pages/Delete.jsx";
@@ -20,9 +25,17 @@ import DeleteRentHisPage from "./pages/DeleteRentHis.page";
 import EditRentHisPage from "./pages/EditRentHis.page";
 import HomeRentHisPage from "./pages/HomeRentHis.page";
 import ShowRentHisPage from "./pages/ShowRentHis.page";
+import "./App.css";
+import Register from "./Auth/Register";
+import Login from "./Auth/Login";
+import Dashboard from "./pages/Dashboard";
+import AdminDashboard from "./pages/AdminDashboard";
+import { useAuth } from "./contexts/AuthContext";
 import Layout from "./components/layout/Layout";
+import Profile from "./pages/ProfilePage.jsx";
 
 const App = () => {
+  const { isAuthenticated, userData } = useAuth();
   return (
     <Layout>
       <Routes>
@@ -62,11 +75,49 @@ const App = () => {
         {/*this has the sign up and sign in buttons*/}
         <Route path="/admin/signin" element={<ChatAdminLogin />} />{" "}
         {/*this has the sign in form for admins admin */}
-        <Route path="/" element={<HomeRentHisPage />} />
+        <Route path="/rentHome" element={<HomeRentHisPage />} />
         <Route path="/rents/createHis" element={<CreateRentHisPage />} />
         <Route path="/rents/detailsHis/:id" element={<ShowRentHisPage />} />
         <Route path="rents/editHis/:id" element={<EditRentHisPage />} />
         <Route path="rents/deleteHis/:id" element={<DeleteRentHisPage />} />
+        <Route
+          path="/signup"
+          element={
+            !isAuthenticated ? (
+              <Register />
+            ) : userData.role === "admin" ? (
+              <Navigate to="/AdminDashboard" />
+            ) : (
+              <Navigate to="/dashboard" />
+            )
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            !isAuthenticated ? (
+              <Login />
+            ) : userData.role === "admin" ? (
+              <Navigate to="/AdminDashboard" />
+            ) : (
+              <Navigate to="/dashboard" />
+            )
+          }
+        />
+        <Route
+          path="/dashboard"
+          element={isAuthenticated ? <Dashboard /> : <Login />}
+        />
+        <Route
+          path="/AdminDashboard"
+          element={
+            isAuthenticated && userData.role === "admin" ? (
+              <AdminDashboard />
+            ) : (
+              <Navigate to="/Login" />
+            )
+          }
+        />
       </Routes>
     </Layout>
   );
