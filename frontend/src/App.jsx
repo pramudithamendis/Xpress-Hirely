@@ -32,6 +32,8 @@ import Layout from "./components/layout/Layout";
 import Profile from "./pages/ProfilePage.jsx";
 import { Navigate } from "react-router-dom";
 
+import { Navigate } from "react-router-dom";
+
 const App = () => {
   const { isAuthenticated, userData } = useAuth();
   return (
