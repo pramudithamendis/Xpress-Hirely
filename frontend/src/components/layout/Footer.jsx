@@ -3,13 +3,13 @@ import { SocialIcon } from "react-social-icons";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-400 text-white py-8">
+    <footer className="bg-gray-400 text-white py-8 mt" style={{marginTop: 28 + 'em'}}>
       <div className="container mx-auto flex flex-wrap justify-between">
         <div className="relative w-full sm:w-1/2 md:w-auto mb-4sm:mb-0 border-r-4 border-gray-700 pr-4">
           <div className="absolute top-0 left-10">
             <h2 className="text-lg font-bold">XPRESS HIRELY</h2>
           </div>
-          <img src="carLogo.png" alt="XpressHirely" className="mr-0" />
+          <img src="/carLogo.png" alt="XpressHirely" className="mr-0" />
         </div>
         <div className="w-full sm:w-1/2 md:w-auto mb-4 sm:mb-0">
           <h2 className="text-lg font-bold mb-2">Overview</h2>
@@ -62,7 +62,7 @@ const Footer = () => {
         <div className="w-full sm:w-1/2 md:w-auto mb-4 sm:mb-0">
           <h3 className="text-lg font-bold mb-2">Payments</h3>
           <div className="flex">
-            <img src="visaLogo.png" alt="Visa" className="mr-2" />
+            <img src="/visaLogo.png" alt="Visa" className="mr-2" />
           </div>
         </div>
       </div>

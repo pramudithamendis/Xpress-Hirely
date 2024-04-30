@@ -24,7 +24,8 @@ const Chats = () => {
 
     useEffect(() => {
         setL(true);
-
+        console.log(user)
+       
         axios.get(`http://localhost:5555/chat/chats/${user}`)
             .then((response) => {
                 setS(response.data);
@@ -51,19 +52,21 @@ const Chats = () => {
     return (
         <div>
             <div>
-                <div className='Chats_parent'>
-                <div>Hi {user}!<br /></div>
+                <div className='Chats_parent '>
+                <div> {user}<br /></div>
                 </div>
             </div>
             <div>
-                {loading ? (<Spinner />) : (
+                {!user ? (<div className='LoginFirst_parent'><div className="LoginIfCantGetDetailsFromLocalStorage_parent">To create a chat, you must create an account first.</div><div className="LoginIfCantGetDetailsFromLocalStorage" onClick={() => {
+                            navigate(`/user/signin`)
+                        }}>Login</div></div>) : (
 
 
-                    <div className='Chats_parent'>
+                    <div className='Chats_parent '>
 
 
 
-                        <div className='CreateButton' onClick={() => {
+                        <div className='CreateButton font-bold' onClick={() => {
                             navigate(`/chat/create`)
                         }}>
 
@@ -80,7 +83,7 @@ const Chats = () => {
                 )}
             </div>
             <div>
-                <div className='Chats_parent2'>
+                <div className='Chats_parent2 '>
                     {chatsloading ? (<div></div>) : (
                         <div >
                             {chats.map(function (s, index) {
@@ -89,10 +92,10 @@ const Chats = () => {
                                         onClick={() => {
                                             navigate(`/chat/getchat/${s._id}`)
                                         }}>
-                                        <div className='Chats_parent_middlepanel_title'>Title: {s.title}</div>
-                                        <div className='Chats_parent_middlepanel_vehicle'>Vehicle Number: {s.vehicle}</div>
+                                        <div className='Chats_parent_middlepanel_title text-black	'>Title: {s.title}</div>
+                                        <div className='Chats_parent_middlepanel_vehicle text-black	'>Vehicle Number: {s.vehicle}</div>
 
-                                        <div className='Chats_parent_middlepanel_Operations'>
+                                        <div className='Chats_parent_middlepanel_Operations text-black	'>
                                             {/* <Link className='info' to={`/chat/getchat/${s._id}`}>
                                                 <BsInfoCircle className='' />
                                             </Link> */}

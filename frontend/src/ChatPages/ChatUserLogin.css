@@ -1,5 +1,5 @@
 
-.ChatAdminLogin_parent{
+.ChatUserLogin_parent{
     display: flex;
     margin-top: 10px;
     margin-left: 10px;
@@ -22,4 +22,10 @@
 .Signin input, button{
     border-radius: 10px;
     padding: 10px;
+}
+
+
+.Create_parent_middlepanel_button{
+    background-color: #FF8A00;
+    width: 250px;
 }

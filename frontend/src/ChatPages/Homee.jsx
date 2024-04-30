@@ -7,8 +7,8 @@ const Home = () => {
     <div className='Home_parent' >
       {/* style={{backgroundImage : `url(${background})`}} */}
 
-    <a className='HomeSignUp' href='/user/create'>Sign up</a>
-    <a className='HomeSignIn' href='/user/signin'>Sign In</a>
+    {/* <a className='HomeSignUp' href='/user/create'>Sign up</a> */}
+    {/* <a className='HomeSignIn' href='/user/signin'>Sign In</a> */}
     
     </div>
   )

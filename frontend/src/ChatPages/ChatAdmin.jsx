@@ -2,17 +2,16 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import Spinner from '../components/Spinner'
 import { useNavigate } from 'react-router-dom'
+import './ChatAdmin.css'
 import { Link } from 'react-router-dom'
-import './ChatAdminLogin.css'
 
-const ChatAdminLogin = () => {
-  // const [loading, setL] = useState(false)
-  const [email, setEmail] = useState('');
+const ChatAdmin = () => {
+  const [loading, setL] = useState(false)
+  const [email, setEmail] = useState();
   const [password, setpassword] = useState('');
   const navigate = useNavigate();
 
-  const [errorMessage, setErrorMessage] = useState('')
-  const LoginF = () => {
+  const CreateF = () => {
     // setL(true);
 
     const data = {
@@ -20,18 +19,10 @@ const ChatAdminLogin = () => {
       password
     }
 
-    axios.post('http://localhost:5555/admin/login', data)
+    axios.post('http://localhost:5555/admin/create', data)
       .then((response) => {
         console.log(response);
-        if (response.data.success === "Success") {
-
-          navigate('/chat/chats/admin')
-          localStorage.setItem('admin', response.data.user);
-
-        }
-        else {
-          setErrorMessage(response.data)
-        }
+        navigate('/home/admin');
       })
       .catch((error) => {
         // setL(false);
@@ -41,9 +32,9 @@ const ChatAdminLogin = () => {
   }
 
   return (
-    <div className='ChatAdminLogin_parent'>
+    <div className='ChatAdmin_parent'>
       <div className='Create_parent_leftpanel phonescreen'><Link to='/home/admin' >Home</Link></div>
-      <div className='Signin'>
+      <div className='Signup'>
 
         <input
           type='text'
@@ -57,11 +48,8 @@ const ChatAdminLogin = () => {
           value={password}
           onChange={(e) => { setpassword(e.target.value); }}
         />
-        <button className='p-2 bg-sky-300 m-' onClick={LoginF}
+        <button className='Create_parent_middlepanel_button' onClick={CreateF}
         >Save</button>
-        <div>
-          {errorMessage}
-        </div>
       </div>
 
 
@@ -69,4 +57,4 @@ const ChatAdminLogin = () => {
   )
 }
 
-export default ChatAdminLogin
+export default ChatAdmin

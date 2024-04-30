@@ -1,12 +1,12 @@
 
-.ChatUserLogin_parent{
+.ChatUser_parent{
     display: flex;
     margin-top: 10px;
     margin-left: 10px;
     margin-right: auto;
 }
 
-.Signin{
+.Signup{
     background-color: #FF8A00;
     border-radius: 10px;
     width: 300px;
@@ -19,7 +19,12 @@
     padding: 20px;
 }
 
-.Signin input, button{
+.Signup input, button{
     border-radius: 10px;
     padding: 10px;
+}
+
+.Create_parent_middlepanel_button{
+    background-color: #FF8A00;
+    width: 250px;
 }

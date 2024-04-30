@@ -9,7 +9,7 @@ const Header = () => {
         <div className="flex items-center">
           <div className="flex-shrink-0 w-25 h-16 flex items-center justify-center mr-2 bg-gray-400">
             <img
-              src="carLogo.png"
+              src="/carLogo.png"
               alt="Logo"
               className="w-full h-auto
             "
@@ -20,7 +20,7 @@ const Header = () => {
         <nav>
           <ul className="flex">
             <li className="mr-6">
-              <a href="#" className="menu-item hover:text-gray-900 relative">
+              <a href="/home" className="menu-item hover:text-gray-900 relative">
                 HOME
               </a>
             </li>
@@ -40,23 +40,23 @@ const Header = () => {
               </a>
             </li>
             <li className="mr-6">
-              <a href="#" className="menu-item hover:text-gray-900 relative">
+              <a href="/chat/chats" className="menu-item hover:text-gray-900 relative">
                 CUSTOMER SUPPORT
               </a>
             </li>
           </ul>
         </nav>
         <div>
-          <Link to="/login">
-            <button className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded mr-4">
-              LOGIN
-            </button>
-          </Link>
-          <Link to="/signup">
-            <button className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded mr-4">
-              SIGN UP
-            </button>
-          </Link>
+
+          <button className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded mr-4">
+            
+            <a className='' href='/user/signin'>LOGIN</a>
+          </button>
+          <button className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded mr-4">
+            
+            <a className='' href='/user/create'>SIGN UP</a>
+          </button>
+
         </div>
         <div className="flex items-center">
           <FaPhone className="mr-1" />

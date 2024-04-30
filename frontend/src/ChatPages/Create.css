@@ -1,14 +1,16 @@
-.Edit_parent{
+body{
+    background: red;
+}
+
+.Create_parent{
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     flex-wrap: wrap;
     margin-top: 10px;
-    margin-left: 10px;
-    
-    
+    margin-left: 10px;    
 }
-.Edit_parent_leftpanel{
+.Create_parent_leftpanel{
     background-color: #FF8A00;
     width: 300px;
     border-radius: 20px;
@@ -18,13 +20,11 @@
     margin-right: 10px;
 }
 
-.Edit_parent_middlepanel{
-    background-color: #FF8A00;
-
+.Create_parent_middlepanel{
     display: flex;
     flex-direction: column;
     width: 350px;
-    background-color: none;
+    background-color: white;
     border: 1px solid white;
     padding: 10px;
     justify-content: center;
@@ -35,49 +35,47 @@
 -moz-box-shadow: 10px 10px 21px 0px rgba(0,0,0,0.75);
 box-shadow: 10px 10px 21px 0px rgba(0,0,0,0.75);  
 }
-.Edit_parent_middlepanel_title{
+.Create_parent_middlepanel_title{
     /* background-color: yellowgreen; */
     width: 300px;
     height: 50px;
     border-radius: 20px;
     padding: 10px;
     margin-bottom: 10px;
-       background-color: none;
-       
+    background-color: none;
     border: 1px solid white;
 }
 
-.Edit_parent_middlepanel_vehicle{
+.Create_parent_middlepanel_vehicle{
     /* background-color: yellowgreen; */
     width: 300px;
     height: 50px;
     border-radius: 20px;
     padding: 10px;
     margin-bottom: 10px;
-       background-color: none;
-       
+    background-color: none;
     border: 1px solid white;
 }
 
-.Edit_parent_middlepanel_issue{
+.Create_parent_middlepanel_issue{
     /* background-color: yellowgreen; */
     width: 300px;
-    height: 150px;
+    height: 50px;
  
     border-radius: 20px;
     padding: 10px;
     margin-bottom: 10px;
-       background-color: none;
-       
-    border: 1px solid white;
     /* height: 200px; */
+    background-color: none;
+    border: 1px solid white;
 
 }
 
-.Edit_parent_middlepanel_button{
+.Create_parent_middlepanel_button{
     background-color: white;
     border: 1px solid white;
     color: black;
+
     width: 300px;
     height: 50px;
  
@@ -87,7 +85,6 @@ box-shadow: 10px 10px 21px 0px rgba(0,0,0,0.75);
 }
 
 
-.Edit_parent_middlepanel_operations{
-    display: flex;
-    margin-top: 10px;
+.Create_parent_middlepanel_button{
+    background-color: #FF8A00;
 }

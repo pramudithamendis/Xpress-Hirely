@@ -1,16 +1,14 @@
-body{
-    background: red;
-}
-
-.Create_parent{
+.Edit_parent{
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     flex-wrap: wrap;
     margin-top: 10px;
-    margin-left: 10px;    
+    margin-left: 10px;
+    
+    
 }
-.Create_parent_leftpanel{
+.Edit_parent_leftpanel{
     background-color: #FF8A00;
     width: 300px;
     border-radius: 20px;
@@ -20,11 +18,13 @@ body{
     margin-right: 10px;
 }
 
-.Create_parent_middlepanel{
+.Edit_parent_middlepanel{
+    background-color: rgb(232, 232, 232);
+
     display: flex;
     flex-direction: column;
     width: 350px;
-    background-color: #FF8A00;
+    background-color: none;
     border: 1px solid white;
     padding: 10px;
     justify-content: center;
@@ -35,51 +35,59 @@ body{
 -moz-box-shadow: 10px 10px 21px 0px rgba(0,0,0,0.75);
 box-shadow: 10px 10px 21px 0px rgba(0,0,0,0.75);  
 }
-.Create_parent_middlepanel_title{
+.Edit_parent_middlepanel_title{
     /* background-color: yellowgreen; */
     width: 300px;
     height: 50px;
     border-radius: 20px;
     padding: 10px;
     margin-bottom: 10px;
-    background-color: none;
+       background-color: none;
+       
     border: 1px solid white;
 }
 
-.Create_parent_middlepanel_vehicle{
+.Edit_parent_middlepanel_vehicle{
     /* background-color: yellowgreen; */
     width: 300px;
     height: 50px;
     border-radius: 20px;
     padding: 10px;
     margin-bottom: 10px;
-    background-color: none;
+       background-color: none;
+       
     border: 1px solid white;
 }
 
-.Create_parent_middlepanel_issue{
+.Edit_parent_middlepanel_issue{
     /* background-color: yellowgreen; */
     width: 300px;
-    height: 50px;
+    height: 150px;
  
     border-radius: 20px;
     padding: 10px;
     margin-bottom: 10px;
-    /* height: 200px; */
-    background-color: none;
+       background-color: none;
+       
     border: 1px solid white;
+    /* height: 200px; */
 
 }
 
-.Create_parent_middlepanel_button{
+.Edit_parent_middlepanel_button{
     background-color: white;
     border: 1px solid white;
     color: black;
-
     width: 300px;
     height: 50px;
  
     border-radius: 20px;
     padding: 10px;
+    margin-top: 10px;
+}
+
+
+.Edit_parent_middlepanel_operations{
+    display: flex;
     margin-top: 10px;
 }
