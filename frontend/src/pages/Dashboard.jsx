@@ -25,10 +25,10 @@ const Dashboard = () => {
             Role: {userData.role}
           </Typography.Text>
           <div className="flex justify-between space-x-8">
-            <button className="rounded bg-orange-500 hover:bg-blue-700 text-white font-bold py-2 px-4">
+            <button className="rounded bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4">
               My Rentals
             </button>
-            <button className="rounded bg-orange-500 hover:bg-blue-700 text-white font-bold py-2 px-4">
+            <button className="rounded bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4">
               Payment Details
             </button>
           </div>
