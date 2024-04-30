@@ -48,14 +48,16 @@ const Header = () => {
         </nav>
         <div>
 
-          <button className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded mr-4">
-            
-            <a className='' href='/user/signin'>LOGIN</a>
-          </button>
-          <button className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded mr-4">
-            
-            <a className='' href='/user/create'>SIGN UP</a>
-          </button>
+        <Link to="/login">
+            <button className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded mr-4">
+              LOGIN
+            </button>
+          </Link>
+          <Link to="/signup">
+            <button className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded mr-4">
+              SIGN UP
+            </button>
+          </Link>
 
         </div>
         <div className="flex items-center">
