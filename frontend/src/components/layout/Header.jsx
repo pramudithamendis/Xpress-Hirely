@@ -1,5 +1,6 @@
 import React from "react";
 import { FaPhone } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -30,7 +31,7 @@ const Header = () => {
             </li>
             <li className="mr-6">
               <a href="#" className="menu-item hover:text-gray-900 relative">
-                FEEDBACKS
+                OFFERS
               </a>
             </li>
             <li className="mr-6">
@@ -46,6 +47,7 @@ const Header = () => {
           </ul>
         </nav>
         <div>
+
           <button className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded mr-4">
             
             <a className='' href='/user/signin'>LOGIN</a>
@@ -54,6 +56,7 @@ const Header = () => {
             
             <a className='' href='/user/create'>SIGN UP</a>
           </button>
+
         </div>
         <div className="flex items-center">
           <FaPhone className="mr-1" />
