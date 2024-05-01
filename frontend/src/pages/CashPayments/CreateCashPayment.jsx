@@ -28,7 +28,7 @@ const CreateCashPayment = () => {
         axios.post(`http://localhost:5555/cashpayments/user`, data).then(() => {
             setLoading(false);
             alert('Successful');
-            navigate('/');
+            navigate('/user');
         })
             .catch((error) => {
                 setLoading(false); 

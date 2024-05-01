@@ -41,7 +41,7 @@ const CreateStripePayment = () => {
         axios.post(`http://localhost:5555/stripepayments/user`, data).then(() => {
             setLoading(false);
             alert('Successful');
-            navigate('/');
+            navigate('/user');
 
             const { clientSecret } = response.data;
             setClientSecret(clientSecret);

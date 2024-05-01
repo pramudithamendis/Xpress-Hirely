@@ -92,7 +92,7 @@ const App = () => {
         <Route path="rents/editHis/:id" element={<EditRentHisPage />} />
         <Route path="rents/deleteHis/:id" element={<DeleteRentHisPage />} />
 
-        {/* <Route path='/' element={<Payments_ClientView />} /> */}
+        <Route path='/user' element={<Payments_ClientView />} />
         <Route path='/admin' element={<Payments_AdminView />} />
         <Route path='/method' element={<ChoosePaymentOption />} />
 

@@ -29,7 +29,7 @@ const CreateRequestRefund = () => {
             // setDate('');
             // setStatus('Pending');
             alert('Successful');
-            navigate('/');
+            navigate('/user');
         })
         .catch((error) => {
             setLoading(false); 

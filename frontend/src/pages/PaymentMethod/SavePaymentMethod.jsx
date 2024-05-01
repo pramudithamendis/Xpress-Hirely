@@ -23,7 +23,7 @@ const SavePaymentMethod = () => {
         setLoading(true);
         axios.post(`http://localhost:5555/savepaymentmethod/user`, data).then(() => {
             setLoading(false);
-            navigate('/');
+            navigate('/user');
         })
             .catch((error) => {
                 setLoading(false); 
