@@ -27,8 +27,8 @@ router.post('/user', async (request, response) => {
                 PaymentID: request.body.PaymentID,
                 Email: request.body.Email,
                 Reason_for_Request: request.body.Reason_for_Request,
-                Date: request.body.Date,
-                Status: request.body.Status,
+                Date: new Date(),
+                Status: 'Pending',
             };
 
             const refundrequest = await RefundRequest.create(newRefundRequest);
