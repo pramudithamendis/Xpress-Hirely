@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import clientbg from '../../images/clientbg.jpeg';
 import BackButton from '../../components/BackButton';
 import Spinner from '../../components/Spinner';
+import jsPDF from 'jspdf';
 
 const ShowRefundRequest = () => {
     const [refundrequest, setRefundRequest] = useState([]);
@@ -22,6 +23,36 @@ const ShowRefundRequest = () => {
             });
 
     }, [id])
+
+    const handleGenerateReport = (refundrequest) => {
+        const doc = new jsPDF();
+    
+        doc.setFontSize(18);
+        doc.text(`Payment Details for ID: ${refundrequest._id}`, 20, 20);
+    
+        let currentY = 35;
+        doc.setFontSize(12);
+    
+        doc.text(`PaymentID: ${refundrequest.PaymentID}`, 20, currentY);
+        currentY += 8;
+        doc.text(`BookingID: ${refundrequest.BookingID}`, 20, currentY);
+        currentY += 8;
+        doc.text(`Email: ${refundrequest.Email}`, 20, currentY);
+        currentY += 8;
+        doc.text(`Reason_for_Request: ${refundrequest.Reason_for_Request}`, 20, currentY);
+        currentY += 8;
+        doc.text(`Status: ${refundrequest.Status}`, 20, currentY);
+    
+        
+        doc.setFontSize(10);
+        doc.text(
+          `Report generated on: ${new Date().toLocaleString()}`,
+          20,
+          doc.internal.pageSize.height - 15
+        );
+    
+        doc.save(`refund_request_report_${refundrequest._id}.pdf`);
+      };
 
     return (
         <div className="flex justify-center items-center h-screen bg-cover bg-center" style={{backgroundImage: `url(${clientbg})`}}>
@@ -66,6 +97,8 @@ const ShowRefundRequest = () => {
                 </div>
             )}
         </div>
+        <br/><br/><br/><br/>
+        <button className="bg-orange-500 hover:bg-orange-600 text-black border border-black hover:border-black px-4 py-2 rounded-full" onClick={() => handleGenerateReport(refundrequest)}>Generate Refund Request Report</button>
         </div>
     )
 }

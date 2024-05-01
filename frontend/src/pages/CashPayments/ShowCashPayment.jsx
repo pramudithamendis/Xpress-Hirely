@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import clientbg from '../../images/clientbg.jpeg';
 import BackButton from '../../components/BackButton';
 import Spinner from '../../components/Spinner';
+import jsPDF from 'jspdf';
 
 const ShowCashPayment = () => {
     const [cashpayment, setCashPayment] = useState([]);
@@ -22,6 +23,34 @@ const ShowCashPayment = () => {
             });
 
     }, [])
+
+    const handleGenerateReport = (cashpayment) => {
+        const doc = new jsPDF();
+    
+        doc.setFontSize(18);
+        doc.text(`Payment Details for ID: ${cashpayment._id}`, 20, 20);
+    
+        let currentY = 35;
+        doc.setFontSize(12);
+    
+        doc.text(`ReceiptNo: ${cashpayment.ReceiptNo}`, 20, currentY);
+        currentY += 8;
+        doc.text(`Status: ${cashpayment.Status}`, 20, currentY);
+        currentY += 8;
+        doc.text(`Amount: ${cashpayment.Amount}`, 20, currentY);
+        currentY += 8;
+        doc.text(`Date: ${cashpayment.Date}`, 20, currentY);
+    
+        
+        doc.setFontSize(10);
+        doc.text(
+          `Report generated on: ${new Date().toLocaleString()}`,
+          20,
+          doc.internal.pageSize.height - 15
+        );
+    
+        doc.save(`cash_payment_report_${cashpayment._id}.pdf`);
+      };
 
     return (
         <div className="flex items-center h-screen bg-cover bg-center" style={{backgroundImage: `url(${clientbg})`}}>
@@ -60,6 +89,8 @@ const ShowCashPayment = () => {
                 </div>
             {/* )} */}
         </div>
+        <br/><br/><br/><br/>
+        <button className="bg-orange-500 hover:bg-orange-600 text-black border border-black hover:border-black px-4 py-2 rounded-full" onClick={() => handleGenerateReport(cashpayment)}>Generate Payment Report</button>
         </div>
     )
 }
