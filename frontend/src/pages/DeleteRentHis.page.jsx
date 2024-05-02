@@ -18,7 +18,7 @@ const DeleteRentHisPage = () => {
       .then(() => {
         setLoading(false);
         enqueueSnackbar("Rent Deleted successfully", { variant: "success" });
-        navigate("/");
+        navigate("/rentHome");
       })
       .catch((error) => {
         setLoading(false);
