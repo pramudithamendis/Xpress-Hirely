@@ -35,7 +35,7 @@ const Dashboard = () => {
           <Button
             size="large"
             type="primary"
-            className="profile-btn"
+            className="profile-btn bg-blue-500"
             onClick={handleLogout}
           >
             Logout
