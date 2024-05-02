@@ -52,7 +52,7 @@ const EditRentHisPage = () => {
       .then(() => {
         setLoading(false);
         enqueueSnackbar("Rent Added successfully", { variant: "success" });
-        navigate("/");
+        navigate("/rentHome");
       })
       .catch((error) => {
         setLoading(false);

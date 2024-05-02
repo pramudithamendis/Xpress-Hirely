@@ -32,6 +32,13 @@ import Layout from "./components/layout/Layout";
 import Profile from "./pages/ProfilePage.jsx";
 import { Navigate } from "react-router-dom";
 
+import adminDashboard from "./components/admin/Dashboard";
+import AddLicense from "./components/admin/AddLicense";
+import LicenseForm from "./components/admin/LicenseForm";
+import InsuranceForm from "./components/admin/InsuranceForm";
+import InsuranceDashboard from "./components/admin/InsuranceDashboard";
+import AddInsurance from "./components/admin/Addinsurance";
+
 const App = () => {
   const { isAuthenticated, userData } = useAuth();
   return (
@@ -78,6 +85,12 @@ const App = () => {
         <Route path="/rents/detailsHis/:id" element={<ShowRentHisPage />} />
         <Route path="rents/editHis/:id" element={<EditRentHisPage />} />
         <Route path="rents/deleteHis/:id" element={<DeleteRentHisPage />} />
+        <Route path="/insuranceform" element={<InsuranceForm />} />
+        <Route path="/dashboard" element={<adminDashboard />} />
+        <Route path="/licenseform" element={<LicenseForm />} />
+        <Route path="/addlicense" element={<AddLicense />} />
+        <Route path="/addinsurance" element={<AddInsurance />} />
+        <Route path="/insurancedashboard" element={<InsuranceDashboard />} />
         <Route
           path="/signup"
           element={
@@ -86,7 +99,7 @@ const App = () => {
             ) : userData.role === "admin" ? (
               <Navigate to="/AdminDashboard" />
             ) : (
-              <Navigate to="/dashboard" />
+              <Navigate to="/profile" />
             )
           }
         />
@@ -98,12 +111,12 @@ const App = () => {
             ) : userData.role === "admin" ? (
               <Navigate to="/AdminDashboard" />
             ) : (
-              <Navigate to="/dashboard" />
+              <Navigate to="/profile" />
             )
           }
         />
         <Route
-          path="/dashboard"
+          path="/profile"
           element={isAuthenticated ? <Dashboard /> : <Login />}
         />
         <Route
