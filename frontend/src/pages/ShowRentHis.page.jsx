@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import BackButton from "../components/BackButton";
+import BackButtonV from "../components/BackButtonV";
 import Spinner from "../components/Spinner";
 import jsPDF from "jspdf";
 
@@ -63,7 +63,7 @@ const ShowRentHisPage = () => {
 
   return (
     <div className="px-20 py-8">
-      <BackButton />
+      <BackButtonV />
       <div className="flex justify-between items-center">
         <h1 className="text-3xl my-4">Show Rent</h1>
         <button
