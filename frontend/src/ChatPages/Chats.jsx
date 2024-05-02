@@ -11,7 +11,8 @@ import { useLocation } from 'react-router-dom';
 
 import { useNavigate } from 'react-router-dom'
 import './Chats.css'
-
+import { jsPDF } from "jspdf";
+import 'jspdf-autotable';
 
 const Chats = () => {
     const [chats, setS] = useState([]);
@@ -49,6 +50,22 @@ const Chats = () => {
 
             })
     }, [])
+    const exportToPDF = () => {
+        const doc = new jsPDF();
+        doc.autoTable({
+            head: [['Issue title', 'Vehicle number']],
+            body: chats.map(s => [
+                s.title,
+                s.vehicle
+              
+                
+                
+            ]),
+            styles: { fontSize: 8 },
+            theme: 'grid'
+        });
+        doc.save('My Chats.pdf');
+    };
     return (
         <div>
             <div>
@@ -73,7 +90,12 @@ const Chats = () => {
                             Create
 
                         </div>
-
+                        <div>
+                        <button onClick={exportToPDF} className="Chats_DownloadPdf">
+                        Download PDF
+                    </button>
+                        </div>
+                        
 
 
                     </div>
