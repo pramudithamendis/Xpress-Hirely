@@ -5,7 +5,6 @@ import carPic from '../../../public/carpic.jpg'; // Replace with the path to you
 const InsuranceForm = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    insuranceNumber: '',
     vehiclenumber: '',
     insuranceProvider: '',
     policyNumber: '',
@@ -57,10 +56,6 @@ const InsuranceForm = () => {
         <div className="mb-4">
           <label htmlFor="vehiclenumber" className="block text-gray-700 text-sm font-bold mb-2">Vehicle Number:</label>
           <input type="text" id="vehiclenumber" name="vehiclenumber" value={formData.vehiclenumber} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
-        </div>
-        <div className="mb-4">
-          <label htmlFor="vehiclenumber" className="block text-gray-700 text-sm font-bold mb-2">Insurance Number:</label>
-          <input type="text" id="insuranceNumber" name="insuranceNumber" value={formData.insuranceNumber} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
         </div>
         <div className="mb-4">
           <label htmlFor="insuranceProvider" className="block text-gray-700 text-sm font-bold mb-2">Insurance Provider:</label>

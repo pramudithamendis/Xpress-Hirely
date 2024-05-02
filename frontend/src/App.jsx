@@ -32,7 +32,7 @@ import Layout from "./components/layout/Layout";
 import Profile from "./pages/ProfilePage.jsx";
 import { Navigate } from "react-router-dom";
 
-import adminDashboard from "./components/admin/Dashboard";
+import LicenseDashboard from "./components/admin/Dashboard";
 import AddLicense from "./components/admin/AddLicense";
 import LicenseForm from "./components/admin/LicenseForm";
 import InsuranceForm from "./components/admin/InsuranceForm";
@@ -85,8 +85,9 @@ const App = () => {
         <Route path="/rents/detailsHis/:id" element={<ShowRentHisPage />} />
         <Route path="rents/editHis/:id" element={<EditRentHisPage />} />
         <Route path="rents/deleteHis/:id" element={<DeleteRentHisPage />} />
+
         <Route path="/insuranceform" element={<InsuranceForm />} />
-        <Route path="/dashboard" element={<adminDashboard />} />
+        <Route path="/licensedashboard" element={<LicenseDashboard />} />
         <Route path="/licenseform" element={<LicenseForm />} />
         <Route path="/addlicense" element={<AddLicense />} />
         <Route path="/addinsurance" element={<AddInsurance />} />

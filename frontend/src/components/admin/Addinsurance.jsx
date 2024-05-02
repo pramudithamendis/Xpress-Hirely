@@ -4,6 +4,7 @@ import { createInsurance } from '../../api/licenseAPI'; // Ensure this API funct
 
 function AddInsurance() {
     const [formData, setFormData] = useState({
+        vehiclenumber: '',
         insuranceProvider: '',
         policyNumber: '',
         policyType: '',
@@ -28,8 +29,8 @@ function AddInsurance() {
     const isValidDate = date => !!Date.parse(date);
 
     const validateForm = () => {
-        const { insuranceProvider, policyNumber, email, startDate, endDate, premiumAmount } = formData;
-        if (!insuranceProvider || !policyNumber || !isValidEmail(email) || !isValidDate(startDate) || !isValidDate(endDate) || Number(premiumAmount) <= 0) {
+        const { vehiclenumber, insuranceProvider, policyNumber, email, startDate, endDate, premiumAmount } = formData;
+        if (!vehiclenumber || !insuranceProvider || !policyNumber || !isValidEmail(email) || !isValidDate(startDate) || !isValidDate(endDate) || Number(premiumAmount) <= 0) {
             setError('Please fill out all fields correctly.');
             return false;
         }
@@ -58,6 +59,21 @@ function AddInsurance() {
                 {error && <div className="text-red-500 text-sm text-center">{error}</div>}
                 <form onSubmit={handleSubmit}>
                     <div className="mt-4">
+
+                        {/* Vehicle Number Input */}
+                        <label className="block text-sm font-bold text-gray-700 mt-4" htmlFor="vehiclenumber">
+                            Vehicle Number
+                        </label>
+                        <input
+                            type="text"
+                            name="vehiclenumber"
+                            value={formData.vehiclenumber}
+                            onChange={handleChange}
+                            placeholder="Enter vehicle number"
+                            className="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            required
+                        />
+
                         {/* Insurance Provider Input */}
                         <label className="block text-sm font-bold text-gray-700" htmlFor="insuranceProvider">
                             Insurance Provider

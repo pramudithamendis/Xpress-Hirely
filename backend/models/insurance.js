@@ -2,7 +2,6 @@ import mongoose from 'mongoose';
 import License from './License.js'; // Assuming License is in the same directory
 
 const InsuranceSchema = new mongoose.Schema({
-    insuranceNumber: { type: String },
     insuranceProvider: { type: String },
     policyNumber: { type: String },
     policyType: { type: String },
