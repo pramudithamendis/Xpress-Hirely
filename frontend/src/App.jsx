@@ -32,6 +32,12 @@ import Layout from "./components/layout/Layout";
 import Profile from "./pages/ProfilePage.jsx";
 import { Navigate } from "react-router-dom";
 
+import Home from './pages/Home';
+import CreateRecord from './pages/createRecords';
+import ShowRecord from './pages/ShowRecord';
+import EditRecord from './pages/editRecord';
+import DeleteRecord from './pages/deleteRecord';
+
 const App = () => {
   const { isAuthenticated, userData } = useAuth();
   return (
@@ -78,6 +84,11 @@ const App = () => {
         <Route path="/rents/detailsHis/:id" element={<ShowRentHisPage />} />
         <Route path="rents/editHis/:id" element={<EditRentHisPage />} />
         <Route path="rents/deleteHis/:id" element={<DeleteRentHisPage />} />
+
+        
+          
+        
+
         <Route
           path="/signup"
           element={
@@ -116,6 +127,13 @@ const App = () => {
             )
           }
         />
+      </Routes>
+      <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/records/create' element={<CreateRecord />} />
+          <Route path='/records/details/:id' element={<ShowRecord />} />
+          <Route path='/records/edit/:id' element={<EditRecord />} />
+          <Route path='/records/delete/:id' element={<DeleteRecord />} />
       </Routes>
     </Layout>
   );

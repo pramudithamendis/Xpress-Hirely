@@ -6,7 +6,8 @@ import userRoutes from './Routes/userRoutes.js'
 import vehicleRoutes from './Routes/vehicleRoutes.js'
 import adminRoutes from './Routes/adminRoutes.js'
 import rentHisRoute from './routes/rentHisRoute.js';
-import authRouter from './Routes/authRoute.js'
+import authRouter from './Routes/authRoute.js';
+import recordsRoute from './Routes/recordsRoute.js'
 import cors from 'cors';
 
 const app = express();
@@ -25,7 +26,9 @@ app.use('/vehicle', vehicleRoutes);
 app.use('/admin', adminRoutes);
 //Rental History-vihara
 app.use('/rents', rentHisRoute);
-app.use('/api/auth', authRouter)
+app.use('/api/auth', authRouter);
+//Vehicle Maintenance - sachith
+app.use('/records', recordsRoute);
 
 mongoose
     .connect(mongoDBURL)
