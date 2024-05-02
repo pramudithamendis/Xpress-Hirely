@@ -17,17 +17,46 @@ const Payments_AdminView = () => {
     const [refundrequests, setAllRefundRequests] = useState([]);
 
     const [searchInput, setSearchInput] = useState("");
-    const [filteredPayments, setFilteredPayments] = useState([]);
+    const [filteredCardPayments, setFilteredCardPayments] = useState([]);
+    const [filteredCashPayments, setFilteredCashPayments] = useState([]);
+    const [filteredStripePayments, setFilteredStripePayments] = useState([]);
+    const [filteredRefundRequests, setFilteredRefundRequests] = useState([]);
 
     const [loading, setLoading] = useState(false);
     const [showType, setShowType] = useState('table');
 
     useEffect(() => {
         const filteredData = cardpayments.filter(item => {
-            return item.CardHolderName.toString().includes(searchInput);
+            return item.CardHolderName.toLowerCase().includes(searchInput.toLowerCase())
+            || item.Amount.toString().includes(searchInput);
         });
-        setFilteredPayments(filteredData);
+        setFilteredCardPayments(filteredData);
     }, [cardpayments, searchInput]);
+
+    useEffect(() => {
+        const filteredData = cashpayments.filter(item => {
+            return item.ReceiptNo.toString().includes(searchInput) ||
+        item.Amount.toString().includes(searchInput) ||
+        item.Status.toString().includes(searchInput);
+        });
+        setFilteredCashPayments(filteredData);
+    }, [cashpayments, searchInput]);
+
+    useEffect(() => {
+        const filteredData = stripepayments.filter(item => {
+            return item.Amount.toString().includes(searchInput); 
+        });
+        setFilteredStripePayments(filteredData);
+    }, [stripepayments, searchInput]);
+
+    useEffect(() => {
+        const filteredData = refundrequests.filter(item => {
+              return item.BookingID.toString().includes(searchInput) ||
+            item.PaymentID.toString().includes(searchInput) ||
+            item.Status.toLowerCase().includes(searchInput.toLowerCase())
+        });
+        setFilteredRefundRequests(filteredData);
+    }, [refundrequests, searchInput]);
 
     const handleSearchChange = (newSearchTerm) => {
         setSearchInput(newSearchTerm);
@@ -110,10 +139,10 @@ const Payments_AdminView = () => {
             <SearchBar onSearchChange={handleSearchChange} />
         </div>
         
-            {loading ? <Spinner /> : showType === 'AllCardPaymentsTable' ? (<AllCardPaymentsTable cardpayments={filteredPayments} />) :
-            showType === 'AllCashPaymentsTable' ? (<AllCashPaymentsTable cashpayments={cashpayments} />) :
-            showType === 'AllRefundRequestsTable' ? (<AllRefundRequestsTable refundrequests={refundrequests} />) :
-            showType === 'AllStripePaymentsTable' ? (<AllStripePaymentsTable stripepayments={stripepayments} />) :
+            {loading ? <Spinner /> : showType === 'AllCardPaymentsTable' ? (<AllCardPaymentsTable cardpayments={filteredCardPayments} />) :
+            showType === 'AllCashPaymentsTable' ? (<AllCashPaymentsTable cashpayments={filteredCashPayments} />) :
+            showType === 'AllRefundRequestsTable' ? (<AllRefundRequestsTable refundrequests={filteredRefundRequests} />) :
+            showType === 'AllStripePaymentsTable' ? (<AllStripePaymentsTable stripepayments={filteredStripePayments} />) :
             null
         }
         
