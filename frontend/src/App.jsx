@@ -75,6 +75,14 @@ import LicenseForm from "./components/admin/LicenseForm";
 import InsuranceForm from "./components/admin/InsuranceForm";
 import InsuranceDashboard from "./components/admin/InsuranceDashboard";
 import AddInsurance from "./components/admin/Addinsurance";
+// lahiru
+import Home from './pages/OfferPages/Home';
+import AddOffer from './pages/OfferPages/AddOffer';
+import EditOffers from './pages/OfferPages/EditOffers';
+import DeleteOffers from './pages/OfferPages/DeleteOffers';
+import ShowOffers from './pages/OfferPages/ShowOffers';
+import FirstPage from './pages/OfferPages/FirstPage';
+import Layout from './components/layouts/Layout';
 
 const App = () => {
   const { isAuthenticated, userData } = useAuth();
@@ -196,6 +204,16 @@ const App = () => {
         <Route path="/records/details/:id" element={<ShowRecord />} />
         <Route path="/records/edit/:id" element={<EditRecord />} />
         <Route path="/records/delete/:id" element={<DeleteRecord />} />
+
+
+        <Route path='/' element={<FirstPage/>} />
+        <Route path='/offers/home' element={<Home />} />
+        <Route path='/offers/show/:id' element={<ShowOffers />} />
+        <Route path='/offers/add' element={<AddOffer />} />
+        <Route path='/offers/edit/:id' element={<EditOffers />} />
+        <Route path='/offers/delete/:id' element={<DeleteOffers />} />
+        
+
 
       </Routes>
     </Layout>
