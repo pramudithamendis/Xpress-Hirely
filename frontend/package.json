@@ -14,7 +14,10 @@
     "axios": "^1.6.2",
     "dlv": "^1.1.3",
     "jspdf": "^2.5.1",
+//<<<<<<< piyaraCRUD
+//=======
     "jspdf-autotable": "^3.8.2",
+//>>>>>>> development-main
     "notistack": "^3.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

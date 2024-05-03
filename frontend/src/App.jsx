@@ -22,12 +22,39 @@ import DeleteRentHisPage from "./pages/DeleteRentHis.page";
 import EditRentHisPage from "./pages/EditRentHis.page";
 import HomeRentHisPage from "./pages/HomeRentHis.page";
 import ShowRentHisPage from "./pages/ShowRentHis.page";
+//<<<<<<< piyaraCRUD
+
+import Payments_ClientView from './pages/Payments_ClientView';
+import Payments_AdminView from './pages/Payments_AdminView';
+import ChoosePaymentOption from './pages/ChoosePaymentOption';
+
+import CreateCardPayment from './pages/CardPayments/CreateCardPayment';
+import ShowCardPayment from './pages/CardPayments/ShowCardPayment';
+
+import EditCashPayment from './pages/CashPayments/EditCashPayment';
+import CreateCashPayment from './pages/CashPayments/CreateCashPayment';
+import ShowCashPayment from './pages/CashPayments/ShowCashPayment';
+
+import EditPaymentMethod from './pages/PaymentMethod/EditPaymentMethod';
+import SavePaymentMethod from './pages/PaymentMethod/SavePaymentMethod';
+import DeletePaymentMethod from './pages/PaymentMethod/DeletePaymentMethod';
+import ShowPaymentMethod from './pages/PaymentMethod/ShowPaymentMethod';
+
+import CreateRequestRefund from './pages/RefundRequests/CreateRequestRefund';
+import ShowRefundRequest from './pages/RefundRequests/ShowRefundRequest';
+import UpdateRefundRequest from './pages/RefundRequests/UpdateRefundRequest';
+
+import CreateStripePayment from './pages/StripePayments/CreateStripePayment';
+import ShowStripePayment from './pages/StripePayments/ShowStripePayment';
+
+//=======
 import "./App.css";
 import Register from "./Auth/Register";
 import Login from "./Auth/Login";
 import Dashboard from "./pages/Dashboard";
 import AdminDashboard from "./pages/AdminDashboard";
 import { useAuth } from "./contexts/AuthContext";
+//>>>>>>> development-main
 import Layout from "./components/layout/Layout";
 import Profile from "./pages/ProfilePage.jsx";
 import { Navigate } from "react-router-dom";
@@ -91,6 +118,30 @@ const App = () => {
         <Route path="/rents/detailsHis/:id" element={<ShowRentHisPage />} />
         <Route path="rents/editHis/:id" element={<EditRentHisPage />} />
         <Route path="rents/deleteHis/:id" element={<DeleteRentHisPage />} />
+// <<<<<<< piyaraCRUD
+
+        <Route path='/user' element={<Payments_ClientView />} />
+        <Route path='/admin' element={<Payments_AdminView />} />
+        <Route path='/method' element={<ChoosePaymentOption />} />
+
+        <Route path='/cardpayments/user/create' element={<CreateCardPayment />} />
+        <Route path='/cashpayments/user/create' element={<CreateCashPayment />} />
+        <Route path='/stripepayments/user/create' element={<CreateStripePayment />} />
+        <Route path='/savepaymentmethod/user/create' element={<SavePaymentMethod />} />
+        <Route path='/refundrequests/user/create' element={<CreateRequestRefund />} />
+
+        <Route path='/cardpayments/user/details/:id' element={<ShowCardPayment />} />
+        <Route path='/cashpayments/user/details/:id' element={<ShowCashPayment />} />
+        <Route path='/stripepayments/user/details/:id' element={<ShowStripePayment />} />
+        <Route path='/savepaymentmethod/user/details/:id' element={<ShowPaymentMethod />} />
+        <Route path='/refundrequests/admin/details/:id' element={<ShowRefundRequest />} />
+
+        <Route path='/cashpayments/admin/edit/:id' element={<EditCashPayment />} />
+        <Route path='/savepaymentmethod/user/edit/:id' element={<EditPaymentMethod />} />
+        <Route path='/refundrequests/admin/edit/:id' element={<UpdateRefundRequest />} />
+
+        <Route path='/savepaymentmethod/user/delete/:id' element={<DeletePaymentMethod />} />
+// =======
         <Route path="/insuranceform" element={<InsuranceForm />} />
         <Route path="/dashboard" element={<adminDashboard />} />
         <Route path="/licenseform" element={<LicenseForm />} />
@@ -140,6 +191,7 @@ const App = () => {
         <Route path="/records/details/:id" element={<ShowRecord />} />
         <Route path="/records/edit/:id" element={<EditRecord />} />
         <Route path="/records/delete/:id" element={<DeleteRecord />} />
+// >>>>>>> development-main
       </Routes>
     </Layout>
   );
