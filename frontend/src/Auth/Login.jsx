@@ -10,79 +10,84 @@ const Login = () => {
     await loginUser(values);
   };
   return (
-    <Card className="form-container">
-      <Flex gap="large" align="center">
-        {/* Image */}
-        <Flex flex={1}>
-          <img src={loginImage} alt="Login" className="auth-image" />
-        </Flex>
-        {/* form */}
-        <Flex vertical flex={1}>
-          <Typography.Title level={3} strong className="title">
-            Sign In
-          </Typography.Title>
-          <Typography.Text type="secondary" className="slogan">
-            Unlock you world!
-          </Typography.Text>
-          <Form layout="vertical" onFinish={handleLogin} autoComplete="off">
-            <Form.Item
-              label="Email"
-              name="email"
-              rules={[
-                {
-                  required: true,
-                  message: "Please enter your Email!",
-                },
-                {
-                  type: "email",
-                  message: "The input is not a valid email!",
-                },
-              ]}
-            >
-              <Input size="large" placeholder="Enter your email" />
-            </Form.Item>
-            <Form.Item
-              label="Password"
-              name="password"
-              rules={[
-                {
-                  required: true,
-                  message: "Please enter your Password!",
-                },
-              ]}
-            >
-              <Input.Password size="large" placeholder="Enter your password" />
-            </Form.Item>
-            {error && (
-              <Alert
-                description={error}
-                type="error"
-                showIcon
-                closable
-                className="alert"
-              />
-            )}
-            <Form.Item>
-              <Button
-                type={`${loading ? "" : "primary"}`}
-                htmlType="submit"
-                size="large"
-                className="btn"
+    <div className="px-80 py-16">
+      <Card className="form-container">
+        <Flex gap="large" align="center">
+          {/* Image */}
+          <Flex flex={1}>
+            <img src={loginImage} alt="Login" className="auth-image" />
+          </Flex>
+          {/* form */}
+          <Flex vertical flex={1}>
+            <Typography.Title level={3} strong className="title">
+              Sign In
+            </Typography.Title>
+            <Typography.Text type="secondary" className="slogan">
+              Unlock you world!
+            </Typography.Text>
+            <Form layout="vertical" onFinish={handleLogin} autoComplete="off">
+              <Form.Item
+                label="Email"
+                name="email"
+                rules={[
+                  {
+                    required: true,
+                    message: "Please enter your Email!",
+                  },
+                  {
+                    type: "email",
+                    message: "The input is not a valid email!",
+                  },
+                ]}
               >
-                {loading ? <Spin /> : "Sign In"}
-              </Button>
-            </Form.Item>
-            <Form.Item>
-              <Link to="/">
-                <Button size="large" className="btn">
-                  Create an account
+                <Input size="large" placeholder="Enter your email" />
+              </Form.Item>
+              <Form.Item
+                label="Password"
+                name="password"
+                rules={[
+                  {
+                    required: true,
+                    message: "Please enter your Password!",
+                  },
+                ]}
+              >
+                <Input.Password
+                  size="large"
+                  placeholder="Enter your password"
+                />
+              </Form.Item>
+              {error && (
+                <Alert
+                  description={error}
+                  type="error"
+                  showIcon
+                  closable
+                  className="alert"
+                />
+              )}
+              <Form.Item>
+                <Button
+                  type={`${loading ? "" : "primary"}`}
+                  htmlType="submit"
+                  size="large"
+                  className="btn bg-blue-500"
+                >
+                  {loading ? <Spin /> : "Sign In"}
                 </Button>
-              </Link>
-            </Form.Item>
-          </Form>
+              </Form.Item>
+              <Form.Item>
+                <Link to="/signup">
+                  <Button size="large" className="btn">
+                    Create an account
+                  </Button>
+                </Link>
+              </Form.Item>
+            </Form>
+          </Flex>
         </Flex>
-      </Flex>
-    </Card>
+      </Card>
+    </div>
   );
 };
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import BackButton from "../components/BackButton";
+import BackButtonV from "../components/BackButtonV";
 import Spinner from "../components/Spinner";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
@@ -52,7 +52,7 @@ const EditRentHisPage = () => {
       .then(() => {
         setLoading(false);
         enqueueSnackbar("Rent Added successfully", { variant: "success" });
-        navigate("/");
+        navigate("/rentHome");
       })
       .catch((error) => {
         setLoading(false);
@@ -63,7 +63,7 @@ const EditRentHisPage = () => {
   };
   return (
     <div className="px-20 py-8">
-      <BackButton />
+      <BackButtonV />
       <h1 className="text-3xl my-4">Edit Rent</h1>
       {loading ? <Spinner /> : ""}
       <div className="flex flex-col border-2 border-sky-400 rounded-xl w-[600px] p-4 mx-auto bg-white bg-opacity-60">

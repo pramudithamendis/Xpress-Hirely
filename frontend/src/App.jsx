@@ -1,4 +1,5 @@
 import React from "react";
+
 import { Routes, Route } from "react-router-dom";
 import Create from "./ChatPages/Create.jsx";
 import Chats from "./ChatPages/Chats.jsx";
@@ -15,11 +16,13 @@ import CreateVehicle from "./ChatPages/CreateVehicle.jsx";
 import ChatAdmin from "./ChatPages/ChatAdmin.jsx";
 import HomeAdmin from "./ChatPages/HomeAdmin.jsx";
 import ChatAdminLogin from "./ChatPages/ChatAdminLogin.jsx";
+
 import CreateRentHisPage from "./pages/CreateRentHis.page";
 import DeleteRentHisPage from "./pages/DeleteRentHis.page";
 import EditRentHisPage from "./pages/EditRentHis.page";
 import HomeRentHisPage from "./pages/HomeRentHis.page";
 import ShowRentHisPage from "./pages/ShowRentHis.page";
+//<<<<<<< piyaraCRUD
 
 import Payments_ClientView from './pages/Payments_ClientView';
 import Payments_AdminView from './pages/Payments_AdminView';
@@ -44,9 +47,33 @@ import UpdateRefundRequest from './pages/RefundRequests/UpdateRefundRequest';
 import CreateStripePayment from './pages/StripePayments/CreateStripePayment';
 import ShowStripePayment from './pages/StripePayments/ShowStripePayment';
 
+//=======
+import "./App.css";
+import Register from "./Auth/Register";
+import Login from "./Auth/Login";
+import Dashboard from "./pages/Dashboard";
+import AdminDashboard from "./pages/AdminDashboard";
+import { useAuth } from "./contexts/AuthContext";
+//>>>>>>> development-main
 import Layout from "./components/layout/Layout";
+import Profile from "./pages/ProfilePage.jsx";
+import { Navigate } from "react-router-dom";
+
+import Home from "./pages/Home";
+import CreateRecord from "./pages/createRecords";
+import ShowRecord from "./pages/ShowRecord";
+import EditRecord from "./pages/editRecord";
+import DeleteRecord from "./pages/deleteRecord";
+
+import adminDashboard from "./components/admin/Dashboard";
+import AddLicense from "./components/admin/AddLicense";
+import LicenseForm from "./components/admin/LicenseForm";
+import InsuranceForm from "./components/admin/InsuranceForm";
+import InsuranceDashboard from "./components/admin/InsuranceDashboard";
+import AddInsurance from "./components/admin/Addinsurance";
 
 const App = () => {
+  const { isAuthenticated, userData } = useAuth();
   return (
     <Layout>
       <Routes>
@@ -86,11 +113,12 @@ const App = () => {
         {/*this has the sign up and sign in buttons*/}
         <Route path="/admin/signin" element={<ChatAdminLogin />} />{" "}
         {/*this has the sign in form for admins admin */}
-        <Route path="/" element={<HomeRentHisPage />} />
+        <Route path="/rentHome" element={<HomeRentHisPage />} />
         <Route path="/rents/createHis" element={<CreateRentHisPage />} />
         <Route path="/rents/detailsHis/:id" element={<ShowRentHisPage />} />
         <Route path="rents/editHis/:id" element={<EditRentHisPage />} />
         <Route path="rents/deleteHis/:id" element={<DeleteRentHisPage />} />
+// <<<<<<< piyaraCRUD
 
         <Route path='/user' element={<Payments_ClientView />} />
         <Route path='/admin' element={<Payments_AdminView />} />
@@ -113,6 +141,57 @@ const App = () => {
         <Route path='/refundrequests/admin/edit/:id' element={<UpdateRefundRequest />} />
 
         <Route path='/savepaymentmethod/user/delete/:id' element={<DeletePaymentMethod />} />
+// =======
+        <Route path="/insuranceform" element={<InsuranceForm />} />
+        <Route path="/dashboard" element={<adminDashboard />} />
+        <Route path="/licenseform" element={<LicenseForm />} />
+        <Route path="/addlicense" element={<AddLicense />} />
+        <Route path="/addinsurance" element={<AddInsurance />} />
+        <Route path="/insurancedashboard" element={<InsuranceDashboard />} />
+        <Route
+          path="/signup"
+          element={
+            !isAuthenticated ? (
+              <Register />
+            ) : userData.role === "admin" ? (
+              <Navigate to="/AdminDashboard" />
+            ) : (
+              <Navigate to="/profile" />
+            )
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            !isAuthenticated ? (
+              <Login />
+            ) : userData.role === "admin" ? (
+              <Navigate to="/AdminDashboard" />
+            ) : (
+              <Navigate to="/profile" />
+            )
+          }
+        />
+        <Route
+          path="/profile"
+          element={isAuthenticated ? <Dashboard /> : <Login />}
+        />
+        <Route
+          path="/AdminDashboard"
+          element={
+            isAuthenticated && userData.role === "admin" ? (
+              <AdminDashboard />
+            ) : (
+              <Navigate to="/Login" />
+            )
+          }
+        />
+        <Route path="/recordHome" element={<Home />} />
+        <Route path="/records/create" element={<CreateRecord />} />
+        <Route path="/records/details/:id" element={<ShowRecord />} />
+        <Route path="/records/edit/:id" element={<EditRecord />} />
+        <Route path="/records/delete/:id" element={<DeleteRecord />} />
+// >>>>>>> development-main
       </Routes>
     </Layout>
   );

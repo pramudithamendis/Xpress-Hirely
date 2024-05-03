@@ -138,3 +138,13 @@ font-size:20px;
 .LoginIfCantGetDetailsFromLocalStorage:hover{
     cursor: pointer;
 }
+
+.Chats_DownloadPdf{
+    background-color: #1eff00;
+    /* margin-left: 600px; */
+    padding: 20px;
+    /* width: 80px; */
+    border-radius: 20px;
+    margin-top: -10px;
+    margin-left: 10px;
+}
