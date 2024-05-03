@@ -30,9 +30,11 @@ const AdminDashboard = () => {
                 User Rentals
               </button>
             </Link>
-            <button className="rounded bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4">
-              Vehicle Maintainance
-            </button>
+            <Link to="/recordHome">
+              <button className="rounded bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4">
+                Vehicle Maintainance
+              </button>
+            </Link>
           </div>
           <Button
             size="large"

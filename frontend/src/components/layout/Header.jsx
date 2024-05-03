@@ -20,13 +20,11 @@ const Header = () => {
         <nav>
           <ul className="flex">
             <li className="mr-6">
-              <a href="/home" className="menu-item hover:text-gray-900 relative">
+              <a
+                href="/home"
+                className="menu-item hover:text-gray-900 relative"
+              >
                 HOME
-              </a>
-            </li>
-            <li className="mr-6">
-              <a href="#" className="menu-item hover:text-gray-900 relative">
-                VEHICLE FLEET
               </a>
             </li>
             <li className="mr-6">
@@ -36,21 +34,26 @@ const Header = () => {
             </li>
             <li className="mr-6">
               <a href="#" className="menu-item hover:text-gray-900 relative">
+                FEEDBACK
+              </a>
+            </li>
+            <li className="mr-6">
+              <a href="#" className="menu-item hover:text-gray-900 relative">
                 RENT YOUR VEHICLE
               </a>
             </li>
             <li className="mr-6">
-              <a href="/chat/chats" className="menu-item hover:text-gray-900 relative">
+              <a
+                href="/chat/chats"
+                className="menu-item hover:text-gray-900 relative"
+              >
                 CUSTOMER SUPPORT
               </a>
             </li>
           </ul>
         </nav>
         <div>
-
-
-        <Link to="/login">
-
+          <Link to="/login">
             <button className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded mr-4">
               LOGIN
             </button>
@@ -60,7 +63,6 @@ const Header = () => {
               SIGN UP
             </button>
           </Link>
-
         </div>
         <div className="flex items-center">
           <FaPhone className="mr-1" />
