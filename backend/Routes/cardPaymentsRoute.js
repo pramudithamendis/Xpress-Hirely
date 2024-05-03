@@ -88,7 +88,7 @@ export default router;
 
 // Read payment template
 
-const paymentTemplate = fs.readFileSync( 'D:/OTHER/sliit/Y2S2/ITP Project/Rent-A-Car_MERNSTACK/backend/templates/PaymentConfirmation.html' , 'utf8');
+const paymentTemplate = fs.readFileSync( 'templates/PaymentConfirmation.html' , 'utf8');
 
 function handlePaymentConfirmation(req, res) {
 
