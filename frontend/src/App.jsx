@@ -118,7 +118,7 @@ const App = () => {
         <Route path="/rents/detailsHis/:id" element={<ShowRentHisPage />} />
         <Route path="rents/editHis/:id" element={<EditRentHisPage />} />
         <Route path="rents/deleteHis/:id" element={<DeleteRentHisPage />} />
-// <<<<<<< piyaraCRUD
+
 
         <Route path='/user' element={<Payments_ClientView />} />
         <Route path='/admin' element={<Payments_AdminView />} />
@@ -191,7 +191,7 @@ const App = () => {
         <Route path="/records/details/:id" element={<ShowRecord />} />
         <Route path="/records/edit/:id" element={<EditRecord />} />
         <Route path="/records/delete/:id" element={<DeleteRecord />} />
-// >>>>>>> development-main
+
       </Routes>
     </Layout>
   );
