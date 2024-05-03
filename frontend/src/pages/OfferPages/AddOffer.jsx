@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import BackButton from '../components/BackButton';
-import Spinner from '../components/Spinner';
+import BackButton from '../../components/BackButton';
+import Spinner from '../../components/Spinner';
 import { useNavigate } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
 

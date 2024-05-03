@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import Spinner from '../components/Spinner';
+import Spinner from '../../components/Spinner';
 import { Link, useNavigate } from 'react-router-dom';
 import { MdOutlineAddBox } from 'react-icons/md';
-import OfferCard from '../components/Home/OfferCard';
-import OfferTable from '../components/Home/OfferTable';
+import OfferCard from '../../components/home/OfferCard';
+import OfferTable from '../../components/home/OfferTable';
 
 const Home = () => {
   const [offers, setOffers] = useState([]);
