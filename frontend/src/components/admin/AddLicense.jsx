@@ -38,7 +38,7 @@ function AddLicense() {
 
     try {
       await createLicense(data);
-      navigate('/');
+      navigate('/licensedashboard');
     } catch (err) {
       setError('Failed to add license. Please try again later.');
       console.error('Error adding license:', err);

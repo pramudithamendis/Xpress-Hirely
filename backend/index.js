@@ -209,7 +209,6 @@ app.post('/insurances', upload.single('uploadInsurance'), async (req, res) => {
     try {
         const newInsurance = await InsuranceRepository.addInsurance({
             // include all required fields
-            insuranceNumber: req.body.insuranceNumber,
             vehicleNo: req.body.vehiclenumber,
             insuranceProvider: req.body.insuranceProvider,
             policyNumber: req.body.policyNumber,

@@ -59,6 +59,9 @@ import Layout from "./components/layout/Layout";
 import Profile from "./pages/ProfilePage.jsx";
 import { Navigate } from "react-router-dom";
 
+
+import LicenseDashboard from "./components/admin/Dashboard";
+
 import Home from "./pages/Home";
 import CreateRecord from "./pages/createRecords";
 import ShowRecord from "./pages/ShowRecord";
@@ -66,6 +69,7 @@ import EditRecord from "./pages/editRecord";
 import DeleteRecord from "./pages/deleteRecord";
 
 import adminDashboard from "./components/admin/Dashboard";
+
 import AddLicense from "./components/admin/AddLicense";
 import LicenseForm from "./components/admin/LicenseForm";
 import InsuranceForm from "./components/admin/InsuranceForm";
@@ -120,6 +124,7 @@ const App = () => {
         <Route path="rents/deleteHis/:id" element={<DeleteRentHisPage />} />
 
 
+
         <Route path='/user' element={<Payments_ClientView />} />
         <Route path='/admin' element={<Payments_AdminView />} />
         <Route path='/method' element={<ChoosePaymentOption />} />
@@ -141,9 +146,9 @@ const App = () => {
         <Route path='/refundrequests/admin/edit/:id' element={<UpdateRefundRequest />} />
 
         <Route path='/savepaymentmethod/user/delete/:id' element={<DeletePaymentMethod />} />
-// =======
+
         <Route path="/insuranceform" element={<InsuranceForm />} />
-        <Route path="/dashboard" element={<adminDashboard />} />
+        <Route path="/licensedashboard" element={<LicenseDashboard />} />
         <Route path="/licenseform" element={<LicenseForm />} />
         <Route path="/addlicense" element={<AddLicense />} />
         <Route path="/addinsurance" element={<AddInsurance />} />
