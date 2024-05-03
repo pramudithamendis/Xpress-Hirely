@@ -17,6 +17,7 @@ import authRouter from './routes/authRoute.js';
 import LicenseRepository from './controllers/LicenseRepository.js';
 import InsuranceRepository from './controllers/InsuranceRepository.js';
 
+import recordsRoute from './routes/recordsRoute.js'
 
 dotenv.config();
 
