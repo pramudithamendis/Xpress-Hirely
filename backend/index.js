@@ -1,5 +1,16 @@
-import express from 'express';
-import mongoose from 'mongoose';
+
+import express from "express";
+import mongoose from "mongoose";
+
+import cardPaymentsRoute from './routes/cardPaymentsRoute.js';
+import cashPaymentsRoute from './routes/cashPaymentsRoute.js';
+import paymentMethodRoute from './routes/paymentMethodRoute.js';
+import refundRequestsRoute from './routes/refundRequestsRoute.js';
+import stripePaymentsRoute from './routes/stripePaymentsRoute.js';
+import sgMail from '@sendgrid/mail';
+import fs from 'fs';
+
+
 import cors from 'cors';
 import multer from 'multer';
 import nodemailer from 'nodemailer';
@@ -15,6 +26,7 @@ import authRouter from './routes/authRoute.js';
 import LicenseRepository from './controllers/LicenseRepository.js';
 import InsuranceRepository from './controllers/InsuranceRepository.js';
 
+import recordsRoute from './routes/recordsRoute.js'
 
 dotenv.config();
 
@@ -64,7 +76,19 @@ app.use('/user', userRoutes);
 app.use('/vehicle', vehicleRoutes);
 app.use('/admin', adminRoutes);
 app.use('/rents', rentHisRoute);
+// <<<<<<< piyaraCRUD
+//Payment management - Piyara
+app.use('/cardpayments',cardPaymentsRoute);
+app.use('/cashpayments',cashPaymentsRoute);
+app.use('/savepaymentmethod',paymentMethodRoute);
+app.use('/refundrequests',refundRequestsRoute);
+app.use('/stripepayments',stripePaymentsRoute);
+// =======
 app.use('/api/auth', authRouter);
+
+//Vehicle Maintenance - sachith
+app.use('/records', recordsRoute);
+
 
 // MongoDB connection
 mongoose.connect(mongoDBURL || process.env.DB_URI, {
@@ -178,6 +202,7 @@ app.delete('/licenses/:id', async (req, res) => {
         res.status(500).send({ message: 'Failed to add insurance', error: error.message || error });
     }
 });
+//>>>>>>> development-main
 
 // Insurance API routes (similar structure to the license routes)
 app.post('/insurances', upload.single('uploadInsurance'), async (req, res) => {

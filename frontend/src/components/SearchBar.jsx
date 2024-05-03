@@ -11,14 +11,14 @@ const SearchBar = ({ onSearchChange }) => {
 
   return (
     <div className="relative">
+      <BsSearch className="absolute top-1/2 left-2 -translate-y-1/2 text-orange-500" />
       <input
         type="text"
         value={searchTerm}
         onChange={handleChange}
-        placeholder="Search rental history..."
-        className="px-4 py-2 border rounded-lg w-full placeholder-grey-500"
+        placeholder="    Search Vehicle ID..."
+        className="px-4 py-2 border rounded-lg w-full bg-white bg-opacity-70 rounded-lg"
       />
-      <BsSearch className="absolute top-1/2 right-2 -translate-y-1/2 text-orange-500 " />
     </div>
   );
 };

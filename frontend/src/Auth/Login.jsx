@@ -71,7 +71,7 @@ const Login = () => {
                   type={`${loading ? "" : "primary"}`}
                   htmlType="submit"
                   size="large"
-                  className="btn"
+                  className="btn bg-blue-500"
                 >
                   {loading ? <Spin /> : "Sign In"}
                 </Button>
