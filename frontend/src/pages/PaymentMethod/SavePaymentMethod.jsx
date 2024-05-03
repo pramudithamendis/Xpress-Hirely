@@ -23,6 +23,7 @@ const SavePaymentMethod = () => {
         setLoading(true);
         axios.post(`http://localhost:5555/savepaymentmethod/user`, data).then(() => {
             setLoading(false);
+            alert('Successful');
             navigate('/user');
         })
             .catch((error) => {
@@ -76,7 +77,7 @@ const SavePaymentMethod = () => {
                 
                     <label className='text-x1 mr-4 text-gray-500'>DateOfExpiry</label>
                     <input
-                        type='text'
+                        type='date'
                         value={DateOfExpiry}
                         onChange={(e) => setDateOfExpiry(e.target.value)}
                         className='bg-white text-black border border-orange-500 focus:border-orange-500 px-4 py-2 rounded w-full'

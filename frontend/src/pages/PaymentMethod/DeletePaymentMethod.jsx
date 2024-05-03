@@ -14,7 +14,7 @@ const DeletePaymentMethod = () => {
         axios.delete(`http://localhost:5555/savepaymentmethod/user/${id}`).then(() => {
             setLoading(false);
             alert('Deleted successfully');
-            navigate('/');
+            navigate('/user');
         })
         .catch((error) => {
             setLoading(false); 

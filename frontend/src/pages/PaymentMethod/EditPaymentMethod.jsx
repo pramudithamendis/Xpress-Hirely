@@ -45,7 +45,7 @@ const EditPaymentMethod = () => {
         axios.put(`http://localhost:5555/savepaymentmethod/user/${id}`, data).then(() => {
             setLoading(false);
             alert('Changes saved');
-            navigate('/');
+            navigate('/user');
         })
             .catch((error) => {
                 setLoading(false); 
