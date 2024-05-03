@@ -1,5 +1,7 @@
+
 import express from 'express';
 import mongoose from 'mongoose';
+
 import cors from 'cors';
 import multer from 'multer';
 import nodemailer from 'nodemailer';
@@ -15,6 +17,7 @@ import authRouter from './routes/authRoute.js';
 import LicenseRepository from './controllers/LicenseRepository.js';
 import InsuranceRepository from './controllers/InsuranceRepository.js';
 
+import recordsRoute from './routes/recordsRoute.js'
 
 dotenv.config();
 
@@ -65,6 +68,10 @@ app.use('/vehicle', vehicleRoutes);
 app.use('/admin', adminRoutes);
 app.use('/rents', rentHisRoute);
 app.use('/api/auth', authRouter);
+
+//Vehicle Maintenance - sachith
+app.use('/records', recordsRoute);
+
 
 // MongoDB connection
 mongoose.connect(mongoDBURL || process.env.DB_URI, {

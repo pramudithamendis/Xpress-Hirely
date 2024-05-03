@@ -32,6 +32,12 @@ import Layout from "./components/layout/Layout";
 import Profile from "./pages/ProfilePage.jsx";
 import { Navigate } from "react-router-dom";
 
+import Home from "./pages/Home";
+import CreateRecord from "./pages/createRecords";
+import ShowRecord from "./pages/ShowRecord";
+import EditRecord from "./pages/editRecord";
+import DeleteRecord from "./pages/deleteRecord";
+
 import adminDashboard from "./components/admin/Dashboard";
 import AddLicense from "./components/admin/AddLicense";
 import LicenseForm from "./components/admin/LicenseForm";
@@ -129,6 +135,11 @@ const App = () => {
             )
           }
         />
+        <Route path="/recordHome" element={<Home />} />
+        <Route path="/records/create" element={<CreateRecord />} />
+        <Route path="/records/details/:id" element={<ShowRecord />} />
+        <Route path="/records/edit/:id" element={<EditRecord />} />
+        <Route path="/records/delete/:id" element={<DeleteRecord />} />
       </Routes>
     </Layout>
   );
