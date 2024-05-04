@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
-import BackButton from '../components/BackButton';
-import Spinner from '../components/Spinner';
+import BackButton from '../../../../sahan/frontend/src/components/BackButton';
+import Spinner from '../../../../sahan/frontend/src/components/Spinner';
 import axios from 'axios';
 
 const CreateBook = () => {
@@ -24,13 +24,13 @@ const CreateBook = () => {
     const data = {
       customerName,
       idNumber,
-      Address,
+      address,
       mobileNumber,
       email,
-      PickupDate,
-      PickupTime,
-      DropoffDate,
-      DropoffTime,
+      pickupDate,
+      pickupTime,
+      dropoffDate,
+      dropoffTime,
     };
 
     setLoading(true);
@@ -39,11 +39,11 @@ const CreateBook = () => {
       .then(() => {
         setLoading(false);
         enqueueSnackbar('Book created successfully', { variant: 'success' });
-        navigate('/');
+        navigate('/bookshome');
       })
       .catch((error) => {
         setLoading(false);
-        enqueueSnackbar('Error', { variant: 'error' });
+        enqueueSnackbar('Errorr', { variant: 'error' });
         console.log(error);
       });
   };

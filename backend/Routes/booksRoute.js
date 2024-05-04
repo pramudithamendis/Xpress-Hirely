@@ -6,36 +6,38 @@ const router = express.Router();
 
 // Route for Save a new Book
 router.post('/', async (request, response) => {
+  // console.log(request.body)
   try {
-    if (
-  !request.body.customerName ||
-  !request.body.idNumber ||
-  !request.body.Address||
-  !request.body.mobileNumber ||
-  !request.body.email ||
-  !request.body.PickupDate||
-  !request.body.PickupTime ||
-  !request.body.DropoffDate ||
-  !request.body.DropoffTime
-    ) {
-      return response.status(400).send({
-        message: 'Error',
-      });
-    }
+    // if (
+  // !request.body.customerName ||
+  // !request.body.idNumber ||
+  // !request.body.Address||
+  // !request.body.mobileNumber ||
+  // !request.body.email ||
+  // !request.body.pickupDate||
+  // !request.body.pickupTime ||
+  // !request.body.dropoffDate ||
+  // !request.body.dropoffTime
+    // ) {
+      // console.log("error here")
+      // return response.status(400).send({
+        // message: 'Error',
+      // });
+    // }
     const newBook = {
       customerName: request.body.customerName,
       idNumber: request.body.idNumber,
-      Address: request.body.Address,
+      Address: request.body.address,
       mobileNumber: request.body.mobileNumber,
       email: request.body.email,
-      PickupDate: request.body.PickupDate,
-      PickupTime: request.body.PickupTime,
-      DropoffDate: request.body.DropoffDate,
-      DropoffTime: request.body.DropoffTime,
+      PickupDate: request.body.pickupDate,
+      PickupTime: request.body.pickupTime,
+      DropoffDate: request.body.dropoffDate,
+      DropoffTime: request.body.dropoffTime,
     };
-
+    console.log(newBook)
     const book = await Book.create(newBook);
-
+    console.log(book)
     return response.status(201).send(book);
   } catch (error) {
     console.log(error.message);

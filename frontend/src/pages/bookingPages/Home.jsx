@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import Spinner from '../components/Spinner';
+import Spinner from '../../../../sahan/frontend/src/components/Spinner';
 import { Link } from 'react-router-dom';
 import { AiOutlineEdit } from 'react-icons/ai';
 import { BsInfoCircle } from 'react-icons/bs';
 import { MdOutlineAddBox, MdOutlineDelete } from 'react-icons/md';
-import BooksTable from '../components/home/BooksTable';
-import BooksCard from '../components/home/BooksCard';
-import { BeatLoader } from 'react-spinners';
+import BooksTable from '../../../../sahan/frontend/src/components/home/BooksTable';
+import BooksCard from '../../../../sahan/frontend/src/components/home/BooksCard';
+// import { BeatLoader } from 'react-spinners';
 import { HiOutlinePlusCircle } from "react-icons/hi";
 import mainhome from './mainhome';
 
