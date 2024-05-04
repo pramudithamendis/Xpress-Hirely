@@ -4,13 +4,7 @@ import Footer from "./Footer";
 
 const Layout = ({ children }) => {
   return (
-    <div
-      className="bg-cover bg-center"
-      style={{
-        backgroundImage: "url('bgRentHis.jpg')",
-        minHeight: "100vh",
-      }}
-    >
+    <div className="bg-cover bg-center">
       <Header />
       <main>{children}</main>
       <Footer />

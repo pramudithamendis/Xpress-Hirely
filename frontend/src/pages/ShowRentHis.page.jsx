@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import BackButtonV from "../components/BackButtonV";
 import Spinner from "../components/Spinner";
 import jsPDF from "jspdf";
+import bgRentHis from "../images/bgRentHis.jpg";
 
 const ShowRentHisPage = () => {
   const [rent, setRentHis] = useState({});
@@ -62,60 +63,69 @@ const ShowRentHisPage = () => {
   };
 
   return (
-    <div className="px-20 py-8">
-      <BackButtonV />
-      <div className="flex justify-between items-center">
-        <h1 className="text-3xl my-4">Show Rent</h1>
-        <button
-          className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded mr-4"
-          onClick={() => handleGenerateReport(rent)}
-        >
-          Generate Report
-        </button>
-      </div>
-
-      {loading ? (
-        <Spinner />
-      ) : (
-        <div className="flex flex-col border-2 border-sky-400 rounded-xl w-fit p-4 bg-white">
-          <div className="my-4">
-            <span className="text-xl mr-4 text-gray-500">No</span>
-            <span>{rent._id}</span>
-          </div>
-          <div className="my-4">
-            <span className="text-xl mr-4 text-gray-500">Name</span>
-            <span>{rent.name}</span>
-          </div>
-          <div className="my-4">
-            <span className="text-xl mr-4 text-gray-500">Vehicle Model</span>
-            <span>{rent.vehicle}</span>
-          </div>
-          <div className="my-4">
-            <span className="text-xl mr-4 text-gray-500">Rent Date</span>
-            <span>{rent.rentDate}</span>
-          </div>
-          <div className="my-4">
-            <span className="text-xl mr-4 text-gray-500">Return Date</span>
-            <span>{rent.returnDate}</span>
-          </div>
-          <div className="my-4">
-            <span className="text-xl mr-4 text-gray-500">Mileage </span>
-            <span>{rent.mileage} km</span>
-          </div>
-          <div className="my-4">
-            <span className="text-xl mr-4 text-gray-500">Rental Charges</span>
-            <span>Rs {rent.amount}</span>
-          </div>
-          <div className="my-4">
-            <span className="text-xl mr-4 text-gray-500">Create Time</span>
-            <span>{new Date(rent.createdAt).toString()}</span>
-          </div>
-          <div className="my-4">
-            <span className="text-xl mr-4 text-gray-500">Last Update Time</span>
-            <span>{new Date(rent.updatedAt).toString()}</span>
-          </div>
+    <div
+      className="bg-cover bg-center"
+      style={{
+        backgroundImage: `url(${bgRentHis})`,
+      }}
+    >
+      <div className="px-20 py-8">
+        <BackButtonV />
+        <div className="flex justify-between items-center">
+          <h1 className="text-3xl my-4">Show Rent</h1>
+          <button
+            className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded mr-4"
+            onClick={() => handleGenerateReport(rent)}
+          >
+            Generate Report
+          </button>
         </div>
-      )}
+
+        {loading ? (
+          <Spinner />
+        ) : (
+          <div className="flex flex-col border-2 border-sky-400 rounded-xl w-fit p-4 bg-white">
+            <div className="my-4">
+              <span className="text-xl mr-4 text-gray-500">No</span>
+              <span>{rent._id}</span>
+            </div>
+            <div className="my-4">
+              <span className="text-xl mr-4 text-gray-500">Name</span>
+              <span>{rent.name}</span>
+            </div>
+            <div className="my-4">
+              <span className="text-xl mr-4 text-gray-500">Vehicle Model</span>
+              <span>{rent.vehicle}</span>
+            </div>
+            <div className="my-4">
+              <span className="text-xl mr-4 text-gray-500">Rent Date</span>
+              <span>{rent.rentDate}</span>
+            </div>
+            <div className="my-4">
+              <span className="text-xl mr-4 text-gray-500">Return Date</span>
+              <span>{rent.returnDate}</span>
+            </div>
+            <div className="my-4">
+              <span className="text-xl mr-4 text-gray-500">Mileage </span>
+              <span>{rent.mileage} km</span>
+            </div>
+            <div className="my-4">
+              <span className="text-xl mr-4 text-gray-500">Rental Charges</span>
+              <span>Rs {rent.amount}</span>
+            </div>
+            <div className="my-4">
+              <span className="text-xl mr-4 text-gray-500">Create Time</span>
+              <span>{new Date(rent.createdAt).toString()}</span>
+            </div>
+            <div className="my-4">
+              <span className="text-xl mr-4 text-gray-500">
+                Last Update Time
+              </span>
+              <span>{new Date(rent.updatedAt).toString()}</span>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

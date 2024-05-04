@@ -9,6 +9,7 @@ import RentsTable from "../components/home/RentsTable";
 import RentsCard from "../components/home/RentsCard";
 import SearchBar from "../components/SearchBar";
 import { useLocation } from "react-router-dom";
+import bgRentHis from "../images/bgRentHis.jpg";
 
 const HomeRentHisPage = () => {
   const [rents, setRentHis] = useState([]);
@@ -51,43 +52,52 @@ const HomeRentHisPage = () => {
   }, [rents, searchInput]);
 
   return (
-    <div className="px-40 py-16">
-      <div className="flex justify-center mt-4">
-        <button
-          className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg w-fit mr-4"
-          onClick={() => setShowType("table")}
-        >
-          Table
-        </button>
-        <button
-          className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg w-fit mr-4"
-          onClick={() => setShowType("card")}
-        >
-          Card
-        </button>
-      </div>
-
-      <div className="flex justify-between items-center">
-        <h1 className="text-3xl my-8">Rents List</h1> {/* Title on the left */}
-        <div className="flex items-center">
-          {" "}
-          {/* Wrapper for search bar and add icon */}
-          <SearchBar onSearchChange={handleSearchChange} /> {/* Search bar */}
-          <Link to="/rents/createHis" className="ml-4">
-            {" "}
-            {/* Add margin to the left */}
-            <MdOutlineAddBox className="text-black text-4xl" /> {/* Add icon */}
-          </Link>
+    <div
+      className="bg-cover bg-center"
+      style={{
+        backgroundImage: `url(${bgRentHis})`,
+      }}
+    >
+      <div className="px-40 py-16">
+        <div className="flex justify-center mt-4">
+          <button
+            className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg w-fit mr-4"
+            onClick={() => setShowType("table")}
+          >
+            Table
+          </button>
+          <button
+            className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg w-fit mr-4"
+            onClick={() => setShowType("card")}
+          >
+            Card
+          </button>
         </div>
-      </div>
 
-      {loading ? (
-        <Spinner />
-      ) : showType === "table" ? (
-        <RentsTable rents={filteredRents} />
-      ) : (
-        <RentsCard rents={filteredRents} />
-      )}
+        <div className="flex justify-between items-center">
+          <h1 className="text-3xl my-8">Rents List</h1>{" "}
+          {/* Title on the left */}
+          <div className="flex items-center">
+            {" "}
+            {/* Wrapper for search bar and add icon */}
+            <SearchBar onSearchChange={handleSearchChange} /> {/* Search bar */}
+            <Link to="/rents/createHis" className="ml-4">
+              {" "}
+              {/* Add margin to the left */}
+              <MdOutlineAddBox className="text-black text-4xl" />{" "}
+              {/* Add icon */}
+            </Link>
+          </div>
+        </div>
+
+        {loading ? (
+          <Spinner />
+        ) : showType === "table" ? (
+          <RentsTable rents={filteredRents} />
+        ) : (
+          <RentsCard rents={filteredRents} />
+        )}
+      </div>
     </div>
   );
 };
