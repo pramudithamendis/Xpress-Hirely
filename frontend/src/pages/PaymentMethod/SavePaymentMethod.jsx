@@ -79,6 +79,7 @@ const SavePaymentMethod = () => {
                     <input
                         type='date'
                         value={DateOfExpiry}
+                        min={new Date().toISOString().split('T')[0]}
                         onChange={(e) => setDateOfExpiry(e.target.value)}
                         className='bg-white text-black border border-orange-500 focus:border-orange-500 px-4 py-2 rounded w-full'
                     /><br/><br/>

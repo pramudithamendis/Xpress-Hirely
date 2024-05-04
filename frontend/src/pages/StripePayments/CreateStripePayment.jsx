@@ -75,6 +75,7 @@ const CreateStripePayment = () => {
                         type='date'
                         placeholder="Expiry Date"
                         value={DateOfExpiry}
+                        min={new Date().toISOString().split('T')[0]}
                         onChange={(e) => setDateOfExpiry(e.target.value)}
                         className='border-2 border-gray-500 px-4 py-2 w-200'
                     />
