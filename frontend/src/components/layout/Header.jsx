@@ -38,10 +38,11 @@ const Header = () => {
               </a>
             </li>
             <li className="mr-6">
-              <a href="#" className="menu-item hover:text-gray-900 relative">
+              <a href="/onboarding" className="menu-item hover:text-gray-900 relative">
                 RENT YOUR VEHICLE
               </a>
             </li>
+            
             <li className="mr-6">
               <a
                 href="/chat/chats"

@@ -8,6 +8,7 @@ import van from '../images/van.png';
 import suv from '../images/jeep.png';
 import Select from 'react-select';
 import axios from 'axios';
+import { useNavigate } from "react-router-dom";
 
 // Hardcoded brands and models
 const brands = [
@@ -17,6 +18,7 @@ const brands = [
 ]; 
 
 const RentRequest = () => {
+    const navigate = useNavigate();
     const [vehicleRequest, setVehicleRequest] = useState({
         owner_Name: '',
         owner_Email: '',
@@ -85,6 +87,7 @@ const RentRequest = () => {
     
             if (response.status === 201) {
                 setSuccessMessage('Request submitted successfully');
+
                 setErrorMessage('');
 
                 // Reset form fields
@@ -102,6 +105,7 @@ const RentRequest = () => {
                     comapny: '',
                     features: []
                 });
+                navigate("/insuranceform");
             } else {
                 console.error('Failed to submit request');
                 setErrorMessage('Failed to submit request');

@@ -238,6 +238,7 @@ const App = () => {
 
 
 
+        <Route path="" />
         <Route path="/onboarding" element={<OnBoarding />} />
           <Route path="/rent-request" element={<RentRequest />} />
           <Route path="/request-management" element={<RequestManagement />} />
