@@ -104,7 +104,17 @@ const App = () => {
         {/* this has the signup and signin buttons */}
         <Route path="/chat/create" element={<Create />} />{" "}
         {/* this has the issue creating form */}
-        <Route path="/chat/chats" element={<Chats />} />{" "}
+        <Route path="/chat/chats"
+        element={
+          !isAuthenticated ? (
+            <Register />
+          ) : userData.role === "admin" ? (
+            <Navigate to="/chat/chats/admin" />
+          ) : (
+            <Chats />
+          )
+        }
+         />{" "}
         {/* this has all the chats */}
         <Route path="/chat/delete/:id" element={<Delete />} />{" "}
         {/* this has the confirm message to delete an issue */}
