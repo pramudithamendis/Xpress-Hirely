@@ -23,7 +23,6 @@ const Payments_ClientView = () => {
     const [filteredCardPayments, setFilteredCardPayments] = useState([]);
     const [filteredCashPayments, setFilteredCashPayments] = useState([]);
     const [filteredStripePayments, setFilteredStripePayments] = useState([]);
-    const [filteredRefundRequests, setFilteredRefundRequests] = useState([]);
 
     const [loading, setLoading] = useState(false);
     const [showType, setShowType] = useState('');
@@ -134,7 +133,7 @@ const Payments_ClientView = () => {
 
             {loading ? <Spinner /> : showType === 'CardPaymentsTable' ? (<CardPaymentsTable cardpayments={filteredCardPayments} />) :
             showType === 'CashPaymentsTable' ? (<CashPaymentsTable cashpayments={filteredCashPayments} />) :
-            showType === 'PaymentMethodTable' ? (<PaymentMethodTable paymentmethods={filteredRefundRequests} />) :
+            showType === 'PaymentMethodTable' ? (<PaymentMethodTable paymentmethods={paymentmethods} />) :
             showType === 'StripePaymentsTable' ? (<StripePaymentsTable stripepayments={filteredStripePayments} />) :
             null
             }
