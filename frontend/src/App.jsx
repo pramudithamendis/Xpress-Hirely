@@ -95,6 +95,12 @@ import RequestManagement from './pages/RequestManagment.jsx';
 import VehicleDetails from './pages/VehicleDetails.jsx';
 import 'react-toastify/dist/ReactToastify.css';
 
+
+import HomeBooking from './pages/bookingPages/Home.jsx';
+import CreateBook from './pages/bookingPages/CreateBooks';
+import ShowBook from './pages/bookingPages/ShowBook';
+import EditBook from './pages/bookingPages/EditBook';
+import DeleteBook from './pages/bookingPages/DeleteBook';
 const App = () => {
   const { isAuthenticated, userData } = useAuth();
   return (
@@ -244,6 +250,12 @@ const App = () => {
           <Route path="/request-management" element={<RequestManagement />} />
           <Route path="/vehicle-details" element={<VehicleDetails />} />
 
+
+          <Route path='/bookshome' element={<HomeBooking />} />
+      <Route path='/books/create' element={<CreateBook />} />
+      <Route path='/books/details/:id' element={<ShowBook />} />
+      <Route path='/books/edit/:id' element={<EditBook />} />
+      <Route path='/books/delete/:id' element={<DeleteBook />} />
       </Routes>
     </Layout>
   );

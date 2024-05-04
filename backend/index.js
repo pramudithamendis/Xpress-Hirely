@@ -32,6 +32,7 @@ import recordsRoute from './routes/recordsRoute.js'
 // const carRoutes = require('./routes/carRoute');
 import carRoutes from './Routes/carRoute.js'
 
+import booksRoute from './routes/booksRoute.js';
 dotenv.config();
 
 const app = express();
@@ -102,6 +103,7 @@ app.use('/offers', offersRoutes );
 app.use('/cars', carRoutes);
 
 
+app.use('/books', booksRoute);
 // MongoDB connection
 mongoose.connect(mongoDBURL || process.env.DB_URI, {
     useNewUrlParser: true,
