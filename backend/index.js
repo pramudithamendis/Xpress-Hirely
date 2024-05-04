@@ -29,16 +29,21 @@ import InsuranceRepository from './controllers/InsuranceRepository.js';
 
 import recordsRoute from './routes/recordsRoute.js'
 
+// const carRoutes = require('./routes/carRoute');
+import carRoutes from './Routes/carRoute.js'
+
 dotenv.config();
 
 const app = express();
 
 app.use(express.json());
+app.use(cors())
 app.use(cors({
     origin: 'http://localhost:5173', // Adjust according to your front-end origin
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
+
 
 // Multer configuration for file uploads
 const storage = multer.diskStorage({
@@ -89,7 +94,13 @@ app.use('/api/auth', authRouter);
 
 //Vehicle Maintenance - sachith
 app.use('/records', recordsRoute);
+
 app.use('/offers', offersRoutes );
+
+
+// Use car routes
+app.use('/cars', carRoutes);
+
 
 // MongoDB connection
 mongoose.connect(mongoDBURL || process.env.DB_URI, {

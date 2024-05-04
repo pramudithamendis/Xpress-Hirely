@@ -28,7 +28,7 @@ const VehicleDetails = () => {
   
   const fetchAcceptedRequests = async () => {
     try {
-      const response = await axios.get("http://localhost:8009/cars");
+      const response = await axios.get("http://localhost:5555/cars");
       const accepted = response.data.filter(
         (request) => request.status === "accepted"
       );
@@ -65,7 +65,7 @@ const VehicleDetails = () => {
 
   const confirmDelete = async () => {
     try {
-      await axios.delete(`http://localhost:8009/cars/${recordToDelete}`);
+      await axios.delete(`http://localhost:5555/cars/${recordToDelete}`);
       fetchAcceptedRequests();
       setSuccessMessage("Vehicle deleted successfully!");
       setErrorMessage("");
@@ -92,7 +92,7 @@ const VehicleDetails = () => {
   const handleEditFormSubmit = async () => {
     try {
       await axios.patch(
-        `http://localhost:8009/cars/${editingRequestId}`,
+        `http://localhost:5555/cars/${editingRequestId}`,
         editFormData
       );
       fetchAcceptedRequests(); 

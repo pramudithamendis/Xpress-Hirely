@@ -8,7 +8,7 @@ const RequestManagement = () => {
 
     const fetchAndFilterPendingRequests = async () => {
         try {
-            const response = await axios.get('http://localhost:8009/cars'); // Assuming '/cars' is the endpoint to fetch all requests
+            const response = await axios.get('http://localhost:5555/cars'); // Assuming '/cars' is the endpoint to fetch all requests
             const pendingRequests = response.data.filter(car => car.status === 'pending');
             setCars(pendingRequests);
         } catch (error) {
@@ -23,7 +23,7 @@ const RequestManagement = () => {
 
     const handleAcceptRequest = async (id, ownerEmail) => {
         try {
-            await axios.patch(`http://localhost:8009/cars/request/${id}`, { status: 'accepted', owner_Email: ownerEmail });
+            await axios.patch(`http://localhost:5555/cars/request/${id}`, { status: 'accepted', owner_Email: ownerEmail });
             fetchAndFilterPendingRequests(); // Refresh the list of pending requests after accepting
             setSuccessMessage('Request accepted successfully');
             setErrorMessage('');
@@ -42,7 +42,7 @@ const RequestManagement = () => {
 
     const handleDeclineRequest = async (id) => {
         try {
-            await axios.delete(`http://localhost:8009/cars/request/${id}`); // Assuming '/cars/:id' is the endpoint to delete the request
+            await axios.delete(`http://localhost:5555/cars/request/${id}`); // Assuming '/cars/:id' is the endpoint to delete the request
             fetchAndFilterPendingRequests(); // Refresh the list of pending requests after declining
             setSuccessMessage('Request declined successfully');
             setErrorMessage('');

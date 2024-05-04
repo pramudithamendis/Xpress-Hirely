@@ -47,6 +47,8 @@ import UpdateRefundRequest from './pages/RefundRequests/UpdateRefundRequest';
 import CreateStripePayment from './pages/StripePayments/CreateStripePayment';
 import ShowStripePayment from './pages/StripePayments/ShowStripePayment';
 
+
+
 //=======
 import "./App.css";
 import Register from "./Auth/Register";
@@ -83,6 +85,15 @@ import DeleteOffers from './pages/OfferPages/DeleteOffers';
 import ShowOffers from './pages/OfferPages/ShowOffers';
 import FirstPage from './pages/OfferPages/FirstPage';
 // import Layout from './components/layouts/Layout';
+
+
+//Nimesha files
+import { ToastContainer } from 'react-toastify'; // Import ToastContainer
+import OnBoarding from '../src/pages/OnBoarding.jsx';
+import RentRequest from './pages/RentRequest.jsx';
+import RequestManagement from './pages/RequestManagment.jsx';
+import VehicleDetails from './pages/VehicleDetails.jsx';
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
   const { isAuthenticated, userData } = useAuth();
@@ -206,6 +217,7 @@ const App = () => {
         <Route path="/records/delete/:id" element={<DeleteRecord />} />
 
 
+
         <Route path='/offers' element={<FirstPage/>} />
         <Route path='/offers/home' element={<OfferHome />} />
         <Route path='/offers/show/:id' element={<ShowOffers />} />
@@ -214,6 +226,12 @@ const App = () => {
         <Route path='/offers/delete/:id' element={<DeleteOffers />} />
         
 
+
+
+        <Route path="/onboarding" element={<OnBoarding />} />
+          <Route path="/rent-request" element={<RentRequest />} />
+          <Route path="/request-management" element={<RequestManagement />} />
+          <Route path="/vehicle-details" element={<VehicleDetails />} />
 
       </Routes>
     </Layout>

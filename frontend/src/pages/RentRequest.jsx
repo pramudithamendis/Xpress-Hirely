@@ -81,7 +81,7 @@ const RentRequest = () => {
         console.log('Submitting request:', vehicleRequest);
     
         try {
-            const response = await axios.post('http://localhost:8009/cars', vehicleRequest);
+            const response = await axios.post('http://localhost:5555/cars', vehicleRequest);
     
             if (response.status === 201) {
                 setSuccessMessage('Request submitted successfully');
@@ -161,7 +161,7 @@ const RentRequest = () => {
     
     return (
         <>
-            <Header />
+            {/* <Header /> */}
             <div className="bg-gray-100 min-h-screen flex items-center justify-center pt-8 pb-8">
                 <div className="max-w-lg w-full bg-white p-8 rounded-lg shadow-lg">
                     <div className="mb-8">
@@ -382,7 +382,7 @@ const RentRequest = () => {
             )}
                 </div>
             </div>
-            <Footer />
+            {/* <Footer /> */}
         </>
     );
 };

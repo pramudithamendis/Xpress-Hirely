@@ -1,16 +1,27 @@
 // routes/carRoutes.js
-const express = require('express');
-const router = express.Router();
-const carController = require('../controllers/carController');
+// const express = require('express');
+import express from 'express'
+// const router = express.Router();
+// const carController = require('../controllers/carController');
+import {getCars,
+    createCar,
+    getCarById,
+    updateCar,
+    deleteCar,
+    getPendingRequests,
+    updateRequestStatus,
+    deleteRequest} from '../controllers/carController.js'
 
+    const router = express.Router();
 // Routes
-router.get('/', carController.getCars);
-router.post('/', carController.createCar);
-router.get('/:id', carController.getCarById);
-router.patch('/:id', carController.updateCar);
-router.delete('/:id', carController.deleteCar);
-router.get('/pending', carController.getPendingRequests);
-router.patch('/request/:id', carController.updateRequestStatus);
-router.delete('/request/:id', carController.deleteRequest);
+router.get('/', getCars);
+router.post('/', createCar);
+router.get('/:id', getCarById);
+router.patch('/:id', updateCar);
+router.delete('/:id', deleteCar);
+router.get('/pending', getPendingRequests);
+router.patch('/request/:id', updateRequestStatus);
+router.delete('/request/:id', deleteRequest);
 
-module.exports = router;
+// module.exports = router;
+export default router;

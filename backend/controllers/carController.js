@@ -1,6 +1,8 @@
 // controllers/carController.js
-const Car = require("../models/Car");
-const nodemailer = require("nodemailer");
+// const Car = require("../models/Car");
+import {Car} from '../models/Car.js'
+import nodemailer from "nodemailer";
+// const nodemailer = require("nodemailer");
 
 // Create a transporter object using SMTP transport
 const transporter = nodemailer.createTransport({
@@ -12,7 +14,7 @@ const transporter = nodemailer.createTransport({
 });
 
 // Get all cars
-const getCars = async (req, res) => {
+export const getCars = async (req, res) => {
   try {
     const cars = await Car.find();
     res.json(cars);
@@ -22,7 +24,7 @@ const getCars = async (req, res) => {
 };
 
 // Get all pending requests
-const getPendingRequests = async (req, res) => {
+export const getPendingRequests = async (req, res) => {
   try {
     const pendingRequests = await Car.find({ status: "pending" });
     res.json(pendingRequests);
@@ -31,7 +33,7 @@ const getPendingRequests = async (req, res) => {
   }
 };
 
-const createCar = async (req, res) => {
+export const createCar = async (req, res) => {
   const {VIN} = req.body;
 
   console.log(req.body);
@@ -101,11 +103,11 @@ const createCar = async (req, res) => {
 };
 
 // Get a specific car
-const getCarById = async (req, res) => {
+export const getCarById = async (req, res) => {
   res.json(res.car);
 };
 
-const updateCar = async (req, res) => {
+export const updateCar = async (req, res) => {
   const { id } = req.params;
   const { VIN } = req.body;
 
@@ -154,7 +156,7 @@ const updateCar = async (req, res) => {
 };
 
 // Update a car
-const updateRequestStatus = async (req, res) => {
+export const updateRequestStatus = async (req, res) => {
   const { id } = req.params;
   const { owner_Email, status } = req.body;
 
@@ -187,7 +189,7 @@ const updateRequestStatus = async (req, res) => {
   }
 };
 
-const deleteCar = async (req, res) => {
+export const deleteCar = async (req, res) => {
   try {
     const deletedCar = await Car.findByIdAndDelete(req.params.id);
 
@@ -202,7 +204,7 @@ const deleteCar = async (req, res) => {
 };
 
 // Delete a car
-const deleteRequest = async (req, res) => {
+export const deleteRequest = async (req, res) => {
   try {
     const deletedCar = await Car.findByIdAndDelete(req.params.id);
 
@@ -234,13 +236,13 @@ const deleteRequest = async (req, res) => {
   }
 };
 
-module.exports = {
-  getCars,
-  createCar,
-  getCarById,
-  updateCar,
-  deleteCar,
-  getPendingRequests,
-  updateRequestStatus,
-  deleteRequest,
-};
+// module.exports = {
+//   getCars,
+//   createCar,
+//   getCarById,
+//   updateCar,
+//   deleteCar,
+//   getPendingRequests,
+//   updateRequestStatus,
+//   deleteRequest,
+// };
