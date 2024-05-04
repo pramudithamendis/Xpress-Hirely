@@ -24,9 +24,11 @@ const mainhome = () => {
       <button className="bg-blue-600 text-white px-2 py-1 rounded-md ml-2"></button>
     </div>
     <div>
-      <span className="text-xl text-green-500 font-semibold">{price}</span>
+      {/* <span className="text-xl text-green-500 font-semibold">{price}</span> */}
       <p className="text-gray-500 text-sm">Includes taxes and fees</p>
-      <button className="bg-blue-600 text-white px-4 py-2 rounded-md mt-2">Book Now</button>
+      <button className="bg-blue-600 text-white px-4 py-2 rounded-md mt-2">
+        <a href="/books/create">Book Now</a>
+        </button>
     </div>
   </div>
 </div>

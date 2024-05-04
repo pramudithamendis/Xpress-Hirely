@@ -28,6 +28,14 @@ const Header = () => {
               </a>
             </li>
             <li className="mr-6">
+              <a
+                href="/mainhome"
+                className="menu-item hover:text-gray-900 relative"
+              >
+                BOOKING
+              </a>
+            </li>
+            <li className="mr-6">
               <a href="#" className="menu-item hover:text-gray-900 relative">
                 OFFERS
               </a>

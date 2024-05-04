@@ -101,6 +101,7 @@ import CreateBook from './pages/bookingPages/CreateBooks';
 import ShowBook from './pages/bookingPages/ShowBook';
 import EditBook from './pages/bookingPages/EditBook';
 import DeleteBook from './pages/bookingPages/DeleteBook';
+import Mainhome from "./pages/bookingPages/mainhome.jsx";
 const App = () => {
   const { isAuthenticated, userData } = useAuth();
   return (
@@ -252,6 +253,7 @@ const App = () => {
 
 
           <Route path='/bookshome' element={<HomeBooking />} />
+          <Route path='/mainhome' element={<Mainhome />} />
       <Route path='/books/create' element={<CreateBook />} />
       <Route path='/books/details/:id' element={<ShowBook />} />
       <Route path='/books/edit/:id' element={<EditBook />} />
