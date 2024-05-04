@@ -9,6 +9,7 @@ import refundRequestsRoute from './routes/refundRequestsRoute.js';
 import stripePaymentsRoute from './routes/stripePaymentsRoute.js';
 import sgMail from '@sendgrid/mail';
 import fs from 'fs';
+import offersRoutes from './routes/offersRoutes.js';
 
 
 import cors from 'cors';
@@ -88,7 +89,7 @@ app.use('/api/auth', authRouter);
 
 //Vehicle Maintenance - sachith
 app.use('/records', recordsRoute);
-
+app.use('/offers', offersRoutes );
 
 // MongoDB connection
 mongoose.connect(mongoDBURL || process.env.DB_URI, {
