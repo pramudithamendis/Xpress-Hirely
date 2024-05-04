@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import BackButton from '../components/BackButton';
 import Spinner from '../components/Spinner';
+import { saveAs } from 'file-saver';
 
 const ShowRecord = () => {
   const [record, setRecord] = useState({});
@@ -22,6 +23,23 @@ const ShowRecord = () => {
       setLoading(false);
     })
   }, [])
+
+  //Function to generate report data
+  const generateReport = () => {
+    const reportData = `
+      Record Id: ${record._id}
+      Maintenance Type: ${record.Maintaintype}
+      Vehicle Id: ${record.VehicleID}
+      Date: ${record.Date}
+      Mileage: ${record.Milage}
+      Description: ${record.Description}
+      Create Time: ${new Date(record.createdAt).toString()}
+      Last Update Time: ${new Date(record.updatedAt).toString()}
+    `;
+    const blob = new Blob([reportData], { type: 'text/plain;charset=utf-8' });
+    saveAs(blob, 'record_report.txt');
+  }
+  
 
   return (
     <div className='p-4'>
@@ -62,6 +80,10 @@ const ShowRecord = () => {
           <div className='my-4'>
             <span className='text-xl mr-4 text-gray-500'>Last Update Time</span>
             <span>{new Date(record.updatedAt).toString()}</span>
+          </div>
+          {/* Download button */}
+          <div className='flex flex-col border-2 bg-orange-500 hover:bg-orange-600 rounded-*1 w-fit p-4 rounded-lg'>
+          <button onClick={generateReport}>Download Report</button>
           </div>
         </div>
       )}
