@@ -19,8 +19,41 @@ const Payments_ClientView = () => {
     const [stripepayments, setStripePayments] = useState([]);
     const [paymentmethods, setPaymentMethods] = useState([]);
 
+    const [searchInput, setSearchInput] = useState("");
+    const [filteredCardPayments, setFilteredCardPayments] = useState([]);
+    const [filteredCashPayments, setFilteredCashPayments] = useState([]);
+    const [filteredStripePayments, setFilteredStripePayments] = useState([]);
+    const [filteredRefundRequests, setFilteredRefundRequests] = useState([]);
+
     const [loading, setLoading] = useState(false);
     const [showType, setShowType] = useState('');
+
+    useEffect(() => {
+        const filteredData = cardpayments.filter(item => {
+            return item.Amount.toString().includes(searchInput);
+        });
+        setFilteredCardPayments(filteredData);
+    }, [cardpayments, searchInput]);
+
+    useEffect(() => {
+        const filteredData = cashpayments.filter(item => {
+            return item.ReceiptNo.toString().includes(searchInput) ||
+        item.Amount.toString().includes(searchInput) ||
+        item.Status.toString().includes(searchInput);
+        });
+        setFilteredCashPayments(filteredData);
+    }, [cashpayments, searchInput]);
+
+    useEffect(() => {
+        const filteredData = stripepayments.filter(item => {
+            return item.Amount.toString().includes(searchInput); 
+        });
+        setFilteredStripePayments(filteredData);
+    }, [stripepayments, searchInput]);
+
+    const handleSearchChange = (newSearchTerm) => {
+        setSearchInput(newSearchTerm);
+      };
 
     useEffect(() => {
         setLoading(true);
@@ -99,10 +132,10 @@ const Payments_ClientView = () => {
             </div>
 
 
-            {loading ? <Spinner /> : showType === 'CardPaymentsTable' ? (<CardPaymentsTable cardpayments={cardpayments} />) :
-            showType === 'CashPaymentsTable' ? (<CashPaymentsTable cashpayments={cashpayments} />) :
-            showType === 'PaymentMethodTable' ? (<PaymentMethodTable paymentmethods={paymentmethods} />) :
-            showType === 'StripePaymentsTable' ? (<StripePaymentsTable stripepayments={stripepayments} />) :
+            {loading ? <Spinner /> : showType === 'CardPaymentsTable' ? (<CardPaymentsTable cardpayments={filteredCardPayments} />) :
+            showType === 'CashPaymentsTable' ? (<CashPaymentsTable cashpayments={filteredCashPayments} />) :
+            showType === 'PaymentMethodTable' ? (<PaymentMethodTable paymentmethods={filteredRefundRequests} />) :
+            showType === 'StripePaymentsTable' ? (<StripePaymentsTable stripepayments={filteredStripePayments} />) :
             null
             }
         <br/>
