@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@react-pdf/renderer": "^3.4.4",
-    "antd": "^5.16.5",
+    "antd": "^5.17.0",
     "axios": "^1.6.2",
     "dlv": "^1.1.3",
     "jspdf": "^2.5.1",
