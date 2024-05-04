@@ -62,7 +62,7 @@ import Profile from "./pages/ProfilePage.jsx";
 import { Navigate } from "react-router-dom";
 
 
-import LicenseDashboard from "./components/admin/Dashboard";
+
 
 import Home from "./pages/Home";
 import CreateRecord from "./pages/createRecords";
@@ -70,8 +70,8 @@ import ShowRecord from "./pages/ShowRecord";
 import EditRecord from "./pages/editRecord";
 import DeleteRecord from "./pages/deleteRecord";
 
-import adminDashboard from "./components/admin/Dashboard";
-
+// import adminDashboard from "./components/admin/Dashboard";
+import LicenseDashboard from "./components/admin/Dashboard";
 import AddLicense from "./components/admin/AddLicense";
 import LicenseForm from "./components/admin/LicenseForm";
 import InsuranceForm from "./components/admin/InsuranceForm";

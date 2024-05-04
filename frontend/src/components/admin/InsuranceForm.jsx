@@ -98,7 +98,7 @@ const InsuranceForm = () => {
           <input type="file" id="uploadInsurance" name="uploadInsurance" onChange={handleFileChange} className="shadow border rounded py-2 px-3 text-gray-700" />
         </div>
         <div className="flex items-center justify-between">
-          <button type="button" className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">BACK</button>
+          {/* <button type="button" className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">BACK</button> */}
           <button type="submit" className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">NEXT</button>
         </div>
       </form>
