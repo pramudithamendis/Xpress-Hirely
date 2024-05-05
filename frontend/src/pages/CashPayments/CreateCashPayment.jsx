@@ -7,10 +7,13 @@ import Spinner from '../../components/Spinner';
 
 const CreateCashPayment = () => {
     // const [PaymentID, setPaymentID] = useState('');
-    const [ReceiptNo, setReceiptNo] = useState('');
-    const [Date, setDate] = useState('');
+    const [ReceiptNo, setReceiptNo] = useState('Pending');
+
+    const today = new Date().toISOString().slice(0, 10); // Get today's date in YYYY-MM-DD format
+    const [Date, setDate] = useState(today);
+    // const [Date, setDate] = useState('');
     const [Status, setStatus] = useState('Pending');
-    const [Amount, setAmount] = useState(0);
+    const [Amount, setAmount] = useState(1000);
     const [selectedFile, setSelectedFile] = useState(null);
 
     const [loading, setLoading] = useState(false);

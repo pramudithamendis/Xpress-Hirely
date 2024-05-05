@@ -10,7 +10,7 @@ const CreateStripePayment = () => {
     const [CardNumber, setCardNumber] = useState('');
     const [CVV, setCVV] = useState('');
     const [DateOfExpiry, setDateOfExpiry] = useState('');
-    const [Amount, setAmount] = useState(100); // default amount in cents 
+    const [Amount, setAmount] = useState(1000); // default amount in cents 
     
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
