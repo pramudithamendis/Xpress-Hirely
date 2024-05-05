@@ -12,7 +12,7 @@ router.post('/user', async (request, response) => {
         if (
             // !request.body.PaymentID ||
             !request.body.ReceiptNo ||
-            !request.body.Date ||
+            !request.body.PaymentDate ||
             !request.body.Status ||
             !request.body.Amount
         ) {
@@ -23,7 +23,7 @@ router.post('/user', async (request, response) => {
         const newCashPayment = {
             // PaymentID: request.body.PaymentID,
             ReceiptNo: request.body.ReceiptNo,
-            Date: request.body.Date,
+            Date: request.body.PaymentDate,
             Status: request.body.Status,
             Amount: request.body.Amount,
         };

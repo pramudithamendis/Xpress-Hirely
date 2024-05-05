@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import clientbg from '../../images/clientbg.jpeg';
-import BackButton from '../../components/BackButton';
 import Spinner from '../../components/Spinner';
 
 const ShowPaymentMethod  = () => {
@@ -25,7 +24,7 @@ const ShowPaymentMethod  = () => {
 
     return (
         <div className="flex justify-center items-center h-screen bg-cover bg-center" style={{backgroundImage: `url(${clientbg})`}}>
-<BackButton />
+
 {loading ? (
                 <Spinner />
             ) : (

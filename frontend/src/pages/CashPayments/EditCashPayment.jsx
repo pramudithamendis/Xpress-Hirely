@@ -9,7 +9,7 @@ const EditCashPayment = () => {
     // const [PaymentID, setPaymentID] = useState('');
     const [ReceiptNo, setReceiptNo] = useState('');
     const [Status, setStatus] = useState('');
-    const [Date, setDate] = useState('');
+    const [PaymentDate, setPaymentDate] = useState('');
     const [Amount, setAmount] = useState('');
     
     const [loading, setLoading] = useState(false);
@@ -23,7 +23,7 @@ const EditCashPayment = () => {
                 // setPaymentID(response.data.PaymentID);
                 setReceiptNo(response.data.ReceiptNo);
                 setStatus(response.data.Status);
-                setDate(response.data.Date);
+                setPaymentDate(response.data.PaymentDate);
                 setAmount(response.data.Amount);
                 setLoading(false);
 
@@ -41,7 +41,7 @@ const EditCashPayment = () => {
             // PaymentID,
             ReceiptNo,
             Status,
-            Date,
+            PaymentDate,
             Amount,
         };
         setLoading(true);
@@ -95,9 +95,10 @@ const EditCashPayment = () => {
                 <div className='my-4'>
                     <label className='text-x1 mr-4 text-gray-500'>Date</label>
                     <input
-                        type='text'
-                        value={Date}
-                        onChange={(e) => setDate(e.target.value)}
+                        type='date'
+                        value={PaymentDate}
+                        onChange={(e) => setPaymentDate(e.target.value)}
+                        max={new Date().toISOString().split('T')[0]}
                         className='bg-white text-black border border-orange-500 focus:border-orange-500 px-4 py-2 rounded w-full'
                     />
                 </div>

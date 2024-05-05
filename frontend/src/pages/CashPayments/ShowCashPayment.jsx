@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import clientbg from '../../images/clientbg.jpeg';
-import BackButton from '../../components/BackButton';
 import Spinner from '../../components/Spinner';
 import jsPDF from 'jspdf';
 
@@ -39,7 +38,7 @@ const ShowCashPayment = () => {
         currentY += 8;
         doc.text(`Amount: ${cashpayment.Amount}`, 20, currentY);
         currentY += 8;
-        doc.text(`Date: ${cashpayment.Date}`, 20, currentY);
+        doc.text(`PaymentDate: ${cashpayment.PaymentDate}`, 20, currentY);
     
         
         doc.setFontSize(10);
@@ -53,9 +52,8 @@ const ShowCashPayment = () => {
       };
 
     return (
-        <div className="flex items-center h-screen bg-cover bg-center" style={{backgroundImage: `url(${clientbg})`}}>
+        <div className="flex justify-center items-center h-screen bg-cover bg-center" style={{backgroundImage: `url(${clientbg})`}}>
 
-    <BackButton />
         <div className='bg-gray-300 rounded-lg bg-opacity-88 p-4'>
            
             <h1 className='text-orange-500 font-bold'>Cash Payment Details</h1>
@@ -74,7 +72,7 @@ const ShowCashPayment = () => {
                         <span>{cashpayment.ReceiptNo}</span>
                     </div>
                     <div>
-                        <span className='text-x1 mr-4 text-gray-500'>Date</span>
+                        <span className='text-x1 mr-4 text-gray-500'>PaymentDate</span>
                         <span>{new Date(cashpayment.createdAt).toString()}</span>
                     </div>
                     <div>
@@ -87,10 +85,10 @@ const ShowCashPayment = () => {
                     </div>
 
                 </div>
-            {/* )} */}
+                <button className="bg-orange-500 hover:bg-orange-600 text-black border border-black hover:border-black px-4 py-2 rounded-full" onClick={() => handleGenerateReport(cashpayment)}>Generate Payment Report</button>
+
         </div>
-        <br/><br/><br/><br/>
-        <button className="bg-orange-500 hover:bg-orange-600 text-black border border-black hover:border-black px-4 py-2 rounded-full" onClick={() => handleGenerateReport(cashpayment)}>Generate Payment Report</button>
+        
         </div>
     )
 }

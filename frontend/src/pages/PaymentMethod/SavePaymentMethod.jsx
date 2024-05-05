@@ -35,7 +35,7 @@ const SavePaymentMethod = () => {
 
     return (
         <div className="flex justify-center items-center h-screen bg-cover bg-center" style={{backgroundImage: `url(${clientbg})`}}>
-        <div className='bg-gray-300 rounded-lg bg-opacity-88 p-4'>
+        <div className='bg-gray-300 rounded-lg bg-opacity-88 p-4 w-[500px]'>
             
             <h1 className='text-3x1 my-4'>Select the method you prefer to save.</h1>
             <hr class="w-200px mx-auto border-t-2 border-gray-300 my-4"/>
