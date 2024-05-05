@@ -107,6 +107,14 @@ import ShowFeedback from "../src/pages/ShowFeedback";
 import FirstPageF from "../src/pages/FirstPage";
 import AddFeedbackUser from "../src/pages/AddFeedbackUser";
 // import Layout from './components/layouts/Layout';
+
+import AHome from '../src/pages/bookingAdmin/Home.jsx';
+import ACreateBook from '../src/pages/bookingAdmin/CreateBooks.jsx';
+import AShowBook from '../src/pages/bookingAdmin/ShowBook.jsx';
+import AEditBook from '../src/pages/bookingAdmin/EditBook.jsx';
+import ADeleteBook from '../src/pages/bookingAdmin/DeleteBook.jsx';
+
+
 const App = () => {
   const { isAuthenticated, userData } = useAuth();
   return (
@@ -297,6 +305,13 @@ const App = () => {
         <Route path="/feedbacks/edit/:id" element={<EditFeedback />} />
         <Route path="/feedbacks/delete/:id" element={<DeleteFeedback />} />
         <Route path="/feedbacks/addUser/" element={<AddFeedbackUser />} />
+
+        {/* Admin */}
+        <Route path='/a' element={<AHome />} />
+      <Route path='/abooks/create' element={<ACreateBook />} />
+      <Route path='/abooks/details/:id' element={<AShowBook />} />
+      <Route path='/abooks/edit/:id' element={<AEditBook />} />
+      <Route path='/abooks/delete/:id' element={<ADeleteBook />} />
       </Routes>
     </Layout>
   );

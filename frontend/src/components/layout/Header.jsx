@@ -21,7 +21,7 @@ const Header = () => {
           <ul className="flex">
             <li className="mr-6">
               <a
-                href="/mainhome"
+                href="/"
                 className="menu-item hover:text-gray-900 relative"
               >
                 HOME

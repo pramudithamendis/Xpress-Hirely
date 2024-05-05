@@ -10,6 +10,7 @@ const AdminDashboard = () => {
   const handleLogout = async () => {
     await logout();
   };
+  
   return (
     <div className="px-40 py-16">
       <Card className="profile-card">
@@ -18,11 +19,11 @@ const AdminDashboard = () => {
           <Typography.Title level={2} strong className="username">
             {userData.name}
           </Typography.Title>
-          <Typography.Text type="secondary" strong>
-            Email: {userData.email}
+          <Typography.Text>
+            Email: <strong>{userData.email}</strong>
           </Typography.Text>
-          <Typography.Text type="secondary" strong>
-            Role: {userData.role}
+          <Typography.Text>
+            Role: <strong>{userData.role}</strong>
           </Typography.Text>
           <div className="flex justify-between space-x-8">
             <Link to="/request-management">
@@ -50,7 +51,7 @@ const AdminDashboard = () => {
             </Link>
             <Link to="/recordHome">
               <button className="rounded bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4">
-                Vehicle Maintainance
+                Vehicle Maintenance
               </button>
             </Link>
 
@@ -60,20 +61,20 @@ const AdminDashboard = () => {
               </button>
             </Link>
 
-            
             <Link to="/offers/home">
               <button className="rounded bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4">
-                Offers Manegment
+                Offers Management
               </button>
             </Link>
             <Link to="/feedbacks/home">
               <button className="rounded bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4">
-                Feedback Manegment
+                Feedback Management
+              </button>
+            </Link>
 
             <Link to="/vehicle-details">
               <button className="rounded bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4">
                 Vehicle Details
-
               </button>
             </Link>
           </div>
