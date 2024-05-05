@@ -36,7 +36,7 @@ const Home = () => {
     
     <div className='p-4'>
       <div className='flex justify-between items-center'>
-      <h1 className='text-4xl font-bold text-center text-gray-800 mt-8 mb-6'>My Bookings</h1>
+      <h1 className='text-4xl font-bold text-center text-gray-800 mt-8 mb-6 Mybookings'>My Bookings</h1>
 
         <Link to='/books/create'>
         <HiOutlinePlusCircle color="green" size={50} />
