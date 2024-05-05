@@ -22,32 +22,31 @@ import DeleteRentHisPage from "./pages/DeleteRentHis.page";
 import EditRentHisPage from "./pages/EditRentHis.page";
 import HomeRentHisPage from "./pages/HomeRentHis.page";
 import ShowRentHisPage from "./pages/ShowRentHis.page";
+import HomeUserRentHisPage from "./pages/HomeUserRentHis.jsx";
 //<<<<<<< piyaraCRUD
 
-import Payments_ClientView from './pages/Payments_ClientView';
-import Payments_AdminView from './pages/Payments_AdminView';
-import ChoosePaymentOption from './pages/ChoosePaymentOption';
+import Payments_ClientView from "./pages/Payments_ClientView";
+import Payments_AdminView from "./pages/Payments_AdminView";
+import ChoosePaymentOption from "./pages/ChoosePaymentOption";
 
-import CreateCardPayment from './pages/CardPayments/CreateCardPayment';
-import ShowCardPayment from './pages/CardPayments/ShowCardPayment';
+import CreateCardPayment from "./pages/CardPayments/CreateCardPayment";
+import ShowCardPayment from "./pages/CardPayments/ShowCardPayment";
 
-import EditCashPayment from './pages/CashPayments/EditCashPayment';
-import CreateCashPayment from './pages/CashPayments/CreateCashPayment';
-import ShowCashPayment from './pages/CashPayments/ShowCashPayment';
+import EditCashPayment from "./pages/CashPayments/EditCashPayment";
+import CreateCashPayment from "./pages/CashPayments/CreateCashPayment";
+import ShowCashPayment from "./pages/CashPayments/ShowCashPayment";
 
-import EditPaymentMethod from './pages/PaymentMethod/EditPaymentMethod';
-import SavePaymentMethod from './pages/PaymentMethod/SavePaymentMethod';
-import DeletePaymentMethod from './pages/PaymentMethod/DeletePaymentMethod';
-import ShowPaymentMethod from './pages/PaymentMethod/ShowPaymentMethod';
+import EditPaymentMethod from "./pages/PaymentMethod/EditPaymentMethod";
+import SavePaymentMethod from "./pages/PaymentMethod/SavePaymentMethod";
+import DeletePaymentMethod from "./pages/PaymentMethod/DeletePaymentMethod";
+import ShowPaymentMethod from "./pages/PaymentMethod/ShowPaymentMethod";
 
-import CreateRequestRefund from './pages/RefundRequests/CreateRequestRefund';
-import ShowRefundRequest from './pages/RefundRequests/ShowRefundRequest';
-import UpdateRefundRequest from './pages/RefundRequests/UpdateRefundRequest';
+import CreateRequestRefund from "./pages/RefundRequests/CreateRequestRefund";
+import ShowRefundRequest from "./pages/RefundRequests/ShowRefundRequest";
+import UpdateRefundRequest from "./pages/RefundRequests/UpdateRefundRequest";
 
-import CreateStripePayment from './pages/StripePayments/CreateStripePayment';
-import ShowStripePayment from './pages/StripePayments/ShowStripePayment';
-
-
+import CreateStripePayment from "./pages/StripePayments/CreateStripePayment";
+import ShowStripePayment from "./pages/StripePayments/ShowStripePayment";
 
 //=======
 import "./App.css";
@@ -60,9 +59,6 @@ import { useAuth } from "./contexts/AuthContext";
 import Layout from "./components/layout/Layout";
 import Profile from "./pages/ProfilePage.jsx";
 import { Navigate } from "react-router-dom";
-
-
-
 
 import Home from "./pages/Home";
 import CreateRecord from "./pages/createRecords";
@@ -78,40 +74,38 @@ import InsuranceForm from "./components/admin/InsuranceForm";
 import InsuranceDashboard from "./components/admin/InsuranceDashboard";
 import AddInsurance from "./components/admin/Addinsurance";
 // lahiru
-import OfferHome from './pages/OfferPages/Home';
-import AddOffer from './pages/OfferPages/AddOffer';
-import EditOffers from './pages/OfferPages/EditOffers';
-import DeleteOffers from './pages/OfferPages/DeleteOffers';
-import ShowOffers from './pages/OfferPages/ShowOffers';
-import FirstPage from './pages/OfferPages/FirstPage';
+import OfferHome from "./pages/OfferPages/Home";
+import AddOffer from "./pages/OfferPages/AddOffer";
+import EditOffers from "./pages/OfferPages/EditOffers";
+import DeleteOffers from "./pages/OfferPages/DeleteOffers";
+import ShowOffers from "./pages/OfferPages/ShowOffers";
+import FirstPage from "./pages/OfferPages/FirstPage";
 // import Layout from './components/layouts/Layout';
 
-
 //Nimesha files
-import { ToastContainer } from 'react-toastify'; // Import ToastContainer
-import OnBoarding from '../src/pages/OnBoarding.jsx';
-import RentRequest from './pages/RentRequest.jsx';
-import RequestManagement from './pages/RequestManagment.jsx';
-import VehicleDetails from './pages/VehicleDetails.jsx';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from "react-toastify"; // Import ToastContainer
+import OnBoarding from "../src/pages/OnBoarding.jsx";
+import RentRequest from "./pages/RentRequest.jsx";
+import RequestManagement from "./pages/RequestManagment.jsx";
+import VehicleDetails from "./pages/VehicleDetails.jsx";
+import "react-toastify/dist/ReactToastify.css";
 
-
-import HomeBooking from './pages/bookingPages/Home.jsx';
-import CreateBook from './pages/bookingPages/CreateBooks';
-import ShowBook from './pages/bookingPages/ShowBook';
-import EditBook from './pages/bookingPages/EditBook';
-import DeleteBook from './pages/bookingPages/DeleteBook';
+import HomeBooking from "./pages/bookingPages/Home.jsx";
+import CreateBook from "./pages/bookingPages/CreateBooks";
+import ShowBook from "./pages/bookingPages/ShowBook";
+import EditBook from "./pages/bookingPages/EditBook";
+import DeleteBook from "./pages/bookingPages/DeleteBook";
 import Mainhome from "./pages/bookingPages/mainhome.jsx";
 
 //feedbacks
 // import ShowFeedback from "../src/pages/ShowFeedback.jsx"
-import HomeFeeback from '../src/pages/Home copy.jsx';
-import AddFeedback from '../src/pages/AddFeedback';
-import EditFeedback from '../src/pages/EditFeedback';
-import DeleteFeedback from '../src/pages/DeleteFeedback ';
-import ShowFeedback from '../src/pages/ShowFeedback';
-import FirstPageF from '../src/pages/FirstPage';
-import AddFeedbackUser from '../src/pages/AddFeedbackUser';
+import HomeFeeback from "../src/pages/Home copy.jsx";
+import AddFeedback from "../src/pages/AddFeedback";
+import EditFeedback from "../src/pages/EditFeedback";
+import DeleteFeedback from "../src/pages/DeleteFeedback ";
+import ShowFeedback from "../src/pages/ShowFeedback";
+import FirstPageF from "../src/pages/FirstPage";
+import AddFeedbackUser from "../src/pages/AddFeedbackUser";
 // import Layout from './components/layouts/Layout';
 const App = () => {
   const { isAuthenticated, userData } = useAuth();
@@ -122,17 +116,18 @@ const App = () => {
         {/* this has the signup and signin buttons */}
         <Route path="/chat/create" element={<Create />} />{" "}
         {/* this has the issue creating form */}
-        <Route path="/chat/chats"
-        element={
-          !isAuthenticated ? (
-            <Register />
-          ) : userData.role === "admin" ? (
-            <Navigate to="/chat/chats/admin" />
-          ) : (
-            <Chats />
-          )
-        }
-         />{" "}
+        <Route
+          path="/chat/chats"
+          element={
+            !isAuthenticated ? (
+              <Register />
+            ) : userData.role === "admin" ? (
+              <Navigate to="/chat/chats/admin" />
+            ) : (
+              <Chats />
+            )
+          }
+        />{" "}
         {/* this has all the chats */}
         <Route path="/chat/delete/:id" element={<Delete />} />{" "}
         {/* this has the confirm message to delete an issue */}
@@ -169,31 +164,66 @@ const App = () => {
         <Route path="/rents/detailsHis/:id" element={<ShowRentHisPage />} />
         <Route path="rents/editHis/:id" element={<EditRentHisPage />} />
         <Route path="rents/deleteHis/:id" element={<DeleteRentHisPage />} />
-
-
-
-        <Route path='/user' element={<Payments_ClientView />} />
-        <Route path='/admin' element={<Payments_AdminView />} />
-        <Route path='/method' element={<ChoosePaymentOption />} />
-
-        <Route path='/cardpayments/user/create' element={<CreateCardPayment />} />
-        <Route path='/cashpayments/user/create' element={<CreateCashPayment />} />
-        <Route path='/stripepayments/user/create' element={<CreateStripePayment />} />
-        <Route path='/savepaymentmethod/user/create' element={<SavePaymentMethod />} />
-        <Route path='/refundrequests/user/create' element={<CreateRequestRefund />} />
-
-        <Route path='/cardpayments/user/details/:id' element={<ShowCardPayment />} />
-        <Route path='/cashpayments/user/details/:id' element={<ShowCashPayment />} />
-        <Route path='/stripepayments/user/details/:id' element={<ShowStripePayment />} />
-        <Route path='/savepaymentmethod/user/details/:id' element={<ShowPaymentMethod />} />
-        <Route path='/refundrequests/admin/details/:id' element={<ShowRefundRequest />} />
-
-        <Route path='/cashpayments/admin/edit/:id' element={<EditCashPayment />} />
-        <Route path='/savepaymentmethod/user/edit/:id' element={<EditPaymentMethod />} />
-        <Route path='/refundrequests/admin/edit/:id' element={<UpdateRefundRequest />} />
-
-        <Route path='/savepaymentmethod/user/delete/:id' element={<DeletePaymentMethod />} />
-
+        <Route path="/userRents" element={<HomeUserRentHisPage />} />
+        <Route path="/user" element={<Payments_ClientView />} />
+        <Route path="/admin" element={<Payments_AdminView />} />
+        <Route path="/method" element={<ChoosePaymentOption />} />
+        <Route
+          path="/cardpayments/user/create"
+          element={<CreateCardPayment />}
+        />
+        <Route
+          path="/cashpayments/user/create"
+          element={<CreateCashPayment />}
+        />
+        <Route
+          path="/stripepayments/user/create"
+          element={<CreateStripePayment />}
+        />
+        <Route
+          path="/savepaymentmethod/user/create"
+          element={<SavePaymentMethod />}
+        />
+        <Route
+          path="/refundrequests/user/create"
+          element={<CreateRequestRefund />}
+        />
+        <Route
+          path="/cardpayments/user/details/:id"
+          element={<ShowCardPayment />}
+        />
+        <Route
+          path="/cashpayments/user/details/:id"
+          element={<ShowCashPayment />}
+        />
+        <Route
+          path="/stripepayments/user/details/:id"
+          element={<ShowStripePayment />}
+        />
+        <Route
+          path="/savepaymentmethod/user/details/:id"
+          element={<ShowPaymentMethod />}
+        />
+        <Route
+          path="/refundrequests/admin/details/:id"
+          element={<ShowRefundRequest />}
+        />
+        <Route
+          path="/cashpayments/admin/edit/:id"
+          element={<EditCashPayment />}
+        />
+        <Route
+          path="/savepaymentmethod/user/edit/:id"
+          element={<EditPaymentMethod />}
+        />
+        <Route
+          path="/refundrequests/admin/edit/:id"
+          element={<UpdateRefundRequest />}
+        />
+        <Route
+          path="/savepaymentmethod/user/delete/:id"
+          element={<DeletePaymentMethod />}
+        />
         <Route path="/insuranceform" element={<InsuranceForm />} />
         <Route path="/licensedashboard" element={<LicenseDashboard />} />
         <Route path="/licenseform" element={<LicenseForm />} />
@@ -243,40 +273,31 @@ const App = () => {
         <Route path="/records/details/:id" element={<ShowRecord />} />
         <Route path="/records/edit/:id" element={<EditRecord />} />
         <Route path="/records/delete/:id" element={<DeleteRecord />} />
-
-
-
-        <Route path='/offers' element={<FirstPage/>} />
-        <Route path='/offers/home' element={<OfferHome />} />
-        <Route path='/offers/show/:id' element={<ShowOffers />} />
-        <Route path='/offers/add' element={<AddOffer />} />
-        <Route path='/offers/edit/:id' element={<EditOffers />} />
-        <Route path='/offers/delete/:id' element={<DeleteOffers />} />
-        
-
-
-
+        <Route path="/offers" element={<FirstPage />} />
+        <Route path="/offers/home" element={<OfferHome />} />
+        <Route path="/offers/show/:id" element={<ShowOffers />} />
+        <Route path="/offers/add" element={<AddOffer />} />
+        <Route path="/offers/edit/:id" element={<EditOffers />} />
+        <Route path="/offers/delete/:id" element={<DeleteOffers />} />
         <Route path="" />
         <Route path="/onboarding" element={<OnBoarding />} />
-          <Route path="/rent-request" element={<RentRequest />} />
-          <Route path="/request-management" element={<RequestManagement />} />
-          <Route path="/vehicle-details" element={<VehicleDetails />} />
-
-
-          <Route path='/bookshome' element={<HomeBooking />} />
-          <Route path='/mainhome' element={<Mainhome />} />
-      <Route path='/books/create' element={<CreateBook />} />
-      <Route path='/books/details/:id' element={<ShowBook />} />
-      <Route path='/books/edit/:id' element={<EditBook />} />
-      <Route path='/books/delete/:id' element={<DeleteBook />} />
-
-      <Route path='/feedbacks' element={<FirstPageF/>} />
-        <Route path='/feedbacks/home' element={<HomeFeeback/>} />
-        <Route path='/feedbacks/show/:id' element={<ShowFeedback />} />
-        <Route path='/feedbacks/add' element={<AddFeedback />} />          {/* admin adding feedback */}
-        <Route path='/feedbacks/edit/:id' element={<EditFeedback />} />
-        <Route path='/feedbacks/delete/:id' element={<DeleteFeedback />} />
-        <Route path='/feedbacks/addUser/' element={<AddFeedbackUser />} />
+        <Route path="/rent-request" element={<RentRequest />} />
+        <Route path="/request-management" element={<RequestManagement />} />
+        <Route path="/vehicle-details" element={<VehicleDetails />} />
+        <Route path="/bookshome" element={<HomeBooking />} />
+        <Route path="/mainhome" element={<Mainhome />} />
+        <Route path="/books/create" element={<CreateBook />} />
+        <Route path="/books/details/:id" element={<ShowBook />} />
+        <Route path="/books/edit/:id" element={<EditBook />} />
+        <Route path="/books/delete/:id" element={<DeleteBook />} />
+        <Route path="/feedbacks" element={<FirstPageF />} />
+        <Route path="/feedbacks/home" element={<HomeFeeback />} />
+        <Route path="/feedbacks/show/:id" element={<ShowFeedback />} />
+        <Route path="/feedbacks/add" element={<AddFeedback />} />{" "}
+        {/* admin adding feedback */}
+        <Route path="/feedbacks/edit/:id" element={<EditFeedback />} />
+        <Route path="/feedbacks/delete/:id" element={<DeleteFeedback />} />
+        <Route path="/feedbacks/addUser/" element={<AddFeedbackUser />} />
       </Routes>
     </Layout>
   );

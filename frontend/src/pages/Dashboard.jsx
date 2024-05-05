@@ -2,6 +2,7 @@ import React from "react";
 import { Avatar, Button, Card, Flex, Typography } from "antd";
 import { useAuth } from "../contexts/AuthContext";
 import { UserOutlined } from "@ant-design/icons";
+import { Link } from "react-router-dom";
 
 const Dashboard = () => {
   const { userData, logout } = useAuth();
@@ -25,9 +26,11 @@ const Dashboard = () => {
             Role: {userData.role}
           </Typography.Text>
           <div className="flex justify-between space-x-8">
-            <button className="rounded bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4">
-              My Rentals
-            </button>
+            <Link to="/userRents">
+              <button className="rounded bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4">
+                My Rentals
+              </button>
+            </Link>
             <button className="rounded bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4">
               <a href="/user">Payment Details</a>
             </button>
