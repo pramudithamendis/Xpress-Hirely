@@ -1,0 +1,128 @@
+.AChat_parent{
+    /* background-color: blue; */
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-left: 10px;
+    
+}
+.AChat_leftpanel{
+    background-color: #FF8A00;
+    width: 300px;
+    border-radius: 20px;
+    height: 50px;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.AChat_parent_middlepanel{
+    background-color: white;
+    /* flex-grow: 1; */
+    width: 300px;
+    border-radius: 20px;
+    height: 450px;
+    justify-content: center;
+    box-shadow: 10px 10px;
+    -webkit-box-shadow: 10px 10px 21px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 21px 0px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 21px 0px rgba(0,0,0,0.75);  
+background-color: none;
+border: 1px solid white;
+
+    
+}
+
+.AChat_parent_middlepanel_title{
+margin-left: 20px;
+/* background-color: aqua; */
+color: white;
+margin-bottom: 20px;
+margin-right: 10px;
+margin-top: 10px;
+border-radius: 20px;
+padding-left: 10px;
+}
+
+.AChat_parent_middlepanel_vehicle{
+margin-left: 20px;
+/* background-color: aqua; */
+color: white;
+margin-bottom: 20px;
+margin-right: 10px;
+border-radius: 20px;
+padding-left: 10px;
+
+}
+.AChat_parent_middlepanel_issue{
+margin-left: 20px;
+/* background-color: aqua; */
+color: white;
+height: 300px;
+margin-right: 10px;
+border-radius: 20px;
+padding-left: 10px;
+
+}
+
+
+.rightpanel{
+    background-color: yellowgreen;
+    border-top-left-radius: 20px;
+    width: 300px;
+
+    
+
+}
+
+.AChat_parent_middlepanel_vehicle_hr{
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.AChat_parent_middlepanel_title_hr{
+        margin-right: 10px;
+        margin-left: 10px;
+}
+
+.AChat_parent_middlepanel_operations{
+    display: flex;
+    justify-content: center;
+}
+
+
+.AChat_parent_right_panel{
+    margin-left: 50px;
+    width: 300px;
+    border-radius: 20px;
+    height: auto;
+    justify-content: center;
+    box-shadow: 10px 10px;
+    -webkit-box-shadow: 10px 10px 21px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 21px 0px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 21px 0px rgba(0,0,0,0.75);  
+background-color: none;
+background-color: rgb(74, 189, 95);
+border: 1px solid white;
+}
+
+
+.AChat_parent_right_panel_title{
+    margin-left: 20px;
+    
+    color: white;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    margin-top: 10px;
+    border-radius: 20px;
+    padding-left: 10px;   
+}
+
+.AChat_Reply{
+    background-color:#c98231 ;
+    padding: 20px;
+    margin-left: 10px;
+    border-radius: 20px;
+}

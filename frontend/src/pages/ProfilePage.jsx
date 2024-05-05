@@ -18,10 +18,10 @@ const ProfilePage = () => {
             </div>
           </div>
           <div className="flex justify-between">
-            <button className="rounded bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4">
+            <button className="rounded bg-orange-500 hover:bg-blue-700 text-white font-bold py-2 px-4">
               My Rentals
             </button>
-            <button className="rounded bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4">
+            <button className="rounded bg-orange-500 hover:bg-blue-700 text-white font-bold py-2 px-4">
               Payment Details
             </button>
           </div>

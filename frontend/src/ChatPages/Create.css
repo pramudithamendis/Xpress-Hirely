@@ -1,0 +1,90 @@
+body{
+    background: red;
+}
+
+.Create_parent{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    margin-left: 10px;    
+}
+.Create_parent_leftpanel{
+    background-color: #FF8A00;
+    width: 300px;
+    border-radius: 20px;
+    height: 50px;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.Create_parent_middlepanel{
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    background-color: white;
+    border: 1px solid white;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 10px 10px;
+    -webkit-box-shadow: 10px 10px 21px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 21px 0px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 21px 0px rgba(0,0,0,0.75);  
+}
+.Create_parent_middlepanel_title{
+    /* background-color: yellowgreen; */
+    width: 300px;
+    height: 50px;
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: none;
+    border: 1px solid white;
+}
+
+.Create_parent_middlepanel_vehicle{
+    /* background-color: yellowgreen; */
+    width: 300px;
+    height: 50px;
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: none;
+    border: 1px solid white;
+}
+
+.Create_parent_middlepanel_issue{
+    /* background-color: yellowgreen; */
+    width: 300px;
+    height: 50px;
+ 
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom: 10px;
+    /* height: 200px; */
+    background-color: none;
+    border: 1px solid white;
+
+}
+
+.Create_parent_middlepanel_button{
+    background-color: white;
+    border: 1px solid white;
+    color: black;
+
+    width: 300px;
+    height: 50px;
+ 
+    border-radius: 20px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+
+.Create_parent_middlepanel_button{
+    background-color: #FF8A00;
+}
