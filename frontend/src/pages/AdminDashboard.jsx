@@ -25,7 +25,6 @@ const AdminDashboard = () => {
             Role: {userData.role}
           </Typography.Text>
           <div className="flex justify-between space-x-8">
-
             <Link to="/request-management">
               <button className="rounded bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4">
                 Request Management
@@ -43,13 +42,12 @@ const AdminDashboard = () => {
                 License Dashboard
               </button>
             </Link>
-
+            <br />
             <Link to="/rentHome">
               <button className="rounded bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4">
                 User Rentals
               </button>
             </Link>
-
             <Link to="/recordHome">
               <button className="rounded bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4">
                 Vehicle Maintainance
@@ -59,6 +57,11 @@ const AdminDashboard = () => {
             <Link to="/admin">
               <button className="rounded bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4">
                 User Payments
+              </button>
+            </Link>
+            <Link to="/vehicle-details">
+              <button className="rounded bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4">
+                Vehicle Details
               </button>
             </Link>
           </div>
