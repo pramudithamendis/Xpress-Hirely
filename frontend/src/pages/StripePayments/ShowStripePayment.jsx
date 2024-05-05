@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import clientbg from '../../images/clientbg.jpeg';
-import BackButton from '../../components/BackButton';
 import Spinner from '../../components/Spinner';
 import jsPDF from 'jspdf';
 
@@ -54,15 +53,9 @@ const ShowStripePayment = () => {
 
     return (
         <div className="flex justify-center items-center h-screen bg-cover bg-center" style={{backgroundImage: `url(${clientbg})`}}>
-             <BackButton /><br/>
-            <h1 className='text-orange-500 font-bold'>Stripe Payment Details</h1><br/><br/>
-
-            {/* <hr class="w-200px mx-auto border-t-2 border-gray-300 my-4"/> */}
-
-            {/* {loading ? (
-                <Spinner />
-            ) : ( */}
+             
                 <div className='bg-gray-300 rounded-lg bg-opacity-88 p-4'>
+                <h1 className='text-orange-500 font-bold'>Stripe Payment Details</h1><br/>
                     <div className='my-4'>
                         <span className='text-x1 mr-4 text-gray-500'>PaymentID</span>
                         <span>{stripepayment._id}</span>
@@ -87,9 +80,11 @@ const ShowStripePayment = () => {
                         <span className='text-x1 mr-4 text-gray-500'>Date</span>
                         <span>{new Date(stripepayment.createdAt).toString()}</span>
                     </div>
+                    <br/>
+                    <button className="bg-orange-500 hover:bg-orange-600 text-black border border-black hover:border-black px-4 py-2 rounded-full" onClick={() => handleGenerateReport(stripepayment)}>Generate Payment Report</button>
+
                 </div>
-                <br/><br/><br/><br/>
-        <button className="bg-orange-500 hover:bg-orange-600 text-black border border-black hover:border-black px-4 py-2 rounded-full" onClick={() => handleGenerateReport(stripepayment)}>Generate Payment Report</button>
+                
         </div>
     )
 }

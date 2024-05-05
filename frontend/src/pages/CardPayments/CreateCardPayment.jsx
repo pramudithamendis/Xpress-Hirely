@@ -96,6 +96,7 @@ const CreateCardPayment = () => {
                         type='date'
                         placeholder="DD/MM/YY"
                         value={DateOfExpiry} required
+                        min={new Date().toISOString().split('T')[0]} 
                         onChange={(e) => setDateOfExpiry(e.target.value)}
                         className='bg-white text-black border border-orange-500 focus:border-orange-500 px-4 py-2 rounded w-[500px]'
                     /><br/><br/>

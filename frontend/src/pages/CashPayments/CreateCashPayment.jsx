@@ -7,10 +7,11 @@ import Spinner from '../../components/Spinner';
 
 const CreateCashPayment = () => {
     // const [PaymentID, setPaymentID] = useState('');
-    const [ReceiptNo, setReceiptNo] = useState('');
-    const [Date, setDate] = useState('');
+    const [ReceiptNo, setReceiptNo] = useState('Pending');
+
+    const [PaymentDate, setPaymentDate] = useState(new Date().toISOString().slice(0, 10));
     const [Status, setStatus] = useState('Pending');
-    const [Amount, setAmount] = useState(0);
+    const [Amount, setAmount] = useState(1000);
     const [selectedFile, setSelectedFile] = useState(null);
 
     const [loading, setLoading] = useState(false);
@@ -20,7 +21,7 @@ const CreateCashPayment = () => {
         const data = {
             // PaymentID,
             ReceiptNo,
-            Date,
+            PaymentDate,
             Status,
             Amount,
         };
@@ -66,13 +67,7 @@ const CreateCashPayment = () => {
             <img src={upload_icon} alt="Upload Icon" className="w-10 h-10 mr-4" />Upload<br/>
 
             <input type="file" accept=".jpg, .png" className="absolute opacity-0 cursor-pointer" 
-            onChange={(e) => {
-                    handleFileUpload(e.target.files);
-                    setReceiptNo('Pending');
-                    setDate('');
-                    setAmount(0);
-                    setStatus('Pending');
-            }}
+            onChange={(e) => {handleFileUpload(e.target.files); }}
             />
 
   <button className='bg-white hover:bg-orange-600 text-black py-2 px-4 rounded-lg border border-orange-500 hover:border-orange-600'>

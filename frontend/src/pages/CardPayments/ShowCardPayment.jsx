@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import clientbg from '../../images/clientbg.jpeg';
-import BackButton from '../../components/BackButton';
 import Spinner from '../../components/Spinner';
 import jsPDF from 'jspdf';
 
@@ -56,7 +55,7 @@ const ShowCardPayment = () => {
 
     return (
         <div className="flex justify-center items-center h-screen bg-cover bg-center" style={{backgroundImage: `url(${clientbg})`}}>
-            <BackButton />
+           
         <div className ='bg-white text-black border border-orange-500 px-4 py-2'>
            
             <h1 className='text-orange-500 font-bold'>Card Payment Details</h1>
@@ -97,9 +96,10 @@ const ShowCardPayment = () => {
                     
                 </div>
              )} 
+             <button className="bg-orange-500 hover:bg-orange-600 text-black border border-black hover:border-black px-4 py-2 rounded-full " onClick={() => handleGenerateReport(cardpayment)}>Generate Payment Report</button>
         </div>
              <br/><br/><br/><br/>
-        <button className="bg-orange-500 hover:bg-orange-600 text-black border border-black hover:border-black px-4 py-2 rounded-full" onClick={() => handleGenerateReport(cardpayment)}>Generate Payment Report</button>
+        
         </div>
     )
 }

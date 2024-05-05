@@ -10,7 +10,7 @@ const AllCashPaymentsTable = ({ cashpayments }) => {
         <table className='w-full bg-gray-300 bg-opacity-88 border-collapse border border-black'>
         <thead>
             <tr>
-            <th className='border border-black px-4 py-2 text-center'>Date</th>
+            <th className='border border-black px-4 py-2 text-center'>PaymentDate</th>
                 <th className='border border-black px-4 py-2 text-center'>ReceiptNo</th>
                 <th className='border border-black px-4 py-2 text-center'>Amount</th>
                 <th className='border border-black px-4 py-2 text-center'>Status</th>
@@ -23,7 +23,7 @@ const AllCashPaymentsTable = ({ cashpayments }) => {
                 <tr key={cashpayment._id} className='h-8'>
 
                 <td className='border border-black px-4 py-2 text-center'>
-                    {cashpayment.Date}
+                    {cashpayment.PaymentDate}
                 </td>
                 <td className='border border-black px-4 py-2 text-center'>
                     {cashpayment.ReceiptNo}

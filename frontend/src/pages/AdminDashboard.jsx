@@ -35,6 +35,11 @@ const AdminDashboard = () => {
                 Vehicle Maintainance
               </button>
             </Link>
+            <Link to="/admin">
+              <button className="rounded bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4">
+                User Payments
+              </button>
+            </Link>
           </div>
           <Button
             size="large"

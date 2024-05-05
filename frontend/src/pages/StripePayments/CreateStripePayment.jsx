@@ -10,7 +10,7 @@ const CreateStripePayment = () => {
     const [CardNumber, setCardNumber] = useState('');
     const [CVV, setCVV] = useState('');
     const [DateOfExpiry, setDateOfExpiry] = useState('');
-    const [Amount, setAmount] = useState(100); // default amount in cents 
+    const [Amount, setAmount] = useState(1000); // default amount in cents 
     
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
@@ -75,6 +75,7 @@ const CreateStripePayment = () => {
                         type='date'
                         placeholder="Expiry Date"
                         value={DateOfExpiry}
+                        min={new Date().toISOString().split('T')[0]}
                         onChange={(e) => setDateOfExpiry(e.target.value)}
                         className='border-2 border-gray-500 px-4 py-2 w-200'
                     />

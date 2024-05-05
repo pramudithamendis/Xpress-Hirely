@@ -50,29 +50,29 @@ return (
     {loading ? <Spinner /> : ''}
 
         <label className='text-x1 mr-4 text-black'>BookingID</label>
-        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&nbsp;&nbsp;
         <input
                 type='text'
                 value={BookingID}
                 onChange={(e) => setBookingID(e.target.value)}
-                className='border border-yellow-500 rounded-lg p-2 w-[600px]'/><br/><br/>
+                className='border border-yellow-500 rounded-lg p-2 w-[500px]'/><br/><br/>
         
         <label className='text-x1 mr-4 text-black'>PaymentID</label>
-        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
         <input
                 type='text'
                 value={PaymentID}
                 onChange={(e) => setPaymentID(e.target.value)}
-                className='border border-yellow-500 rounded-lg p-2 w-[600px]'/><br/><br/>
+                className='border border-yellow-500 rounded-lg p-2 w-[500px]'/><br/><br/>
         
         <label className='text-x1 mr-4 text-black'>Email</label>
-        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&nbsp;
         <input
                 type='email'
                 value={Email}
                 // pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" 
                 onChange={(e) => setEmail(e.target.value)}
-                className='border border-yellow-500 rounded-lg p-2 w-[600px]'/><br/><br/>
+                className='border border-yellow-500 rounded-lg p-2 w-[500px]'/><br/><br/>
         
         <label className='text-x1 mr-4 text-black'>Reason_for_Request</label>
         <input
@@ -81,7 +81,7 @@ return (
                 onChange={(e) => {setReason_for_Request(e.target.value);
                     setDate(new Date().toISOString().slice(0, 10));
                     setStatus('Pending'); }}
-                className='border border-yellow-500 rounded-lg p-2 w-[600px]'/><br/><br/>
+                className='border border-yellow-500 rounded-lg p-2 w-[500px]'/><br/><br/>
 
         <button className='bg-orange-500 hover:bg-orange-600 text-black border border-black hover:border-black px-4 py-2 rounded-full' onClick={handleRequestRefund}>Submit Request</button>
     </div>
