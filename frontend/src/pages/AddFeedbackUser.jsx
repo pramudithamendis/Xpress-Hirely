@@ -16,10 +16,14 @@ const AddFeedback = () => {
     const validateForm = () => {
         let errors = [];
         if (!name.trim()) errors.push("Name");
-        if (!email.trim()) errors.push("Email");
+        if (!email.trim()) {
+            errors.push("Email is required");
+        } else if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/.test(email)) {
+            errors.push("Email is invalid");
+        }
         if (!details.trim()) errors.push("Details");
         if (errors.length > 0) {
-            enqueueSnackbar(`Please fill out the following fields: ${errors.join(", ")}`, { variant: 'warning' });
+            enqueueSnackbar(`Please correct the following: ${errors.join(", ")}`, { variant: 'warning' });
             return false;
         }
         return true;
@@ -41,7 +45,7 @@ const AddFeedback = () => {
             console.error('Error adding feedback:', error);
         } finally {
             setLoading(false);
-            navigate('/feedbacks');
+            navigate('/'); // Navigate to a default or home route after process
         }
     };
 

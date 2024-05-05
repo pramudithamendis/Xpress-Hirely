@@ -9,12 +9,14 @@ const OffersSingleCard = ({ offer }) => {
     const [showModal, setShowModal] = useState(false);
 
     return (
-        <div className='border-2 border-gray-500 rounded-lg p-4 m-4 hover:shadow-xl'>
-            <h2 className='font-bold text-lg'>{offer.name}</h2>
-            <p>{offer.description}</p>
-            <p>{offer.details}</p>
+        <div className='max-w-md w-full m-4 shadow-lg hover:shadow-2xl transition-shadow duration-300 bg-gradient-to-r from-yellow-400 to-orange-200 rounded-lg overflow-hidden cursor-pointer'>
+            <h2 className='font-bold text-lg text-center'>{offer.name}</h2>
+            <p className='text-center'>{offer.description}</p>
+            <p className='text-center'>{offer.details}</p>
             <div className='flex justify-around mt-4'>
+                
                 <BiShowAlt
+                
                     className='text-3xl text-blue-800 hover:text-black cursor-pointer'
                     onClick={() => setShowModal(true)}
                 />

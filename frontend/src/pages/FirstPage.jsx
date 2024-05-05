@@ -5,8 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { MdOutlineAddBox } from 'react-icons/md';
 import FeedbackCardUser from '../components/home/FeedbackCardUser';
 import FeedbackTable from '../components/home/FeedbackTable';
-
-
+// import backgroundImage from '../assets/photo-feed.jpg'
 
 const FirstPage = () => {
   const [feedbacks, setFeedbacks] = useState([]);
@@ -50,7 +49,7 @@ const FirstPage = () => {
         <div className='flex-1'></div>
         <h1 className='text-4xl text-center flex-1 text-cyan-50 '><b>Feedback</b></h1>
         <Link to='/feedbacks/addUser' className='flex-1 text-right'>
-          <button className='bg-red-500 py-2 px-4 rounded'>Add Feedback</button>
+          <button className='bg-orange-500 py-2 px-4 rounded text-white'>Add Feedback</button>
         </Link>
       </div>
       {loading ? (
