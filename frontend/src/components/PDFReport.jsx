@@ -27,12 +27,14 @@ const styles = StyleSheet.create({
     borderBottomWidth: 0,
   },
   tableRow: { margin: 'auto', flexDirection: 'row' },
-  tableCol: { width: '20%', borderStyle: 'solid', borderColor: '#bfbfbf', borderWidth: 1, padding: 5 },
+  tableCol: { width: '140px', borderStyle: 'solid', borderColor: '#bfbfbf', borderWidth: 1, padding: 5 },
+  
+  
 });
 
 const PDFReport = ({ data }) => (
   <Document>
-    <Page size="A4" style={styles.page}>
+    <Page size="A1" style={styles.page}>
       <View style={styles.section}>
         <Text style={styles.header}>Vehicle Details Report</Text>
         <View style={styles.table}>
