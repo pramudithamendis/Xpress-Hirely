@@ -21,7 +21,7 @@ const Header = () => {
           <ul className="flex">
             <li className="mr-6">
               <a
-                href="/home"
+                href="/mainhome"
                 className="menu-item hover:text-gray-900 relative"
               >
                 HOME
@@ -29,28 +29,29 @@ const Header = () => {
             </li>
             <li className="mr-6">
               <a
-                href="/mainhome"
+                href="/offers"
                 className="menu-item hover:text-gray-900 relative"
               >
-                BOOKING
-              </a>
-            </li>
-            <li className="mr-6">
-              <a href="#" className="menu-item hover:text-gray-900 relative">
                 OFFERS
               </a>
             </li>
             <li className="mr-6">
-              <a href="#" className="menu-item hover:text-gray-900 relative">
+              <a
+                href="/feedbacks"
+                className="menu-item hover:text-gray-900 relative"
+              >
                 FEEDBACK
               </a>
             </li>
             <li className="mr-6">
-              <a href="/onboarding" className="menu-item hover:text-gray-900 relative">
+              <a
+                href="/onboarding"
+                className="menu-item hover:text-gray-900 relative"
+              >
                 RENT YOUR VEHICLE
               </a>
             </li>
-            
+
             <li className="mr-6">
               <a
                 href="/chat/chats"

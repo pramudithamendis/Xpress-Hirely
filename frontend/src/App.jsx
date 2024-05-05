@@ -279,13 +279,12 @@ const App = () => {
         <Route path="/offers/add" element={<AddOffer />} />
         <Route path="/offers/edit/:id" element={<EditOffers />} />
         <Route path="/offers/delete/:id" element={<DeleteOffers />} />
-        <Route path="" />
         <Route path="/onboarding" element={<OnBoarding />} />
         <Route path="/rent-request" element={<RentRequest />} />
         <Route path="/request-management" element={<RequestManagement />} />
         <Route path="/vehicle-details" element={<VehicleDetails />} />
         <Route path="/bookshome" element={<HomeBooking />} />
-        <Route path="/mainhome" element={<Mainhome />} />
+        <Route path="/" element={<Mainhome />} />
         <Route path="/books/create" element={<CreateBook />} />
         <Route path="/books/details/:id" element={<ShowBook />} />
         <Route path="/books/edit/:id" element={<EditBook />} />
