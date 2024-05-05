@@ -12,7 +12,7 @@ const AdminDashboard = () => {
   };
   
   return (
-    <div className="px-40 py-16">
+    <div className="px-20 py-16">
       <Card className="profile-card">
         <Flex vertical gap="small" align="center">
           <Avatar size={150} icon={<UserOutlined />} className="avatar" />
@@ -75,6 +75,11 @@ const AdminDashboard = () => {
             <Link to="/vehicle-details">
               <button className="rounded bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4">
                 Vehicle Details
+              </button>
+            </Link>
+            <Link to="/a">
+              <button className="rounded bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4">
+                Bookings
               </button>
             </Link>
           </div>
