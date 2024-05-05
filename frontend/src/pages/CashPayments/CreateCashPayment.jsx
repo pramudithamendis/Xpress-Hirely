@@ -39,18 +39,20 @@ const CreateCashPayment = () => {
     };
 
     const handleFileUpload = (files) => {
-        // const file = files[0];
+       
         setSelectedFile(files[0]);
-        // setReceiptNo('Pending');
-        // setAmount(0);
-        // setDate('');
-        // setStatus('Pending');
+           
+    };
 
-        // const currentDate = new Date().toISOString().split('T')[0];
-        // setDate(currentDate);
+    // const handleFileChange = (event) => {
+    //     setSelectedFile(event.target.files[0]);
+    //   };
 
-        //file upload
-      };
+    // const handleSubmit = async () => {
+    //     const formData = new FormData();
+    //     formData.append('image', selectedFile);
+
+    
 
     return (
         <div className="flex justify-center items-center h-screen bg-cover bg-center" style={{backgroundImage: `url(${clientbg})`}}>
