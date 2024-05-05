@@ -56,7 +56,8 @@ const CreateBook = () => {
 
 
       {loading && <Spinner />}
-      <div className='flex flex-col border-2 border-orange-400 rounded-xl w-full max-w-[600px] p-10 mx-auto'>
+      <div className='flex flex-col border-2 border-orange-400 rounded-xl w-full max-w-[600px] p-10 mx-auto bg-white'>
+
         <div className='my-4'>
         <label className='text-xl mr-4 text-balck-500'>Name</label>
         <input
@@ -144,6 +145,20 @@ const CreateBook = () => {
 />
 
         </div>
+        <div className=''>
+  <label className='text-xl mr-4 text-black-500'>Distance (Km) </label>
+  <select className="border-2 border-gray-500 px-4 py-2 w-full rounded-md focus:outline-none focus:border-orange-500" onChange={(e) => console.log(e.target.value)}>
+    <option value="100">100</option>
+    <option value="200">200</option>
+    <option value="300">300</option>
+    <option value="400">400</option>
+    <option value="500">500</option>
+    <option value="600">600</option>
+    <option value="600">1000</option>
+    
+  </select>
+</div>
+
         <div className='my-4'>
         <label className='text-xl mr-4 text-black-500 font-bold'>Total:</label>
         </div>

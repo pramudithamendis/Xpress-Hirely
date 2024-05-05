@@ -36,6 +36,14 @@ const bookSchema = mongoose.Schema(
     DropoffTime: {
       type: String,
       required: true,
+    },
+    distance:{
+      type:String,
+      required:true,
+    },
+    Total:{
+      type:Number,
+      required:true,
     }
     
   }

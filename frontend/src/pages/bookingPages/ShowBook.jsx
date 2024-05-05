@@ -31,24 +31,32 @@ const ShowBook = () => {
       {loading ? (
         <Spinner />
       ) : (
-        <div className='border border-orange-300 rounded-lg shadow-lg p-6 mx-4 my-6 relative hover:shadow-xl'>
+        <div className='border border-orange-300 rounded-lg shadow-lg p-6 mx-4 my-6 relative hover:shadow-xl bg-white opacity-80'>
+
+
           <h2 className='font-bold text-lg text-gray-800 mb-4'>
     Hello, {book.customerName}!
   </h2>
   <div className='my-4 flex items-center'>
-    <span className='text-xl mr-4 text-gray-500'>Pickup Date:</span>
+  <span className='text-xl mr-4 text-black-500 font-bold'>
+Pickup Date:</span>
     <span>{new Date(book.PickupDate).toString()}</span>
   </div>
   <div className='my-4 flex items-center'>
-    <span className='text-xl mr-4 text-gray-500'>Pickup Time:</span>
-    <span>{new Date(book.PickupTime).toString()}</span>
-  </div>
+  <span className='text-xl mr-4 text-black-500 font-bold'>Pickup Time:</span>
+  <span>{new Date(book.PickupTime).toLocaleTimeString()}</span>
+</div>
+
   <div className='my-4 flex items-center'>
-    <span className='text-xl mr-4 text-gray-500'>Dropoff Date:</span>
+  <span className='text-xl mr-4 text-black-500 font-bold'>Dropoff Date:</span>
     <span>{new Date(book.DropoffDate).toString()}</span>
   </div>
   <div className='my-4 flex items-center'>
-    <span className='text-xl mr-4 text-gray-500'>Dropoff Time:</span>
+  <span className='text-xl mr-4 text-black-500 font-bold'>Dropoff Time:</span>
+    <span>{new Date(book.DropoffTime).toString()}</span>
+  </div>
+  <div className='my-4 flex items-center'>
+  <span className='text-xl mr-4 text-black-500 font-bold'>Total:</span>
     <span>{new Date(book.DropoffTime).toString()}</span>
   </div>
 </div>
