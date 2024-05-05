@@ -1,0 +1,11 @@
+body{
+    background: rgb(222, 171, 76);
+    /* background-image: url("../../public/ferrari-360-2918130_1280.jpg"); */
+    /* background-image: url("../../car-63930_1280.jpg"); */
+    background-image: url("../images/a.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: black;
+}

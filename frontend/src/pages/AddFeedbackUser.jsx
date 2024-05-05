@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
 import BackButton from '../components/BackButton';
 import Spinner from '../components/Spinner';
-
+import "./FirstPage.css";
 const AddFeedback = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -45,7 +45,7 @@ const AddFeedback = () => {
             console.error('Error adding feedback:', error);
         } finally {
             setLoading(false);
-            navigate('/'); // Navigate to a default or home route after process
+            navigate('/feedbacks'); // Navigate to a default or home route after process
         }
     };
 
@@ -55,7 +55,7 @@ const AddFeedback = () => {
             <div className='flex flex-col items-center'>
                 <h1 className='text-3xl my-4 text-center'><b>Add New Feedback</b></h1>
                 {loading ? <Spinner /> : null}
-                <div className='flex flex-col border-2 border-orange-500 rounded-xl w-[600px] p-4'>
+                <div className='flex flex-col border-2 border-orange-500 rounded-xl w-[600px] p-4 bg-slate-100'>
                     <InputField label="Name" value={name} onChange={setName} />
                     <InputField label="Email" value={email} onChange={setEmail} />
                     <InputField label="Details" value={details} onChange={setDetails} />

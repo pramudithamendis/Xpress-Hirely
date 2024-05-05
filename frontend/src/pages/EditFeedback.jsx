@@ -4,7 +4,7 @@ import BackButton from '../components/BackButton';
 import Spinner from '../components/Spinner';
 import { useNavigate, useParams } from 'react-router-dom';
 import {useSnackbar} from 'notistack'
-
+import "./FirstPage.css";
 const EditFeedback = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');

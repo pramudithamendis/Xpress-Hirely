@@ -33,7 +33,7 @@ const DeleteOffers = () => {
 
       <h1 className='text-3xl my-4 text-center'><b>Delete Offer</b></h1>
       {loading ? <Spinner /> : ''}
-      <div className='flex flex-col items-center border-2 border-orange-500 rounded-xl w-[600px] p-8 mx-auto'>
+      <div className='flex flex-col items-center border-2 border-orange-500 rounded-xl w-[600px] p-8 mx-auto bg-slate-100'>
         <h3 className='text-2xl'>Are You Sure You Want To Delete This ?</h3>
 
         <button
