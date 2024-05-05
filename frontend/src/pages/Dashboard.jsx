@@ -29,7 +29,7 @@ const Dashboard = () => {
               My Rentals
             </button>
             <button className="rounded bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4">
-              Payment Details
+              <a href="/user">Payment Details</a>
             </button>
           </div>
           <Button
