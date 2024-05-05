@@ -102,6 +102,17 @@ import ShowBook from './pages/bookingPages/ShowBook';
 import EditBook from './pages/bookingPages/EditBook';
 import DeleteBook from './pages/bookingPages/DeleteBook';
 import Mainhome from "./pages/bookingPages/mainhome.jsx";
+
+//feedbacks
+// import ShowFeedback from "../src/pages/ShowFeedback.jsx"
+import HomeFeeback from '../src/pages/Home copy.jsx';
+import AddFeedback from '../src/pages/AddFeedback';
+import EditFeedback from '../src/pages/EditFeedback';
+import DeleteFeedback from '../src/pages/DeleteFeedback ';
+import ShowFeedback from '../src/pages/ShowFeedback';
+import FirstPageF from '../src/pages/FirstPage';
+import AddFeedbackUser from '../src/pages/AddFeedbackUser';
+// import Layout from './components/layouts/Layout';
 const App = () => {
   const { isAuthenticated, userData } = useAuth();
   return (
@@ -258,6 +269,14 @@ const App = () => {
       <Route path='/books/details/:id' element={<ShowBook />} />
       <Route path='/books/edit/:id' element={<EditBook />} />
       <Route path='/books/delete/:id' element={<DeleteBook />} />
+
+      <Route path='/feedbacks' element={<FirstPageF/>} />
+        <Route path='/feedbacks/home' element={<HomeFeeback/>} />
+        <Route path='/feedbacks/show/:id' element={<ShowFeedback />} />
+        <Route path='/feedbacks/add' element={<AddFeedback />} />          {/* admin adding feedback */}
+        <Route path='/feedbacks/edit/:id' element={<EditFeedback />} />
+        <Route path='/feedbacks/delete/:id' element={<DeleteFeedback />} />
+        <Route path='/feedbacks/addUser/' element={<AddFeedbackUser />} />
       </Routes>
     </Layout>
   );
