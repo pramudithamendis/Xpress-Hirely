@@ -33,6 +33,7 @@ import recordsRoute from './routes/recordsRoute.js'
 import carRoutes from './Routes/carRoute.js'
 
 import booksRoute from './routes/booksRoute.js';
+import feedbackRoutes from './routes/feedbackRoutes.js';
 dotenv.config();
 
 const app = express();
@@ -104,6 +105,8 @@ app.use('/cars', carRoutes);
 
 
 app.use('/books', booksRoute);
+
+app.use('/feedbacks', feedbackRoutes );
 // MongoDB connection
 mongoose.connect(mongoDBURL || process.env.DB_URI, {
     useNewUrlParser: true,
