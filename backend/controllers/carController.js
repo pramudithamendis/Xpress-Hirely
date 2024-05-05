@@ -8,8 +8,8 @@ import nodemailer from "nodemailer";
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: "prashandev77@gmail.com", // Your Gmail email address
-    pass: "bbuf vsxh scfa eklq", // Your Gmail password or an app-specific password if you have 2-step verification enabled
+    user: "temp", // Your Gmail email address
+    pass: "temp", // Your Gmail password or an app-specific password if you have 2-step verification enabled
   },
 });
 
