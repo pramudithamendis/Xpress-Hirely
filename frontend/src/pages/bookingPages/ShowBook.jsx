@@ -44,9 +44,8 @@ Pickup Date:</span>
   </div>
   <div className='my-4 flex items-center'>
   <span className='text-xl mr-4 text-black-500 font-bold'>Pickup Time:</span>
-  <span>{new Date(book.PickupTime).toLocaleTimeString()}</span>
-</div>
-
+    <span>{new Date(book.PickupTime).toString()}</span>
+  </div>
   <div className='my-4 flex items-center'>
   <span className='text-xl mr-4 text-black-500 font-bold'>Dropoff Date:</span>
     <span>{new Date(book.DropoffDate).toString()}</span>
