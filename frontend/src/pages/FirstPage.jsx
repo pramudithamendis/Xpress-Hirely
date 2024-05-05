@@ -3,10 +3,9 @@ import axios from 'axios';
 import Spinner from '../components/Spinner';
 import { Link, useNavigate } from 'react-router-dom';
 import { MdOutlineAddBox } from 'react-icons/md';
-import FeedbackCardUser from '../components/home/FeedbackCardUser';
-import FeedbackTable from '../components/home/FeedbackTable';
-
-
+import FeedbackCardUser from '../components/Home/FeedbackCardUser';
+import FeedbackTable from '../components/Home/FeedbackTable';
+import backgroundImage from '../assets/photo-feed.jpg'
 
 const FirstPage = () => {
   const [feedbacks, setFeedbacks] = useState([]);
@@ -41,7 +40,7 @@ const FirstPage = () => {
 
   return (
     <div  style={{
-      // backgroundImage: `url(${backgroundImage})`,
+      backgroundImage: `url(${backgroundImage})`,
       height: '100vh', 
       backgroundSize: 'cover',
       backgroundPosition: 'center'
@@ -50,7 +49,7 @@ const FirstPage = () => {
         <div className='flex-1'></div>
         <h1 className='text-4xl text-center flex-1 text-cyan-50 '><b>Feedback</b></h1>
         <Link to='/feedbacks/addUser' className='flex-1 text-right'>
-          <button className='bg-red-500 py-2 px-4 rounded'>Add Feedback</button>
+          <button className='bg-orange-500 py-2 px-4 rounded text-white'>Add Feedback</button>
         </Link>
       </div>
       {loading ? (

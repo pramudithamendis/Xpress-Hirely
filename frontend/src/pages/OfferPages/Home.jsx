@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import Spinner from '../../components/Spinner';
+import Spinner from '../components/Spinner';
 import { Link, useNavigate } from 'react-router-dom';
 import { MdOutlineAddBox } from 'react-icons/md';
-import OfferCard from '../../components/home/OfferCard';
-import OfferTable from '../../components/home/OfferTable';
+import OfferCard from '../components/Home/OfferCard';
+import OfferTable from '../components/Home/OfferTable';
 
 const Home = () => {
   const [offers, setOffers] = useState([]);
@@ -53,8 +53,14 @@ const Home = () => {
         >
           Table View
         </button>
+        <br></br>
+        <br></br>
+        <br></br>
       </div>
       <div className='flex justify-between '>
+      <br></br>
+        <br></br>
+        <br></br>
         <h1 className='text-3xl text-center'>Offers List</h1>
         <Link to='/offers/add'>
           <MdOutlineAddBox className='text-sky-800 text-4xl' />
