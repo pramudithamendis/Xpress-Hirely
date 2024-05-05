@@ -34,6 +34,9 @@ const Dashboard = () => {
             <button className="rounded bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4">
               <a href="/user">Payment Details</a>
             </button>
+            <button className="rounded bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4">
+              <a href="/bookshome">My Bookings</a>
+            </button>
           </div>
           <Button
             size="large"
