@@ -44,30 +44,30 @@ const ShowOffers = () => {
       {loading ? (
         <Spinner />
       ) : (
-        <div className='flex flex-col items-center'>
-          <div className='flex flex-col border-2 border-orange-400 rounded-xl w-fit p-4'>
+        <div className='flex flex-col items-center '>
+          <div className='flex flex-col border-2 border-black-400 rounded-xl w-fit p-4 bg-orange-300'>
             <div className='my-4'>
-              <span className='text-xl m-4 text-gray-500'>Id :</span>
+              <span className='text-xl m-4 '>Id :</span>
               <span>{offers._id}</span>
             </div>
             <div className='my-4'>
-              <span className='text-xl m-4 text-gray-500'>Name :</span>
+              <span className='text-xl m-4 '>Name :</span>
               <span>{offers.name}</span>
             </div>
             <div className='my-4'>
-              <span className='text-xl m-4 text-gray-500'>Description :</span>
+              <span className='text-xl m-4 '>Description :</span>
               <span>{offers.description}</span>
             </div>
             <div className='my-4'>
-              <span className='text-xl m-4 text-gray-500'>Details :</span>
+              <span className='text-xl m-4 '>Details :</span>
               <span>{offers.details}</span>
             </div>
             <div className='my-4'>
-              <span className='text-xl m-4 text-gray-500'>Create Time :</span>
+              <span className='text-xl m-4 '>Create Time :</span>
               <span>{new Date(offers.createdAt).toString()}</span>
             </div>
             <div className='my-4'>
-              <span className='text-xl m-4 text-gray-500'>Last Updated Time :</span>
+              <span className='text-xl m-4 '>Last Updated Time :</span>
               <span>{new Date(offers.updatedAt).toString()}</span>
             </div>
           </div>

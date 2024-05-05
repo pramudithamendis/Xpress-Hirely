@@ -55,7 +55,7 @@ const AddOffer = () => {
         
         <h1 className='text-3xl my-4 text-center'><b>Add New Offer</b></h1>
         {loading ? <Spinner /> : null}
-        <div className='flex flex-col border-2 border-orange-500 rounded-xl w-[600px] p-4'>
+        <div className='flex flex-col border-2 border-orange-500 rounded-xl w-[600px] p-4 bg-slate-100'>
           {error && <p className="text-red-500">{error}</p>}
           <InputField label="Name" value={name} onChange={setName} />
           <InputField label="Description" value={description} onChange={setDescription} />

@@ -61,6 +61,17 @@ const AdminDashboard = () => {
                 User Payments
               </button>
             </Link>
+            
+            <Link to="/offers/home">
+              <button className="rounded bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4">
+                Offers Manegment
+              </button>
+            </Link>
+            <Link to="/feedbacks/home">
+              <button className="rounded bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4">
+                Feedback Manegment
+              </button>
+            </Link>
           </div>
           <Button
             size="large"

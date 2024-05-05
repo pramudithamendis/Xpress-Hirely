@@ -61,9 +61,9 @@ const Home = () => {
       <br></br>
         <br></br>
         <br></br>
-        <h1 className='text-3xl text-center'>Offers List</h1>
+        <h1 className='text-3xl text-cente text-6xl'>Offers List</h1>
         <Link to='/offers/add'>
-          <MdOutlineAddBox className='text-sky-800 text-4xl' />
+          <MdOutlineAddBox className='text-white text-4xl' />
         </Link>
       </div>
       {loading ? (

@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import BackButton from '../components/BackButton'; // Assuming this is correct
 import Spinner from '../components/Spinner'; // Assuming this is correct
-
+import "./FirstPage.css";
 const ShowFeedback = () => {
     const [feedback, setFeedback] = useState(null);
     const [loading, setLoading] = useState(true); // Added loading state
@@ -51,29 +51,29 @@ const ShowFeedback = () => {
           <BackButton backPath='/' />
           <div className='flex flex-col items-center'>
             <h1 className='text-3xl my-4'><b>Feedback Details</b></h1>
-            <div className='flex flex-col border-2 border-orange-400 rounded-xl w-fit p-4'>
+            <div className='flex flex-col border-2 border-orange-400 rounded-xl w-fit p-4 bg-slate-100'>
               <div className='my-4'>
-                <span className='text-xl m-4 text-gray-500'>Id :</span>
+                <span className='text-xl m-4 text-orange-500'>Id :</span>
                 <span>{feedback._id}</span>
               </div>
               <div className='my-4'>
-                <span className='text-xl m-4 text-gray-500'>Name :</span>
+                <span className='text-xl m-4 text-orange-500'>Name :</span>
                 <span>{feedback.name}</span>
               </div>
               <div className='my-4'>
-                <span className='text-xl m-4 text-gray-500'>Email :</span>
+                <span className='text-xl m-4 text-orange-500'>Email :</span>
                 <span>{feedback.email}</span>
               </div>
               <div className='my-4'>
-                <span className='text-xl m-4 text-gray-500'>Feedback :</span>
+                <span className='text-xl m-4 text-orange-500'>Feedback :</span>
                 <span>{feedback.details}</span>
               </div>
               <div className='my-4'>
-                <span className='text-xl m-4 text-gray-500'>Create Time :</span>
+                <span className='text-xl m-4 text-orange-500'>Create Time :</span>
                 <span>{new Date(feedback.createdAt).toString()}</span>
               </div>
               <div className='my-4'>
-                <span className='text-xl m-4 text-gray-500'>Last Updated Time :</span>
+                <span className='text-xl m-4 text-orange-500'>Last Updated Time :</span>
                 <span>{new Date(feedback.updatedAt).toString()}</span>
               </div>
             </div>

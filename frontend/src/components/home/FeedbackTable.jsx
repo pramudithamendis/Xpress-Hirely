@@ -39,8 +39,8 @@ const FeedbackTable = ({ feedbacks }) => {
         Download Report
       </button>
       <div className="overflow-x-auto">
-        <table className='w-full text-sm text-left text-gray-500 dark:text-gray-400'>
-          <thead className='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400'>
+        <table className='w-full text-sm text-left text-gray-500 dark:text-gray-400 bg-slate-100'>
+          <thead className='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 bg-slate-100'>
             <tr>
               <th scope="col" className='py-1 px-1 w-1'>Name</th>
               <th scope="col" className='py-2 px-4 w-1'>Email</th>
@@ -50,7 +50,7 @@ const FeedbackTable = ({ feedbacks }) => {
           </thead>
           <tbody className="bg-white dark:bg-gray-800">
             {feedbacks.map((feedback) => (
-              <tr key={feedback._id} className='border-b dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700'>
+              <tr key={feedback._id} className='border-b dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 bg-slate-100'>
                 <td className='py-1 px-1'>{feedback.name}</td>
                 <td className='py-1 px-1'>{feedback.email}</td>
                 <td className='py-1 px-1'>{feedback.details}</td>

@@ -61,7 +61,7 @@ const EditOffers = () => {
         
         <h1 className='text-3xl my-4 text-center'><b>Edit Offer</b></h1>
         {loading ? <Spinner /> : (
-          <div className='flex flex-col border-2 border-orange-500 rounded-xl w-[600px] p-4'>
+          <div className='flex flex-col border-2 border-orange-500 rounded-xl w-[600px] p-4 bg-slate-100'>
             <div className='my-4'>
               <label className='text-xl mr-4 text-black'>Name</label>
               <input

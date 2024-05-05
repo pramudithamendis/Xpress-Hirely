@@ -9,7 +9,7 @@ import { MdOutlineAddBox } from 'react-icons/md';
 import FeedbackCard from '../components/home/FeedbackCard';
 import FeedbackTable from '../components/home/FeedbackTable';
 // import backgroundImage from '../assets/photo-feed.jpg'
-
+import "./FirstPage.css";
 const Home = () => {
   const [feedbacks, setFeedbacks] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -65,7 +65,7 @@ const Home = () => {
       </div>
       <div className='flex flex-col justify-center mb-4'>
         <br></br>
-        <h1 className='text-3xl text-center text-white'><b>Feedback List</b></h1>
+        <h1 className='text-3xl text-center text-black'><b>Feedback List</b></h1>
         <Link to='/feedbacks/add' className='flex justify-center items-center'>
           <MdOutlineAddBox className='text-sky-800 text-4xl' />
         </Link>
